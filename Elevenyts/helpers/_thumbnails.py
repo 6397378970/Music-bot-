@@ -1,35 +1,9 @@
 # ==========================================================
-  # Copyright (c) 2026 ArtistBots
-  # All Rights Reserved.
-  # 
-  # Project      : ArtistBots API Telegram Music Bot
-  # Powered By   : Artist
-  # Type         : API Based Telegram Music Bot
-  #
-  # Bot          : @ArtistApibot
-  # Channel      : https://t.me/artistbots
-  # GitHub       : https://github.com/elevenyts
-  #
-  # Unauthorized copying, modification, or redistribution
-  # of this source code without permission is prohibited.
-  # ==========================================================
-# ==========================================================
-# Copyright (c) 2026 ArtistBots
-# All Rights Reserved.
-#
-# Project      : ArtistBots API Telegram Music Bot
-# Powered By   : Artist
-# Type         : API Based Telegram Music Bot
-#
-# Bot          : @ArtistApibot
-# Channel      : https://t.me/artistbots
-# GitHub       : https://github.com/elevenyts
-#
-# Unauthorized copying, modification, or redistribution
-# of this source code without permission is prohibited.
+# Copyright (c) 2026 ArtistBots — All Rights Reserved.
 # ==========================================================
 import os
 import re
+import math
 import asyncio
 import aiohttp
 import base64
@@ -39,286 +13,384 @@ from PIL import (
     ImageDraw,
     ImageEnhance,
     ImageFilter,
-    ImageFont
+    ImageFont,
 )
 
 from Elevenyts import config
 from Elevenyts.helpers import Track
 
 
-PANEL_W, PANEL_H = 1030, 610
-PANEL_X = (1280 - PANEL_W) // 2
-PANEL_Y = 55
+# ── Canvas ────────────────────────────────────────────────
+W, H = 1280, 720
 
-THUMB_W, THUMB_H = 930, 420
-THUMB_X = PANEL_X + (PANEL_W - THUMB_W) // 2
-THUMB_Y = PANEL_Y + 30
+# ── Album art (left side) ─────────────────────────────────
+ART_X, ART_Y     = 52, 52
+ART_W, ART_H     = 546, 616
+ART_RADIUS       = 36
 
-TITLE_X = THUMB_X + 5
-TITLE_Y = THUMB_Y + THUMB_H + 25
+# ── Info card (right side) ────────────────────────────────
+CARD_X, CARD_Y   = 638, 52
+CARD_W, CARD_H   = 590, 616
+CARD_RADIUS      = 36
 
-META_Y = TITLE_Y + 58
+# ── Colors ────────────────────────────────────────────────
+PURPLE  = (162,  89, 255)
+PINK    = (255,  75, 155)
+BLUE    = ( 75, 155, 255)
+WHITE   = (255, 255, 255)
+LIGHT   = (210, 190, 255)
+DIM     = (140, 120, 180)
+DARK    = ( 10,   8,  20)
 
-BAR_X = THUMB_X + 5
-BAR_Y = META_Y + 60
+# progress bar
+BAR_FILL  = 0.33          # fraction already played
+BAR_COLOR = (162,  89, 255)
+BAR_BG    = ( 40,  35,  60)
 
-BAR_RED_LEN = 330
-BAR_TOTAL_LEN = 920
-
-ICONS_W, ICONS_H = 420, 45
-ICONS_X = PANEL_X + (PANEL_W - ICONS_W) // 2
-ICONS_Y = BAR_Y + 65
-
-MAX_TITLE_WIDTH = 820
-
+# signature
 _f = "QXJ0aXN0Ym90cw=="
 
 
-def _decode_f():
-    decoded = base64.b64decode(_f).decode("utf-8")
-    return f"✦ {decoded} ✦"
+def _sig():
+    return f"✦ {base64.b64decode(_f).decode()} ✦"
 
 
-def trim_to_width(text: str, font, max_w: int) -> str:
-    ellipsis = "…"
+# ── Font loader ──────────────────────────────────────────
+def _fonts():
+    try:
+        bold   = "Elevenyts/helpers/Raleway-Bold.ttf"
+        light  = "Elevenyts/helpers/Inter-Light.ttf"
+        return {
+            "title":  ImageFont.truetype(bold,  46),
+            "title2": ImageFont.truetype(bold,  36),
+            "badge":  ImageFont.truetype(bold,  18),
+            "meta":   ImageFont.truetype(light, 22),
+            "small":  ImageFont.truetype(light, 19),
+            "sig":    ImageFont.truetype(bold,  20),
+        }
+    except OSError:
+        d = ImageFont.load_default()
+        return {k: d for k in ("title","title2","badge","meta","small","sig")}
+
+
+# ── Helpers ───────────────────────────────────────────────
+def _trim(text, font, max_w):
     if font.getlength(text) <= max_w:
         return text
     for i in range(len(text) - 1, 0, -1):
-        if font.getlength(text[:i] + ellipsis) <= max_w:
-            return text[:i] + ellipsis
-    return ellipsis
+        if font.getlength(text[:i] + "…") <= max_w:
+            return text[:i] + "…"
+    return "…"
 
 
-def draw_rounded_rect_border_glow(draw, box, radius, color, width, glow_color, glow_spread):
-    """Draw a glowing rounded rectangle border."""
-    x0, y0, x1, y1 = box
-    for i in range(glow_spread, 0, -1):
-        alpha = int(80 * (i / glow_spread))
-        gc = (*glow_color[:3], alpha)
+def _lerp_color(a, b, t):
+    return tuple(int(a[i] + (b[i] - a[i]) * t) for i in range(3))
+
+
+def _gradient_rect(draw, x0, y0, x1, y1, c_left, c_right):
+    """Horizontal gradient fill via scanline."""
+    for x in range(x0, x1):
+        t = (x - x0) / max(x1 - x0 - 1, 1)
+        draw.line([(x, y0), (x, y1)], fill=(*_lerp_color(c_left, c_right, t), 255))
+
+
+def _glow_ellipse(layer, cx, cy, rx, ry, color, steps=14, max_alpha=60):
+    d = ImageDraw.Draw(layer)
+    for i in range(steps, 0, -1):
+        a = int(max_alpha * (i / steps) ** 2)
+        sx = int(rx * i / steps * 2.2)
+        sy = int(ry * i / steps * 2.2)
+        d.ellipse((cx - sx, cy - sy, cx + sx, cy + sy),
+                  fill=(*color[:3], a))
+
+
+def _rounded_paste(base, img, xy, radius):
+    mask = Image.new("L", img.size, 0)
+    ImageDraw.Draw(mask).rounded_rectangle(
+        (0, 0, img.width, img.height), radius=radius, fill=255)
+    base.paste(img, xy, mask)
+
+
+def _draw_waveform(draw, x, y, w, h, color, bars=38, seed=7):
+    """Decorative static waveform bars."""
+    gap = 4
+    bw  = (w - gap * (bars - 1)) // bars
+    for i in range(bars):
+        t  = i / (bars - 1)
+        # smooth sine envelope
+        env = 0.3 + 0.7 * abs(math.sin(math.pi * t * 2.5 + seed))
+        bh  = int(h * env)
+        bx  = x + i * (bw + gap)
+        by  = y + (h - bh) // 2
+        alpha = int(180 + 60 * env)
+        c = (*_lerp_color(color, PINK, t), alpha)
         draw.rounded_rectangle(
-            (x0 - i, y0 - i, x1 + i, y1 + i),
-            radius=radius + i,
-            outline=gc,
-            width=1
-        )
-    draw.rounded_rectangle(box, radius=radius, outline=color, width=width)
+            (bx, by, bx + bw, by + bh), radius=bw // 2, fill=c)
 
 
+def _draw_progress(draw, x, y, length, height, fraction, color_l, color_r):
+    """Gradient progress bar with glowing knob."""
+    # Track background
+    draw.rounded_rectangle(
+        (x, y, x + length, y + height),
+        radius=height // 2, fill=(*BAR_BG, 255))
+    # Played gradient
+    played = int(length * fraction)
+    if played > height:
+        tmp = Image.new("RGBA", (played, height), (0, 0, 0, 0))
+        _gradient_rect(ImageDraw.Draw(tmp), 0, 0, played, height, color_l, color_r)
+        rmask = Image.new("L", (played, height), 0)
+        ImageDraw.Draw(rmask).rounded_rectangle(
+            (0, 0, played, height), radius=height // 2, fill=255)
+        base = Image.new("RGBA", (length, height), (0, 0, 0, 0))
+        base.paste(tmp, (0, 0), rmask)
+        draw._image.paste(base, (x, y), base)
+    # Knob
+    kx = x + played
+    ky = y + height // 2
+    kr = height
+    for gi in range(10, 0, -1):
+        ga = int(70 * (gi / 10) ** 2)
+        draw.ellipse((kx - kr - gi, ky - kr - gi,
+                      kx + kr + gi, ky + kr + gi),
+                     fill=(*color_r, ga))
+    draw.ellipse((kx - kr, ky - kr, kx + kr, ky + kr), fill=(*color_r, 255))
+    draw.ellipse((kx - kr // 2, ky - kr // 2,
+                  kx + kr // 2, ky + kr // 2), fill=WHITE)
+
+
+# ── Main class ────────────────────────────────────────────
 class Thumbnail:
 
     def __init__(self):
-        try:
-            self.title_font = ImageFont.truetype(
-                "Elevenyts/helpers/Raleway-Bold.ttf", 42)
-            self.regular_font = ImageFont.truetype(
-                "Elevenyts/helpers/Inter-Light.ttf", 24)
-            self.signature_font = ImageFont.truetype(
-                "Elevenyts/helpers/Raleway-Bold.ttf", 26)
-            self.small_font = ImageFont.truetype(
-                "Elevenyts/helpers/Inter-Light.ttf", 20)
-        except OSError:
-            self.title_font = ImageFont.load_default()
-            self.regular_font = ImageFont.load_default()
-            self.signature_font = ImageFont.load_default()
-            self.small_font = ImageFont.load_default()
+        self.fonts = _fonts()
 
-    async def save_thumb(self, output_path: str, url: str):
-        async with aiohttp.ClientSession() as session:
-            async with session.get(url) as resp:
+    async def save_thumb(self, output_path, url):
+        async with aiohttp.ClientSession() as s:
+            async with s.get(url) as r:
                 with open(output_path, "wb") as f:
-                    f.write(await resp.read())
+                    f.write(await r.read())
         return output_path
 
-    async def generate(self, song: Track, size=(1280, 720)) -> str:
+    async def generate(self, song: Track, size=(W, H)) -> str:
         try:
-            temp = f"cache/temp_{song.id}.jpg"
+            temp   = f"cache/temp_{song.id}.jpg"
             output = f"cache/{song.id}_ultra.png"
             if os.path.exists(output):
                 return output
             await self.save_thumb(temp, song.thumbnail)
             return await asyncio.get_event_loop().run_in_executor(
-                None, self._generate_sync, temp, output, song, size)
+                None, self._generate_sync, temp, output, song)
         except Exception:
             return config.DEFAULT_THUMB
 
-    def _generate_sync(self, temp, output, song, size=(1280, 720)):
+    def _generate_sync(self, temp, output, song):
         try:
-            W, H = size  # 1280, 720
+            fonts = self.fonts
 
-            # ── 1. Background ─────────────────────────────────────────
+            # ── 1. Background ──────────────────────────────────────────
             with Image.open(temp) as tmp:
-                base = tmp.resize(size).convert("RGBA")
+                raw = tmp.resize((W, H)).convert("RGBA")
 
-            bg = base.filter(ImageFilter.GaussianBlur(32))
-            bg = ImageEnhance.Brightness(bg).enhance(0.22)
-            bg = ImageEnhance.Contrast(bg).enhance(1.5)
+            bg = raw.filter(ImageFilter.GaussianBlur(40))
+            bg = ImageEnhance.Brightness(bg).enhance(0.18)
+            bg = ImageEnhance.Contrast(bg).enhance(1.6)
+            bg = ImageEnhance.Color(bg).enhance(0.5)
 
-            # Radial vignette overlay (dark edges)
-            vignette = Image.new("RGBA", size, (0, 0, 0, 0))
-            vd = ImageDraw.Draw(vignette)
-            for i in range(60, 0, -1):
-                alpha = int(160 * (1 - i / 60))
-                spread = i * 6
-                vd.ellipse(
-                    (W // 2 - spread, H // 2 - spread * 9 // 16,
-                     W // 2 + spread, H // 2 + spread * 9 // 16),
-                    fill=(0, 0, 0, alpha)
-                )
-            bg = Image.alpha_composite(bg, vignette)
+            # Deep dark overlay
+            bg = Image.alpha_composite(
+                bg, Image.new("RGBA", (W, H), (*DARK, 130)))
 
-            # Subtle dark overlay
-            dark = Image.new("RGBA", size, (0, 0, 0, 100))
-            bg = Image.alpha_composite(bg, dark)
-
+            # ── 2. Ambient glow blobs ──────────────────────────────────
+            glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+            _glow_ellipse(glow, ART_X + ART_W // 2, ART_Y + ART_H // 2,
+                          ART_W // 2, ART_H // 2, PURPLE, steps=18, max_alpha=55)
+            _glow_ellipse(glow, CARD_X + CARD_W // 2, H // 2,
+                          CARD_W // 2, CARD_H // 2, PINK, steps=14, max_alpha=35)
+            bg = Image.alpha_composite(bg, glow)
             draw = ImageDraw.Draw(bg)
 
-            # ── 2. Glass panel with glow border ───────────────────────
-            panel = Image.new("RGBA", (PANEL_W, PANEL_H), (0, 0, 0, 0))
-            pd = ImageDraw.Draw(panel)
+            # ── 3. Decorative corner dots (top-left) ──────────────────
+            for di, (dx, dy) in enumerate([(20, 20), (36, 20), (20, 36)]):
+                a = 200 - di * 50
+                draw.ellipse((dx - 3, dy - 3, dx + 3, dy + 3),
+                             fill=(*PURPLE, a))
 
-            # Outer glow rings
-            CYAN = (0, 255, 255)
-            for gi in range(8, 0, -1):
-                ga = int(35 * (gi / 8))
-                pd.rounded_rectangle(
-                    (0 - gi, 0 - gi, PANEL_W - 1 + gi, PANEL_H - 1 + gi),
-                    radius=42 + gi,
-                    outline=(0, 220, 255, ga),
-                    width=1
-                )
+            # ── 4. Album art ───────────────────────────────────────────
+            with Image.open(temp) as tmp:
+                art = tmp.resize((ART_W, ART_H)).convert("RGBA")
+
+            # Glow behind art
+            art_glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+            _glow_ellipse(art_glow,
+                          ART_X + ART_W // 2, ART_Y + ART_H // 2,
+                          ART_W // 2 + 20, ART_H // 2 + 20,
+                          PURPLE, steps=12, max_alpha=80)
+            bg = Image.alpha_composite(bg, art_glow)
+            draw = ImageDraw.Draw(bg)
+
+            _rounded_paste(bg, art, (ART_X, ART_Y), ART_RADIUS)
+
+            # Gradient border around art (purple → pink)
+            border_size = 3
+            art_border = Image.new("RGBA", (ART_W + border_size * 2,
+                                            ART_H + border_size * 2), (0, 0, 0, 0))
+            bd = ImageDraw.Draw(art_border)
+            steps = ART_W + ART_H
+            for si in range(steps):
+                t   = si / steps
+                col = _lerp_color(PURPLE, PINK, t)
+                ang = 2 * math.pi * t
+                bx  = int((ART_W // 2 + border_size) + (ART_W // 2 + border_size) * math.cos(ang))
+                by  = int((ART_H // 2 + border_size) + (ART_H // 2 + border_size) * math.sin(ang))
+                bx  = max(border_size, min(bx, ART_W + border_size - 1))
+                by  = max(border_size, min(by, ART_H + border_size - 1))
+            # Simpler: draw 4 gradient lines around the art rect
+            for si in range(ART_W):
+                t   = si / ART_W
+                col = _lerp_color(PURPLE, PINK, t)
+                # top edge
+                draw.line([(ART_X + si, ART_Y - 2),
+                           (ART_X + si, ART_Y - 1)], fill=(*col, 230))
+                # bottom edge
+                draw.line([(ART_X + si, ART_Y + ART_H + 1),
+                           (ART_X + si, ART_Y + ART_H + 2)], fill=(*col, 230))
+            for si in range(ART_H):
+                t   = si / ART_H
+                col = _lerp_color(PURPLE, PINK, t)
+                draw.line([(ART_X - 2, ART_Y + si),
+                           (ART_X - 1, ART_Y + si)], fill=(*col, 230))
+                draw.line([(ART_X + ART_W + 1, ART_Y + si),
+                           (ART_X + ART_W + 2, ART_Y + si)], fill=(*col, 230))
+
+            # ── 5. Glass info card ─────────────────────────────────────
+            card = Image.new("RGBA", (CARD_W, CARD_H), (0, 0, 0, 0))
+            cd   = ImageDraw.Draw(card)
 
             # Glass fill
-            pd.rounded_rectangle(
-                (0, 0, PANEL_W - 1, PANEL_H - 1),
-                radius=42,
-                fill=(8, 8, 18, 165)
-            )
-            # Inner border
-            pd.rounded_rectangle(
-                (0, 0, PANEL_W - 1, PANEL_H - 1),
-                radius=42,
-                outline=(0, 255, 255, 230),
-                width=2
-            )
-            # Subtle inner highlight (top edge)
-            pd.rounded_rectangle(
-                (3, 3, PANEL_W - 4, PANEL_H // 3),
-                radius=40,
-                outline=(255, 255, 255, 18),
-                width=1
-            )
+            cd.rounded_rectangle(
+                (0, 0, CARD_W - 1, CARD_H - 1),
+                radius=CARD_RADIUS,
+                fill=(18, 12, 35, 185))
 
-            pmask = Image.new("L", (PANEL_W, PANEL_H), 0)
-            ImageDraw.Draw(pmask).rounded_rectangle(
-                (0, 0, PANEL_W, PANEL_H), radius=42, fill=255)
-            bg.paste(panel, (PANEL_X, PANEL_Y), pmask)
+            # Gradient top highlight
+            for yi in range(CARD_H // 4):
+                a = int(28 * (1 - yi / (CARD_H // 4)))
+                cd.rounded_rectangle(
+                    (0, 0, CARD_W - 1, yi * 2),
+                    radius=CARD_RADIUS,
+                    outline=(255, 255, 255, a),
+                    width=1)
 
-            # ── 3. Thumbnail image with border glow ───────────────────
-            thumb = base.resize((THUMB_W, THUMB_H))
+            # Gradient border (purple top → pink bottom)
+            for side_y in range(CARD_H):
+                t   = side_y / CARD_H
+                col = _lerp_color(PURPLE, PINK, t)
+                card.putpixel((0, side_y),              (*col, 180))
+                card.putpixel((CARD_W - 1, side_y),     (*col, 180))
+            for side_x in range(CARD_W):
+                t   = side_x / CARD_W
+                col = _lerp_color(PURPLE, PINK, t)
+                card.putpixel((side_x, 0),              (*col, 180))
+                card.putpixel((side_x, CARD_H - 1),     (*col, 180))
 
-            # Glow frame behind thumbnail
-            glow_layer = Image.new("RGBA", size, (0, 0, 0, 0))
-            gd = ImageDraw.Draw(glow_layer)
-            for gi in range(10, 0, -1):
-                ga = int(50 * (gi / 10))
-                gd.rounded_rectangle(
-                    (THUMB_X - gi, THUMB_Y - gi,
-                     THUMB_X + THUMB_W + gi, THUMB_Y + THUMB_H + gi),
-                    radius=28 + gi,
-                    fill=(0, 200, 255, ga)
-                )
-            bg = Image.alpha_composite(bg, glow_layer)
+            cmask = Image.new("L", (CARD_W, CARD_H), 0)
+            ImageDraw.Draw(cmask).rounded_rectangle(
+                (0, 0, CARD_W, CARD_H), radius=CARD_RADIUS, fill=255)
+            bg.paste(card, (CARD_X, CARD_Y), cmask)
             draw = ImageDraw.Draw(bg)
 
-            tmask = Image.new("L", thumb.size, 0)
-            ImageDraw.Draw(tmask).rounded_rectangle(
-                (0, 0, THUMB_W, THUMB_H), radius=26, fill=255)
-            bg.paste(thumb, (THUMB_X, THUMB_Y), tmask)
+            # ── 6. Inside card — content ───────────────────────────────
+            CX = CARD_X + 38   # content left margin
+            CY = CARD_Y + 38   # content top margin
+            CW = CARD_W - 76   # content width
 
-            # Thin cyan border around thumbnail
-            draw.rounded_rectangle(
-                (THUMB_X, THUMB_Y, THUMB_X + THUMB_W, THUMB_Y + THUMB_H),
-                radius=26, outline=(0, 255, 255, 160), width=2
-            )
+            # "NOW PLAYING" badge
+            badge_txt = "  NOW PLAYING  "
+            bw = int(fonts["badge"].getlength(badge_txt)) + 4
+            bh = 30
+            badge_bg = Image.new("RGBA", (bw, bh), (0, 0, 0, 0))
+            _gradient_rect(ImageDraw.Draw(badge_bg),
+                           0, 0, bw, bh, PURPLE, PINK)
+            bmask = Image.new("L", (bw, bh), 0)
+            ImageDraw.Draw(bmask).rounded_rectangle(
+                (0, 0, bw, bh), radius=bh // 2, fill=255)
+            bg.paste(badge_bg, (CX, CY), bmask)
+            draw = ImageDraw.Draw(bg)
+            draw.text((CX + 10, CY + 6), badge_txt.strip(),
+                      fill=WHITE, font=fonts["badge"])
 
-            # ── 4. Cyan accent bar + Title ────────────────────────────
-            # Vertical accent bar
-            draw.rounded_rectangle(
-                (TITLE_X, TITLE_Y + 2, TITLE_X + 5, TITLE_Y + 46),
-                radius=3, fill=(0, 255, 255)
-            )
-
-            clean_title = re.sub(r"\W+", " ", song.title).title() + " | Artistbots"
-            final_title = trim_to_width(clean_title, self.title_font, MAX_TITLE_WIDTH)
-
+            # Title
+            raw_title = re.sub(r"\W+", " ", song.title).strip().title()
+            line1 = _trim(raw_title, fonts["title"], CW)
+            TY = CY + bh + 22
             # Drop shadow
-            draw.text((TITLE_X + 13, TITLE_Y + 3), final_title,
-                      fill=(0, 0, 0, 160), font=self.title_font)
-            # Main title
-            draw.text((TITLE_X + 12, TITLE_Y + 1), final_title,
-                      fill=(255, 255, 255), font=self.title_font)
+            draw.text((CX + 2, TY + 2), line1,
+                      fill=(0, 0, 0, 120), font=fonts["title"])
+            draw.text((CX, TY), line1, fill=WHITE, font=fonts["title"])
 
-            # ── 5. Meta info ──────────────────────────────────────────
-            meta_text = f"▷  Now Playing   ·   YouTube   ·   {song.view_count or 'Unknown Views'}"
-            draw.text((TITLE_X + 12, META_Y), meta_text,
-                      fill=(140, 200, 220), font=self.regular_font)
+            # Gradient underline below title
+            ul_y  = TY + 56
+            ul_len = min(int(fonts["title"].getlength(line1)), CW)
+            for xi in range(ul_len):
+                t   = xi / ul_len
+                col = _lerp_color(PURPLE, PINK, t)
+                draw.line([(CX + xi, ul_y), (CX + xi, ul_y + 2)],
+                          fill=(*col, 200))
 
-            # ── 6. Progress bar ───────────────────────────────────────
-            # Track BG
-            draw.rounded_rectangle(
-                (BAR_X, BAR_Y - 5, BAR_X + BAR_TOTAL_LEN, BAR_Y + 5),
-                radius=12, fill=(45, 45, 55)
-            )
-            # Played portion
-            draw.rounded_rectangle(
-                (BAR_X, BAR_Y - 5, BAR_X + BAR_RED_LEN, BAR_Y + 5),
-                radius=12, fill=(0, 220, 255)
-            )
-            # Knob glow
-            kx = BAR_X + BAR_RED_LEN
-            for gi in range(8, 0, -1):
-                ga = int(60 * (gi / 8))
-                draw.ellipse(
-                    (kx - 10 - gi, BAR_Y - 10 - gi,
-                     kx + 10 + gi, BAR_Y + 10 + gi),
-                    fill=(0, 200, 255, ga)
-                )
-            # Knob
-            draw.ellipse(
-                (kx - 10, BAR_Y - 10, kx + 10, BAR_Y + 10),
-                fill=(0, 255, 255)
-            )
-            draw.ellipse(
-                (kx - 5, BAR_Y - 5, kx + 5, BAR_Y + 5),
-                fill=(255, 255, 255)
-            )
-
-            # Time stamps
-            draw.text((BAR_X, BAR_Y + 18), "00:00",
-                      fill=(180, 180, 180), font=self.small_font)
+            # Meta row
+            MY = ul_y + 18
             is_live = getattr(song, "is_live", False)
-            end_text = "🔴 LIVE" if is_live else song.duration
-            tw = self.small_font.getlength(end_text)
-            draw.text((BAR_X + BAR_TOTAL_LEN - tw, BAR_Y + 18),
-                      end_text,
-                      fill=(0, 255, 255) if is_live else (180, 180, 180),
-                      font=self.small_font)
+            dur_txt = "🔴 LIVE" if is_live else (song.duration or "--:--")
+            views   = song.view_count or ""
+            meta    = f"▷  {dur_txt}    ·    {views}" if views else f"▷  {dur_txt}"
+            draw.text((CX, MY), meta, fill=LIGHT, font=fonts["meta"])
 
-            # ── 7. Play icons ─────────────────────────────────────────
-            icons_path = "Elevenyts/helpers/play_icons.png"
-            if os.path.isfile(icons_path):
-                with Image.open(icons_path) as icons_img:
-                    ic = icons_img.resize((ICONS_W, ICONS_H)).convert("RGBA")
-                    r, g, b, a = ic.split()
-                    cyan_ic = Image.merge("RGBA", (
-                        r.point(lambda _: 0),
-                        g.point(lambda _: 220),
-                        b.point(lambda _: 255),
-                        a
-                    ))
-                    bg.paste(cyan_ic, (ICONS_X, ICONS_Y), cyan_ic)
+            # ── 7. Waveform decoration ─────────────────────────────────
+            WY = MY + 46
+            _draw_waveform(draw, CX, WY, CW, 72, PURPLE, bars=40, seed=42)
 
-            bg.save(output)
+            # ── 8. Progress bar ────────────────────────────────────────
+            PY  = WY + 96
+            PH  = 8
+            PW  = CW
+            _draw_progress(draw, CX, PY, PW, PH, BAR_FILL, PURPLE, PINK)
+
+            # Time labels
+            draw.text((CX, PY + PH + 10), "00:00",
+                      fill=DIM, font=fonts["small"])
+            end_txt = dur_txt
+            ew = int(fonts["small"].getlength(end_txt))
+            draw.text((CX + PW - ew, PY + PH + 10), end_txt,
+                      fill=(0, 220, 255) if is_live else DIM,
+                      font=fonts["small"])
+
+            # ── 9. Control icons ───────────────────────────────────────
+            icons_y  = PY + PH + 50
+            controls = ["⏮", "⏪", "⏯", "⏩", "⏭"]
+            icon_gap = CW // len(controls)
+            for ci, ic in enumerate(controls):
+                ix   = CX + ci * icon_gap + icon_gap // 2
+                col  = (*_lerp_color(PURPLE, PINK, ci / (len(controls) - 1)), 220)
+                size = 30 if ci == 2 else 22
+                iw   = fonts["meta"].getlength(ic)
+                draw.text((ix - iw // 2, icons_y), ic,
+                          fill=col, font=fonts["meta"])
+
+            # ── 10. Signature / branding ───────────────────────────────
+            sig     = _sig()
+            sig_y   = CARD_Y + CARD_H - 46
+            sig_w   = fonts["sig"].getlength(sig)
+            sig_x   = CARD_X + (CARD_W - sig_w) // 2
+            draw.text((sig_x + 1, sig_y + 1), sig,
+                      fill=(0, 0, 0, 100), font=fonts["sig"])
+            draw.text((sig_x, sig_y), sig,
+                      fill=(*_lerp_color(PURPLE, PINK, 0.5), 210),
+                      font=fonts["sig"])
+
+            # ── 11. Save ───────────────────────────────────────────────
+            out = bg.convert("RGB")
+            out.save(output, quality=96)
             try:
                 os.remove(temp)
             except OSError:
@@ -327,4 +399,3 @@ class Thumbnail:
 
         except Exception:
             return config.DEFAULT_THUMB
-
