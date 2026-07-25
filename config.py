@@ -73,9 +73,6 @@ class Config:
         self.START_IMG: str = getenv("START_IMG", "https://files.catbox.moe/d9unds.png")
         self.RADIO_IMG: str = getenv("RADIO_IMG", "https://files.catbox.moe/d9unds.png")
         
-        # Sticker ID for welcome message
-        self.STICKER_ID: str = getenv("STICKER_ID", "CAACAgUAAxkBAAERZd9qMHDSNUAH_8ZAnU4aT97Aw5THZwACdh8AApKxgFWOSimDJoOjCjwE")
-
         # Moderation
         self.EXCLUDED_USERNAMES: List[str] = getenv("EXCLUDED_USERNAMES", "").split()
 
