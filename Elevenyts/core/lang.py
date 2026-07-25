@@ -33,7 +33,7 @@ from functools import wraps
 from pathlib import Path
 
 from Elevenyts import db, logger
-from Elevenyts.emojis import build_map
+from Elevenyts.emojis import build_map, _EMOJIS
 
 # Supported language codes and their display names
 lang_codes = {
@@ -87,8 +87,21 @@ class Language:
         base = self.languages.get("en", {}).copy()
         if lang_code != "en" and lang_code in self.languages:
             base.update(self.languages[lang_code])
-        # Substitute {e_key} placeholders with premium emoji HTML (or plain fallback)
-        emap = build_map()
+
+        # Per-locale emoji ID overrides: read _emoji_ids block from locale JSON.
+        # Any key with a non-empty ID here overrides the global emojis.py definition.
+        locale_ids: dict = base.pop("_emoji_ids", {})
+
+        def _render(key: str) -> str:
+            fallback, global_id = _EMOJIS.get(key, ("❓", ""))
+            eid = locale_ids.get(key, "").strip() or global_id
+            if eid:
+                return f'<tg-emoji emoji-id="{eid}">{fallback}</tg-emoji>'
+            return fallback
+
+        # Build substitution map using locale-overridden IDs
+        emap = {f"e_{k}": _render(k) for k in _EMOJIS}
+
         result = {}
         for k, v in base.items():
             if isinstance(v, str):
