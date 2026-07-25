@@ -1,17 +1,5 @@
 # ==========================================================
-# Copyright (c) 2026 ArtistBots
-# All Rights Reserved.
-#
-# Project      : ArtistBots API Telegram Music Bot
-# Powered By   : Artist
-# Type         : API Based Telegram Music Bot
-#
-# Bot          : @ArtistApibot
-# Channel      : https://t.me/artistbots
-# GitHub       : https://github.com/elevenyts
-#
-# Unauthorized copying, modification, or redistribution
-# of this source code without permission is prohibited.
+# Copyright (c) 2026 ArtistBots — All Rights Reserved.
 # ==========================================================
 
 from pyrogram import enums, errors, filters, types
@@ -23,12 +11,10 @@ from Elevenyts.helpers import buttons, utils
 @app.on_message(filters.command(["help"]) & filters.private & ~app.bl_users)
 @lang.language()
 async def _help(_, m: types.Message):
-    """Handle /help command in private chats - shows help menu with image."""
     try:
         await m.delete()
     except Exception:
         pass
-
     try:
         await m.reply_photo(
             photo=config.START_IMG,
@@ -47,7 +33,6 @@ async def _help(_, m: types.Message):
 @app.on_message(filters.command(["start"]))
 @lang.language()
 async def start(_, message: types.Message):
-    """Handle /start command."""
     if message.chat.type != enums.ChatType.PRIVATE:
         try:
             await message.delete()
@@ -81,11 +66,7 @@ async def start(_, message: types.Message):
         )
     except errors.ChatSendPhotosForbidden:
         try:
-            await message.reply_text(
-                text=_text,
-                reply_markup=key,
-                quote=not private,
-            )
+            await message.reply_text(text=_text, reply_markup=key, quote=not private)
         except Exception:
             pass
     except Exception:
@@ -101,15 +82,14 @@ async def start(_, message: types.Message):
 @app.on_message(filters.command(["playmode", "settings"]) & filters.group & ~app.bl_users)
 @lang.language()
 async def settings(_, message: types.Message):
-    """Handle /playmode or /settings command - show group settings."""
     try:
         await message.delete()
     except Exception:
         pass
 
-    admin_only = await db.get_play_mode(message.chat.id)
+    admin_only  = await db.get_play_mode(message.chat.id)
     force_admin = await db.get_force_mode(message.chat.id)
-    _language = "en"
+    _language   = "en"
     await utils.safe_text(
         message,
         message.lang["start_settings"].format(message.chat.title),
@@ -123,7 +103,6 @@ async def settings(_, message: types.Message):
 @app.on_message(filters.new_chat_members, group=7)
 @lang.language()
 async def _new_member(_, message: types.Message):
-    """Handle new member events - detect when bot is added to groups."""
     if message.chat.type != enums.ChatType.SUPERGROUP:
         return await message.chat.leave()
 
