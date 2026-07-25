@@ -35,6 +35,7 @@ from typing import List, Tuple
 from pyrogram import enums, errors, filters, types
 
 from Elevenyts import app, db, lang
+from Elevenyts.emojis import e
 
 
 # Global flag to track if a broadcast is currently running
@@ -99,7 +100,7 @@ async def broadcast_message(_, message: types.Message) -> None:
 
     if not all_chats:
         return await message.reply_text(
-            "❌ No recipients found. Make sure the bot is added to groups or has users."
+            f"{e('cross')} No recipients found. Make sure the bot is added to groups or has users."
         )
 
     # Set broadcasting flag
@@ -704,7 +705,7 @@ async def _send_broadcast_completion(
     completion_text = message.lang["gcast_end"].format(
         success_groups, success_users)
     if media_message:
-        completion_text += f"\n📎 Media type: {media_type}"
+        completion_text += f"\n{e('paperclip')} Media type: {media_type}"
 
     # If there were failures, send error file
     if failed_log:

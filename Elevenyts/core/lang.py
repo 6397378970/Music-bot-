@@ -33,6 +33,7 @@ from functools import wraps
 from pathlib import Path
 
 from Elevenyts import db, logger
+from Elevenyts.emojis import build_map
 
 # Supported language codes and their display names
 lang_codes = {
@@ -86,7 +87,15 @@ class Language:
         base = self.languages.get("en", {}).copy()
         if lang_code != "en" and lang_code in self.languages:
             base.update(self.languages[lang_code])
-        return base
+        # Substitute {e_key} placeholders with premium emoji HTML (or plain fallback)
+        emap = build_map()
+        result = {}
+        for k, v in base.items():
+            if isinstance(v, str):
+                for placeholder, emoji_html in emap.items():
+                    v = v.replace("{" + placeholder + "}", emoji_html)
+            result[k] = v
+        return result
 
     async def get_lang(self, chat_id: int) -> dict:
         """Get the translation dictionary for a specific chat/user."""

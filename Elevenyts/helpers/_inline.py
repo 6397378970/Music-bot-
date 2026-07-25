@@ -32,6 +32,7 @@ from pyrogram import types
 from pyrogram.enums import ButtonStyle
 
 from Elevenyts import app, config, lang
+from Elevenyts.emojis import e
 
 
 class Inline:
@@ -85,7 +86,7 @@ class Inline:
                     self.ikb(
                         text="Auto", callback_data=f"controls autoplay {chat_id}", style=ButtonStyle.SUCCESS),
                     self.ikb(
-                        text="🗑", callback_data=f"controls close {chat_id}", style=ButtonStyle.DANGER),
+                        text=e("trash"), callback_data=f"controls close {chat_id}", style=ButtonStyle.DANGER),
                 ]
             )
         return self.ikm(keyboard)
@@ -190,7 +191,7 @@ class Inline:
                     self.ikb(
                         text="Auto", callback_data=f"controls autoplay {chat_id}", style=ButtonStyle.SUCCESS),
                     self.ikb(
-                        text="🗑", callback_data=f"controls close {chat_id}", style=ButtonStyle.DANGER),
+                        text=e("trash"), callback_data=f"controls close {chat_id}", style=ButtonStyle.DANGER),
                 ]
             ]
         )

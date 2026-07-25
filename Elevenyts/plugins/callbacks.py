@@ -37,6 +37,7 @@ from pyrogram import filters, types
 from pyrogram.errors import FloodWait, QueryIdInvalid
 
 from Elevenyts import tune, app, config, db, lang, logger, queue, tg, yt
+from Elevenyts.emojis import e
 from Elevenyts.helpers import admin_check, buttons, can_manage_vc
 
 
@@ -51,7 +52,7 @@ def safe_callback(func):
         except Exception as e:
             logger.error(f"Error in callback {func.__name__}: {e}", exc_info=True)
             try:
-                await query.answer("❌ An error occurred. Please try again.", show_alert=True)
+                await query.answer(f"{e('cross')} An error occurred. Please try again.", show_alert=True)
             except Exception:
                 pass
     return wrapper

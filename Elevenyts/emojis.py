@@ -40,6 +40,7 @@ _EMOJIS = {
     "live":       ("🔴",  ""),   # live stream
     "expire":     ("⌛",  ""),   # expired
     "stopsign":   ("🛑",  ""),   # broadcast stopped
+    "close":      ("✖",   ""),   # close / cancel button
 
     # ── Info & System ─────────────────────────────────────
     "zap":        ("⚡",  ""),   # fast / powered by
@@ -53,6 +54,10 @@ _EMOJIS = {
     "bot":        ("🤖",  ""),   # bot
     "pkg":        ("📦",  ""),   # modules
     "py":         ("🐍",  ""),   # python
+    "gear":       ("⚙️", ""),   # settings / config
+    "plugin":     ("🔌",  ""),   # plugins / modules
+    "question":   ("❓",  ""),   # help / question
+    "globe":      ("🌐",  ""),   # internet / language
 
     # ── Users & Chats ─────────────────────────────────────
     "user":       ("👤",  ""),   # single user
@@ -60,9 +65,11 @@ _EMOJIS = {
     "chat":       ("💬",  ""),   # chat
     "id":         ("🆔",  ""),   # user/chat id
     "tag":        ("🔖",  ""),   # tag
+    "wave":       ("👋",  ""),   # goodbye / auto-leave
 
     # ── Actions ───────────────────────────────────────────
     "dl":         ("⬇️", ""),   # downloading
+    "download":   ("📥",  ""),   # download / inbox
     "send":       ("📤",  ""),   # broadcast send
     "broadcast":  ("📢",  ""),   # broadcast
     "mail":       ("📬",  ""),   # sent to
@@ -73,6 +80,8 @@ _EMOJIS = {
     "trash":      ("🗑",   ""),   # removed
     "add":        ("✚",   ""),   # add me
     "mute":       ("🔕",  ""),   # logger off
+    "paperclip":  ("📎",  ""),   # media attachment
+    "video":      ("📹",  ""),   # video
 
     # ── UI ────────────────────────────────────────────────
     "queue":      ("📋",  ""),   # queue list
@@ -102,6 +111,6 @@ def e(key: str) -> str:
 def build_map() -> dict:
     """
     Returns a dict {e_key: emoji_html} for use in string .format_map().
-    Used by lang.py to substitute placeholders in locale strings.
+    Used by lang.py to substitute {e_key} placeholders in locale strings.
     """
     return {f"e_{k}": e(k) for k in _EMOJIS}

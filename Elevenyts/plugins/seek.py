@@ -32,6 +32,7 @@
 from pyrogram import filters, types
 
 from Elevenyts import tune, app, db, lang, queue
+from Elevenyts.emojis import e
 from Elevenyts.helpers import can_manage_vc
 
 
@@ -90,9 +91,9 @@ async def _seek(_, m: types.Message):
     if success:
         _t = int(start_from)
         _ts = f"{_t//60:02d}:{_t%60:02d}"
-        _dir = ">> ꜰᴏʀᴡᴀʀᴅᴇᴅ" if stype == "forward" else "▢ ʀᴇᴡɪɴᴅᴇᴅ"
+        _dir = f"{e('seek')} ꜰᴏʀᴡᴀʀᴅᴇᴅ" if stype == "forward" else f"{e('seekback')} ʀᴇᴡɪɴᴅᴇᴅ"
         await sent.edit_text(
-            f"<blockquote><b>{_dir}</b>\n\n⏱  ᴅᴜʀᴀᴛɪᴏɴ ╌ {_ts}\n👤  ʙʏ ╌ {m.from_user.mention}</blockquote>"
+            f"<blockquote><b>{_dir}</b>\n\n⏱  ᴅᴜʀᴀᴛɪᴏɴ ╌ {_ts}\n{e('user')}  ʙʏ ╌ {m.from_user.mention}</blockquote>"
         )
     else:
         await sent.edit_text("Failed to seek!")

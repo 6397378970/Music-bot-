@@ -33,6 +33,7 @@ from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
 from pyrogram.types import Message
 
 from Elevenyts import app, config, db
+from Elevenyts.emojis import e
 
 
 @app.on_message(filters.command(["channelplay"]) & filters.group & ~app.bl_users)
@@ -46,12 +47,12 @@ async def channelplay_command(_, m: Message):
     
     # Check if from_user exists (not sent by channel/anonymous admin)
     if not m.from_user:
-        return await m.reply_text("❌ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴɴᴏᴛ ʙᴇ ᴜꜱᴇᴅ ʙʏ ᴄʜᴀɴɴᴇʟꜱ ᴏʀ ᴀɴᴏɴʏᴍᴏᴜꜱ ᴀᴅᴍɪɴꜱ.")
+        return await m.reply_text(f"{e('cross')} ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴɴᴏᴛ ʙᴇ ᴜꜱᴇᴅ ʙʏ ᴄʜᴀɴɴᴇʟꜱ ᴏʀ ᴀɴᴏɴʏᴍᴏᴜꜱ ᴀᴅᴍɪɴꜱ.")
     
     # Check if user is admin
     member = await app.get_chat_member(m.chat.id, m.from_user.id)
     if member.status not in [ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.OWNER]:
-        return await m.reply_text("❌ ᴏɴʟʏ ᴀᴅᴍɪɴꜱ ᴄᴀɴ ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ.")
+        return await m.reply_text(f"{e('cross')} ᴏɴʟʏ ᴀᴅᴍɪɴꜱ ᴄᴀɴ ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ.")
 
     if len(m.command) < 2:
         return await m.reply_text(
@@ -69,7 +70,7 @@ async def channelplay_command(_, m: Message):
     # Disable channel play
     if query.lower() == "disable":
         await db.set_cmode(m.chat.id, None)
-        return await m.reply_text("✅ ᴄʜᴀɴɴᴇʟ ᴘʟᴀʏ ᴅɪꜱᴀʙʟᴇᴅ.")
+        return await m.reply_text(f"{e('check')} ᴄʜᴀɴɴᴇʟ ᴘʟᴀʏ ᴅɪꜱᴀʙʟᴇᴅ.")
 
     # Enable for linked channel
     elif query.lower() == "linked":
@@ -78,11 +79,11 @@ async def channelplay_command(_, m: Message):
             channel_id = chat.linked_chat.id
             await db.set_cmode(m.chat.id, channel_id)
             return await m.reply_text(
-                f"✅ ᴄʜᴀɴɴᴇʟ ᴘʟᴀʏ ᴇɴᴀʙʟᴇᴅ ꜰᴏʀ: {chat.linked_chat.title}\n"
+                f"{e('check')} ᴄʜᴀɴɴᴇʟ ᴘʟᴀʏ ᴇɴᴀʙʟᴇᴅ ꜰᴏʀ: {chat.linked_chat.title}\n"
                 f"ᴄʜᴀɴɴᴇʟ ɪᴅ: `{chat.linked_chat.id}`"
             )
         else:
-            return await m.reply_text("❌ ᴛʜɪꜱ ᴄʜᴀᴛ ᴅᴏᴇꜱɴ'ᴛ ʜᴀᴠᴇ ᴀ ʟɪɴᴋᴇᴅ ᴄʜᴀɴɴᴇʟ.")
+            return await m.reply_text(f"{e('cross')} ᴛʜɪꜱ ᴄʜᴀᴛ ᴅᴏᴇꜱɴ'ᴛ ʜᴀᴠᴇ ᴀ ʟɪɴᴋᴇᴅ ᴄʜᴀɴɴᴇʟ.")
 
     # Enable for specific channel
     else:
@@ -96,7 +97,7 @@ async def channelplay_command(_, m: Message):
             chat = await app.get_chat(channel_id)
         except Exception as e:
             return await m.reply_text(
-                f"❌ ꜰᴀɪʟᴇᴅ ᴛᴏ ɢᴇᴛ ᴄʜᴀɴɴᴇʟ.\n\n"
+                f"{e('cross')} ꜰᴀɪʟᴇᴅ ᴛᴏ ɢᴇᴛ ᴄʜᴀɴɴᴇʟ.\n\n"
                 f"ᴇʀʀᴏʀ: `{type(e).__name__}`\n\n"
                 "ᴍᴀᴋᴇ ꜱᴜʀᴇ ʏᴏᴜ'ᴠᴇ ᴀᴅᴅᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴀꜱ ᴀᴅᴍɪɴ ɪɴ ᴛʜᴇ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴘʀᴏᴍᴏᴛᴇᴅ ɪᴛ ᴀꜱ ᴀᴅᴍɪɴ.\n\n"
                 "ꜰᴏʀ ɴᴜᴍᴇʀɪᴄ ɪᴅꜱ: ᴜꜱᴇ ᴛʜᴇ ꜰᴜʟʟ ɪᴅ ɪɴᴄʟᴜᴅɪɴɢ `-100` ᴘʀᴇꜰɪx\n"
@@ -104,7 +105,7 @@ async def channelplay_command(_, m: Message):
             )
 
         if chat.type != ChatType.CHANNEL:
-            return await m.reply_text("❌ ᴏɴʟʏ ᴄʜᴀɴɴᴇʟꜱ ᴀʀᴇ ꜱᴜᴘᴘᴏʀᴛᴇᴅ.")
+            return await m.reply_text(f"{e('cross')} ᴏɴʟʏ ᴄʜᴀɴɴᴇʟꜱ ᴀʀᴇ ꜱᴜᴘᴘᴏʀᴛᴇᴅ.")
 
         # Check if user is owner of the channel
         owner_username = None
@@ -119,27 +120,27 @@ async def channelplay_command(_, m: Message):
                     break
         except Exception as e:
             return await m.reply_text(
-                f"❌ ꜰᴀɪʟᴇᴅ ᴛᴏ ɢᴇᴛ ᴄʜᴀɴɴᴇʟ ᴀᴅᴍɪɴɪꜱᴛʀᴀᴛᴏʀꜱ.\n\n"
+                f"{e('cross')} ꜰᴀɪʟᴇᴅ ᴛᴏ ɢᴇᴛ ᴄʜᴀɴɴᴇʟ ᴀᴅᴍɪɴɪꜱᴛʀᴀᴛᴏʀꜱ.\n\n"
                 f"ᴇʀʀᴏʀ: `{type(e).__name__}`\n\n"
                 "ᴍᴀᴋᴇ ꜱᴜʀᴇ ᴛʜᴇ ʙᴏᴛ ɪꜱ ᴀᴅᴍɪɴ ɪɴ ᴛʜᴇ ᴄʜᴀɴɴᴇʟ."
             )
 
         if not owner_id:
             return await m.reply_text(
-                "❌ ᴄᴏᴜʟᴅ ɴᴏᴛ ꜰɪɴᴅ ᴄʜᴀɴɴᴇʟ ᴏᴡɴᴇʀ.\n\n"
+                f"{e('cross')} ᴄᴏᴜʟᴅ ɴᴏᴛ ꜰɪɴᴅ ᴄʜᴀɴɴᴇʟ ᴏᴡɴᴇʀ.\n\n"
                 "ᴍᴀᴋᴇ ꜱᴜʀᴇ ᴛʜᴇ ʙᴏᴛ ʜᴀꜱ ᴘᴇʀᴍɪꜱꜱɪᴏɴ ᴛᴏ ᴠɪᴇᴡ ᴄʜᴀɴɴᴇʟ ᴀᴅᴍɪɴꜱ."
             )
 
         if owner_id != m.from_user.id:
             return await m.reply_text(
-                f"❌ ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ᴛʜᴇ ᴏᴡɴᴇʀ ᴏꜰ ᴄʜᴀɴɴᴇʟ {chat.title} ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ɪᴛ ᴡɪᴛʜ ᴛʜɪꜱ ɢʀᴏᴜᴘ.\n\n"
+                f"{e('cross')} ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ᴛʜᴇ ᴏᴡɴᴇʀ ᴏꜰ ᴄʜᴀɴɴᴇʟ {chat.title} ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ɪᴛ ᴡɪᴛʜ ᴛʜɪꜱ ɢʀᴏᴜᴘ.\n\n"
                 f"ᴄʜᴀɴɴᴇʟ'ꜱ ᴏᴡɴᴇʀ: @{owner_username}\n\n"
                 "ᴀʟᴛᴇʀɴᴀᴛɪᴠᴇʟʏ, ʏᴏᴜ ᴄᴀɴ ʟɪɴᴋ ʏᴏᴜʀ ᴄʜᴀᴛ'ꜱ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴄᴏɴɴᴇᴄᴛ ᴡɪᴛʜ `/channelplay linked`"
             )
 
         await db.set_cmode(m.chat.id, chat.id)
         return await m.reply_text(
-            f"✅ ᴄʜᴀɴɴᴇʟ ᴘʟᴀʏ ᴇɴᴀʙʟᴇᴅ ꜰᴏʀ: {chat.title}\n"
+            f"{e('check')} ᴄʜᴀɴɴᴇʟ ᴘʟᴀʏ ᴇɴᴀʙʟᴇᴅ ꜰᴏʀ: {chat.title}\n"
             f"ᴄʜᴀɴɴᴇʟ ɪᴅ: `{chat.id}`"
         )
 
