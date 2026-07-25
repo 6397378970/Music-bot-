@@ -13,5 +13,318 @@
   # Unauthorized copying, modification, or redistribution
   # of this source code without permission is prohibited.
   # ==========================================================
+# ==========================================================
+# Copyright (c) 2026 ArtistBots
+# All Rights Reserved.
+#
+# Project      : ArtistBots API Telegram Music Bot
+# Powered By   : Artist
+# Type         : API Based Telegram Music Bot
+#
+# Bot          : @ArtistApibot
+# Channel      : https://t.me/artistbots
+# GitHub       : https://github.com/elevenyts
+#
+# Unauthorized copying, modification, or redistribution
+# of this source code without permission is prohibited.
+# ==========================================================
+import os
+import re
+import asyncio
+import aiohttp
 import base64
-exec(base64.b64decode("IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ29weXJpZ2h0IChjKSAyMDI2IEFydGlzdEJvdHMKIyBBbGwgUmlnaHRzIFJlc2VydmVkLgojCiMgUHJvamVjdCAgICAgIDogQXJ0aXN0Qm90cyBBUEkgVGVsZWdyYW0gTXVzaWMgQm90CiMgUG93ZXJlZCBCeSAgIDogQXJ0aXN0CiMgVHlwZSAgICAgICAgIDogQVBJIEJhc2VkIFRlbGVncmFtIE11c2ljIEJvdAojCiMgQm90ICAgICAgICAgIDogQEFydGlzdEFwaWJvdAojIENoYW5uZWwgICAgICA6IGh0dHBzOi8vdC5tZS9hcnRpc3Rib3RzCiMgR2l0SHViICAgICAgIDogaHR0cHM6Ly9naXRodWIuY29tL2VsZXZlbnl0cwojCiMgVW5hdXRob3JpemVkIGNvcHlpbmcsIG1vZGlmaWNhdGlvbiwgb3IgcmVkaXN0cmlidXRpb24KIyBvZiB0aGlzIHNvdXJjZSBjb2RlIHdpdGhvdXQgcGVybWlzc2lvbiBpcyBwcm9oaWJpdGVkLgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KaW1wb3J0IG9zCmltcG9ydCByZQppbXBvcnQgYXN5bmNpbwppbXBvcnQgYWlvaHR0cAppbXBvcnQgYmFzZTY0Cgpmcm9tIFBJTCBpbXBvcnQgKAogICAgSW1hZ2UsCiAgICBJbWFnZURyYXcsCiAgICBJbWFnZUVuaGFuY2UsCiAgICBJbWFnZUZpbHRlciwKICAgIEltYWdlRm9udAopCgpmcm9tIEVsZXZlbnl0cyBpbXBvcnQgY29uZmlnCmZyb20gRWxldmVueXRzLmhlbHBlcnMgaW1wb3J0IFRyYWNrCgoKUEFORUxfVywgUEFORUxfSCA9IDEwMzAsIDYxMApQQU5FTF9YID0gKDEyODAgLSBQQU5FTF9XKSAvLyAyClBBTkVMX1kgPSA1NQoKVEhVTUJfVywgVEhVTUJfSCA9IDkzMCwgNDIwClRIVU1CX1ggPSBQQU5FTF9YICsgKFBBTkVMX1cgLSBUSFVNQl9XKSAvLyAyClRIVU1CX1kgPSBQQU5FTF9ZICsgMzAKClRJVExFX1ggPSBUSFVNQl9YICsgNQpUSVRMRV9ZID0gVEhVTUJfWSArIFRIVU1CX0ggKyAyNQoKTUVUQV9ZID0gVElUTEVfWSArIDU4CgpCQVJfWCA9IFRIVU1CX1ggKyA1CkJBUl9ZID0gTUVUQV9ZICsgNjAKCkJBUl9SRURfTEVOID0gMzMwCkJBUl9UT1RBTF9MRU4gPSA5MjAKCklDT05TX1csIElDT05TX0ggPSA0MjAsIDQ1CklDT05TX1ggPSBQQU5FTF9YICsgKFBBTkVMX1cgLSBJQ09OU19XKSAvLyAyCklDT05TX1kgPSBCQVJfWSArIDY1CgpNQVhfVElUTEVfV0lEVEggPSA4MjAKCl9mID0gIlFYSjBhWE4wWW05MGN3PT0iCgoKZGVmIF9kZWNvZGVfZigpOgogICAgZGVjb2RlZCA9IGJhc2U2NC5iNjRkZWNvZGUoX2YpLmRlY29kZSgidXRmLTgiKQogICAgcmV0dXJuIGYi4pymIHtkZWNvZGVkfSDinKYiCgoKZGVmIHRyaW1fdG9fd2lkdGgodGV4dDogc3RyLCBmb250LCBtYXhfdzogaW50KSAtPiBzdHI6CiAgICBlbGxpcHNpcyA9ICLigKYiCiAgICBpZiBmb250LmdldGxlbmd0aCh0ZXh0KSA8PSBtYXhfdzoKICAgICAgICByZXR1cm4gdGV4dAogICAgZm9yIGkgaW4gcmFuZ2UobGVuKHRleHQpIC0gMSwgMCwgLTEpOgogICAgICAgIGlmIGZvbnQuZ2V0bGVuZ3RoKHRleHRbOmldICsgZWxsaXBzaXMpIDw9IG1heF93OgogICAgICAgICAgICByZXR1cm4gdGV4dFs6aV0gKyBlbGxpcHNpcwogICAgcmV0dXJuIGVsbGlwc2lzCgoKZGVmIGRyYXdfcm91bmRlZF9yZWN0X2JvcmRlcl9nbG93KGRyYXcsIGJveCwgcmFkaXVzLCBjb2xvciwgd2lkdGgsIGdsb3dfY29sb3IsIGdsb3dfc3ByZWFkKToKICAgICIiIkRyYXcgYSBnbG93aW5nIHJvdW5kZWQgcmVjdGFuZ2xlIGJvcmRlci4iIiIKICAgIHgwLCB5MCwgeDEsIHkxID0gYm94CiAgICBmb3IgaSBpbiByYW5nZShnbG93X3NwcmVhZCwgMCwgLTEpOgogICAgICAgIGFscGhhID0gaW50KDgwICogKGkgLyBnbG93X3NwcmVhZCkpCiAgICAgICAgZ2MgPSAoKmdsb3dfY29sb3JbOjNdLCBhbHBoYSkKICAgICAgICBkcmF3LnJvdW5kZWRfcmVjdGFuZ2xlKAogICAgICAgICAgICAoeDAgLSBpLCB5MCAtIGksIHgxICsgaSwgeTEgKyBpKSwKICAgICAgICAgICAgcmFkaXVzPXJhZGl1cyArIGksCiAgICAgICAgICAgIG91dGxpbmU9Z2MsCiAgICAgICAgICAgIHdpZHRoPTEKICAgICAgICApCiAgICBkcmF3LnJvdW5kZWRfcmVjdGFuZ2xlKGJveCwgcmFkaXVzPXJhZGl1cywgb3V0bGluZT1jb2xvciwgd2lkdGg9d2lkdGgpCgoKY2xhc3MgVGh1bWJuYWlsOgoKICAgIGRlZiBfX2luaXRfXyhzZWxmKToKICAgICAgICB0cnk6CiAgICAgICAgICAgIHNlbGYudGl0bGVfZm9udCA9IEltYWdlRm9udC50cnVldHlwZSgKICAgICAgICAgICAgICAgICJFbGV2ZW55dHMvaGVscGVycy9SYWxld2F5LUJvbGQudHRmIiwgNDIpCiAgICAgICAgICAgIHNlbGYucmVndWxhcl9mb250ID0gSW1hZ2VGb250LnRydWV0eXBlKAogICAgICAgICAgICAgICAgIkVsZXZlbnl0cy9oZWxwZXJzL0ludGVyLUxpZ2h0LnR0ZiIsIDI0KQogICAgICAgICAgICBzZWxmLnNpZ25hdHVyZV9mb250ID0gSW1hZ2VGb250LnRydWV0eXBlKAogICAgICAgICAgICAgICAgIkVsZXZlbnl0cy9oZWxwZXJzL1JhbGV3YXktQm9sZC50dGYiLCAyNikKICAgICAgICAgICAgc2VsZi5zbWFsbF9mb250ID0gSW1hZ2VGb250LnRydWV0eXBlKAogICAgICAgICAgICAgICAgIkVsZXZlbnl0cy9oZWxwZXJzL0ludGVyLUxpZ2h0LnR0ZiIsIDIwKQogICAgICAgIGV4Y2VwdCBPU0Vycm9yOgogICAgICAgICAgICBzZWxmLnRpdGxlX2ZvbnQgPSBJbWFnZUZvbnQubG9hZF9kZWZhdWx0KCkKICAgICAgICAgICAgc2VsZi5yZWd1bGFyX2ZvbnQgPSBJbWFnZUZvbnQubG9hZF9kZWZhdWx0KCkKICAgICAgICAgICAgc2VsZi5zaWduYXR1cmVfZm9udCA9IEltYWdlRm9udC5sb2FkX2RlZmF1bHQoKQogICAgICAgICAgICBzZWxmLnNtYWxsX2ZvbnQgPSBJbWFnZUZvbnQubG9hZF9kZWZhdWx0KCkKCiAgICBhc3luYyBkZWYgc2F2ZV90aHVtYihzZWxmLCBvdXRwdXRfcGF0aDogc3RyLCB1cmw6IHN0cik6CiAgICAgICAgYXN5bmMgd2l0aCBhaW9odHRwLkNsaWVudFNlc3Npb24oKSBhcyBzZXNzaW9uOgogICAgICAgICAgICBhc3luYyB3aXRoIHNlc3Npb24uZ2V0KHVybCkgYXMgcmVzcDoKICAgICAgICAgICAgICAgIHdpdGggb3BlbihvdXRwdXRfcGF0aCwgIndiIikgYXMgZjoKICAgICAgICAgICAgICAgICAgICBmLndyaXRlKGF3YWl0IHJlc3AucmVhZCgpKQogICAgICAgIHJldHVybiBvdXRwdXRfcGF0aAoKICAgIGFzeW5jIGRlZiBnZW5lcmF0ZShzZWxmLCBzb25nOiBUcmFjaywgc2l6ZT0oMTI4MCwgNzIwKSkgLT4gc3RyOgogICAgICAgIHRyeToKICAgICAgICAgICAgdGVtcCA9IGYiY2FjaGUvdGVtcF97c29uZy5pZH0uanBnIgogICAgICAgICAgICBvdXRwdXQgPSBmImNhY2hlL3tzb25nLmlkfV91bHRyYS5wbmciCiAgICAgICAgICAgIGlmIG9zLnBhdGguZXhpc3RzKG91dHB1dCk6CiAgICAgICAgICAgICAgICByZXR1cm4gb3V0cHV0CiAgICAgICAgICAgIGF3YWl0IHNlbGYuc2F2ZV90aHVtYih0ZW1wLCBzb25nLnRodW1ibmFpbCkKICAgICAgICAgICAgcmV0dXJuIGF3YWl0IGFzeW5jaW8uZ2V0X2V2ZW50X2xvb3AoKS5ydW5faW5fZXhlY3V0b3IoCiAgICAgICAgICAgICAgICBOb25lLCBzZWxmLl9nZW5lcmF0ZV9zeW5jLCB0ZW1wLCBvdXRwdXQsIHNvbmcsIHNpemUpCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICAgICAgcmV0dXJuIGNvbmZpZy5ERUZBVUxUX1RIVU1CCgogICAgZGVmIF9nZW5lcmF0ZV9zeW5jKHNlbGYsIHRlbXAsIG91dHB1dCwgc29uZywgc2l6ZT0oMTI4MCwgNzIwKSk6CiAgICAgICAgdHJ5OgogICAgICAgICAgICBXLCBIID0gc2l6ZSAgIyAxMjgwLCA3MjAKCiAgICAgICAgICAgICMg4pSA4pSAIDEuIEJhY2tncm91bmQg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACiAgICAgICAgICAgIHdpdGggSW1hZ2Uub3Blbih0ZW1wKSBhcyB0bXA6CiAgICAgICAgICAgICAgICBiYXNlID0gdG1wLnJlc2l6ZShzaXplKS5jb252ZXJ0KCJSR0JBIikKCiAgICAgICAgICAgIGJnID0gYmFzZS5maWx0ZXIoSW1hZ2VGaWx0ZXIuR2F1c3NpYW5CbHVyKDMyKSkKICAgICAgICAgICAgYmcgPSBJbWFnZUVuaGFuY2UuQnJpZ2h0bmVzcyhiZykuZW5oYW5jZSgwLjIyKQogICAgICAgICAgICBiZyA9IEltYWdlRW5oYW5jZS5Db250cmFzdChiZykuZW5oYW5jZSgxLjUpCgogICAgICAgICAgICAjIFJhZGlhbCB2aWduZXR0ZSBvdmVybGF5IChkYXJrIGVkZ2VzKQogICAgICAgICAgICB2aWduZXR0ZSA9IEltYWdlLm5ldygiUkdCQSIsIHNpemUsICgwLCAwLCAwLCAwKSkKICAgICAgICAgICAgdmQgPSBJbWFnZURyYXcuRHJhdyh2aWduZXR0ZSkKICAgICAgICAgICAgZm9yIGkgaW4gcmFuZ2UoNjAsIDAsIC0xKToKICAgICAgICAgICAgICAgIGFscGhhID0gaW50KDE2MCAqICgxIC0gaSAvIDYwKSkKICAgICAgICAgICAgICAgIHNwcmVhZCA9IGkgKiA2CiAgICAgICAgICAgICAgICB2ZC5lbGxpcHNlKAogICAgICAgICAgICAgICAgICAgIChXIC8vIDIgLSBzcHJlYWQsIEggLy8gMiAtIHNwcmVhZCAqIDkgLy8gMTYsCiAgICAgICAgICAgICAgICAgICAgIFcgLy8gMiArIHNwcmVhZCwgSCAvLyAyICsgc3ByZWFkICogOSAvLyAxNiksCiAgICAgICAgICAgICAgICAgICAgZmlsbD0oMCwgMCwgMCwgYWxwaGEpCiAgICAgICAgICAgICAgICApCiAgICAgICAgICAgIGJnID0gSW1hZ2UuYWxwaGFfY29tcG9zaXRlKGJnLCB2aWduZXR0ZSkKCiAgICAgICAgICAgICMgU3VidGxlIGRhcmsgb3ZlcmxheQogICAgICAgICAgICBkYXJrID0gSW1hZ2UubmV3KCJSR0JBIiwgc2l6ZSwgKDAsIDAsIDAsIDEwMCkpCiAgICAgICAgICAgIGJnID0gSW1hZ2UuYWxwaGFfY29tcG9zaXRlKGJnLCBkYXJrKQoKICAgICAgICAgICAgZHJhdyA9IEltYWdlRHJhdy5EcmF3KGJnKQoKICAgICAgICAgICAgIyDilIDilIAgMi4gR2xhc3MgcGFuZWwgd2l0aCBnbG93IGJvcmRlciDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKICAgICAgICAgICAgcGFuZWwgPSBJbWFnZS5uZXcoIlJHQkEiLCAoUEFORUxfVywgUEFORUxfSCksICgwLCAwLCAwLCAwKSkKICAgICAgICAgICAgcGQgPSBJbWFnZURyYXcuRHJhdyhwYW5lbCkKCiAgICAgICAgICAgICMgT3V0ZXIgZ2xvdyByaW5ncwogICAgICAgICAgICBDWUFOID0gKDAsIDI1NSwgMjU1KQogICAgICAgICAgICBmb3IgZ2kgaW4gcmFuZ2UoOCwgMCwgLTEpOgogICAgICAgICAgICAgICAgZ2EgPSBpbnQoMzUgKiAoZ2kgLyA4KSkKICAgICAgICAgICAgICAgIHBkLnJvdW5kZWRfcmVjdGFuZ2xlKAogICAgICAgICAgICAgICAgICAgICgwIC0gZ2ksIDAgLSBnaSwgUEFORUxfVyAtIDEgKyBnaSwgUEFORUxfSCAtIDEgKyBnaSksCiAgICAgICAgICAgICAgICAgICAgcmFkaXVzPTQyICsgZ2ksCiAgICAgICAgICAgICAgICAgICAgb3V0bGluZT0oMCwgMjIwLCAyNTUsIGdhKSwKICAgICAgICAgICAgICAgICAgICB3aWR0aD0xCiAgICAgICAgICAgICAgICApCgogICAgICAgICAgICAjIEdsYXNzIGZpbGwKICAgICAgICAgICAgcGQucm91bmRlZF9yZWN0YW5nbGUoCiAgICAgICAgICAgICAgICAoMCwgMCwgUEFORUxfVyAtIDEsIFBBTkVMX0ggLSAxKSwKICAgICAgICAgICAgICAgIHJhZGl1cz00MiwKICAgICAgICAgICAgICAgIGZpbGw9KDgsIDgsIDE4LCAxNjUpCiAgICAgICAgICAgICkKICAgICAgICAgICAgIyBJbm5lciBib3JkZXIKICAgICAgICAgICAgcGQucm91bmRlZF9yZWN0YW5nbGUoCiAgICAgICAgICAgICAgICAoMCwgMCwgUEFORUxfVyAtIDEsIFBBTkVMX0ggLSAxKSwKICAgICAgICAgICAgICAgIHJhZGl1cz00MiwKICAgICAgICAgICAgICAgIG91dGxpbmU9KDAsIDI1NSwgMjU1LCAyMzApLAogICAgICAgICAgICAgICAgd2lkdGg9MgogICAgICAgICAgICApCiAgICAgICAgICAgICMgU3VidGxlIGlubmVyIGhpZ2hsaWdodCAodG9wIGVkZ2UpCiAgICAgICAgICAgIHBkLnJvdW5kZWRfcmVjdGFuZ2xlKAogICAgICAgICAgICAgICAgKDMsIDMsIFBBTkVMX1cgLSA0LCBQQU5FTF9IIC8vIDMpLAogICAgICAgICAgICAgICAgcmFkaXVzPTQwLAogICAgICAgICAgICAgICAgb3V0bGluZT0oMjU1LCAyNTUsIDI1NSwgMTgpLAogICAgICAgICAgICAgICAgd2lkdGg9MQogICAgICAgICAgICApCgogICAgICAgICAgICBwbWFzayA9IEltYWdlLm5ldygiTCIsIChQQU5FTF9XLCBQQU5FTF9IKSwgMCkKICAgICAgICAgICAgSW1hZ2VEcmF3LkRyYXcocG1hc2spLnJvdW5kZWRfcmVjdGFuZ2xlKAogICAgICAgICAgICAgICAgKDAsIDAsIFBBTkVMX1csIFBBTkVMX0gpLCByYWRpdXM9NDIsIGZpbGw9MjU1KQogICAgICAgICAgICBiZy5wYXN0ZShwYW5lbCwgKFBBTkVMX1gsIFBBTkVMX1kpLCBwbWFzaykKCiAgICAgICAgICAgICMg4pSA4pSAIDMuIFRodW1ibmFpbCBpbWFnZSB3aXRoIGJvcmRlciBnbG93IOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAogICAgICAgICAgICB0aHVtYiA9IGJhc2UucmVzaXplKChUSFVNQl9XLCBUSFVNQl9IKSkKCiAgICAgICAgICAgICMgR2xvdyBmcmFtZSBiZWhpbmQgdGh1bWJuYWlsCiAgICAgICAgICAgIGdsb3dfbGF5ZXIgPSBJbWFnZS5uZXcoIlJHQkEiLCBzaXplLCAoMCwgMCwgMCwgMCkpCiAgICAgICAgICAgIGdkID0gSW1hZ2VEcmF3LkRyYXcoZ2xvd19sYXllcikKICAgICAgICAgICAgZm9yIGdpIGluIHJhbmdlKDEwLCAwLCAtMSk6CiAgICAgICAgICAgICAgICBnYSA9IGludCg1MCAqIChnaSAvIDEwKSkKICAgICAgICAgICAgICAgIGdkLnJvdW5kZWRfcmVjdGFuZ2xlKAogICAgICAgICAgICAgICAgICAgIChUSFVNQl9YIC0gZ2ksIFRIVU1CX1kgLSBnaSwKICAgICAgICAgICAgICAgICAgICAgVEhVTUJfWCArIFRIVU1CX1cgKyBnaSwgVEhVTUJfWSArIFRIVU1CX0ggKyBnaSksCiAgICAgICAgICAgICAgICAgICAgcmFkaXVzPTI4ICsgZ2ksCiAgICAgICAgICAgICAgICAgICAgZmlsbD0oMCwgMjAwLCAyNTUsIGdhKQogICAgICAgICAgICAgICAgKQogICAgICAgICAgICBiZyA9IEltYWdlLmFscGhhX2NvbXBvc2l0ZShiZywgZ2xvd19sYXllcikKICAgICAgICAgICAgZHJhdyA9IEltYWdlRHJhdy5EcmF3KGJnKQoKICAgICAgICAgICAgdG1hc2sgPSBJbWFnZS5uZXcoIkwiLCB0aHVtYi5zaXplLCAwKQogICAgICAgICAgICBJbWFnZURyYXcuRHJhdyh0bWFzaykucm91bmRlZF9yZWN0YW5nbGUoCiAgICAgICAgICAgICAgICAoMCwgMCwgVEhVTUJfVywgVEhVTUJfSCksIHJhZGl1cz0yNiwgZmlsbD0yNTUpCiAgICAgICAgICAgIGJnLnBhc3RlKHRodW1iLCAoVEhVTUJfWCwgVEhVTUJfWSksIHRtYXNrKQoKICAgICAgICAgICAgIyBUaGluIGN5YW4gYm9yZGVyIGFyb3VuZCB0aHVtYm5haWwKICAgICAgICAgICAgZHJhdy5yb3VuZGVkX3JlY3RhbmdsZSgKICAgICAgICAgICAgICAgIChUSFVNQl9YLCBUSFVNQl9ZLCBUSFVNQl9YICsgVEhVTUJfVywgVEhVTUJfWSArIFRIVU1CX0gpLAogICAgICAgICAgICAgICAgcmFkaXVzPTI2LCBvdXRsaW5lPSgwLCAyNTUsIDI1NSwgMTYwKSwgd2lkdGg9MgogICAgICAgICAgICApCgogICAgICAgICAgICAjIOKUgOKUgCA0LiBDeWFuIGFjY2VudCBiYXIgKyBUaXRsZSDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKICAgICAgICAgICAgIyBWZXJ0aWNhbCBhY2NlbnQgYmFyCiAgICAgICAgICAgIGRyYXcucm91bmRlZF9yZWN0YW5nbGUoCiAgICAgICAgICAgICAgICAoVElUTEVfWCwgVElUTEVfWSArIDIsIFRJVExFX1ggKyA1LCBUSVRMRV9ZICsgNDYpLAogICAgICAgICAgICAgICAgcmFkaXVzPTMsIGZpbGw9KDAsIDI1NSwgMjU1KQogICAgICAgICAgICApCgogICAgICAgICAgICBjbGVhbl90aXRsZSA9IHJlLnN1YihyIlxXKyIsICIgIiwgc29uZy50aXRsZSkudGl0bGUoKSArICIgfCBBcnRpc3Rib3RzIgogICAgICAgICAgICBmaW5hbF90aXRsZSA9IHRyaW1fdG9fd2lkdGgoY2xlYW5fdGl0bGUsIHNlbGYudGl0bGVfZm9udCwgTUFYX1RJVExFX1dJRFRIKQoKICAgICAgICAgICAgIyBEcm9wIHNoYWRvdwogICAgICAgICAgICBkcmF3LnRleHQoKFRJVExFX1ggKyAxMywgVElUTEVfWSArIDMpLCBmaW5hbF90aXRsZSwKICAgICAgICAgICAgICAgICAgICAgIGZpbGw9KDAsIDAsIDAsIDE2MCksIGZvbnQ9c2VsZi50aXRsZV9mb250KQogICAgICAgICAgICAjIE1haW4gdGl0bGUKICAgICAgICAgICAgZHJhdy50ZXh0KChUSVRMRV9YICsgMTIsIFRJVExFX1kgKyAxKSwgZmluYWxfdGl0bGUsCiAgICAgICAgICAgICAgICAgICAgICBmaWxsPSgyNTUsIDI1NSwgMjU1KSwgZm9udD1zZWxmLnRpdGxlX2ZvbnQpCgogICAgICAgICAgICAjIOKUgOKUgCA1LiBNZXRhIGluZm8g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACiAgICAgICAgICAgIG1ldGFfdGV4dCA9IGYi4pa3ICBOb3cgUGxheWluZyAgIMK3ICAgWW91VHViZSAgIMK3ICAge3Nvbmcudmlld19jb3VudCBvciAnVW5rbm93biBWaWV3cyd9IgogICAgICAgICAgICBkcmF3LnRleHQoKFRJVExFX1ggKyAxMiwgTUVUQV9ZKSwgbWV0YV90ZXh0LAogICAgICAgICAgICAgICAgICAgICAgZmlsbD0oMTQwLCAyMDAsIDIyMCksIGZvbnQ9c2VsZi5yZWd1bGFyX2ZvbnQpCgogICAgICAgICAgICAjIOKUgOKUgCA2LiBQcm9ncmVzcyBiYXIg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACiAgICAgICAgICAgICMgVHJhY2sgQkcKICAgICAgICAgICAgZHJhdy5yb3VuZGVkX3JlY3RhbmdsZSgKICAgICAgICAgICAgICAgIChCQVJfWCwgQkFSX1kgLSA1LCBCQVJfWCArIEJBUl9UT1RBTF9MRU4sIEJBUl9ZICsgNSksCiAgICAgICAgICAgICAgICByYWRpdXM9MTIsIGZpbGw9KDQ1LCA0NSwgNTUpCiAgICAgICAgICAgICkKICAgICAgICAgICAgIyBQbGF5ZWQgcG9ydGlvbgogICAgICAgICAgICBkcmF3LnJvdW5kZWRfcmVjdGFuZ2xlKAogICAgICAgICAgICAgICAgKEJBUl9YLCBCQVJfWSAtIDUsIEJBUl9YICsgQkFSX1JFRF9MRU4sIEJBUl9ZICsgNSksCiAgICAgICAgICAgICAgICByYWRpdXM9MTIsIGZpbGw9KDAsIDIyMCwgMjU1KQogICAgICAgICAgICApCiAgICAgICAgICAgICMgS25vYiBnbG93CiAgICAgICAgICAgIGt4ID0gQkFSX1ggKyBCQVJfUkVEX0xFTgogICAgICAgICAgICBmb3IgZ2kgaW4gcmFuZ2UoOCwgMCwgLTEpOgogICAgICAgICAgICAgICAgZ2EgPSBpbnQoNjAgKiAoZ2kgLyA4KSkKICAgICAgICAgICAgICAgIGRyYXcuZWxsaXBzZSgKICAgICAgICAgICAgICAgICAgICAoa3ggLSAxMCAtIGdpLCBCQVJfWSAtIDEwIC0gZ2ksCiAgICAgICAgICAgICAgICAgICAgIGt4ICsgMTAgKyBnaSwgQkFSX1kgKyAxMCArIGdpKSwKICAgICAgICAgICAgICAgICAgICBmaWxsPSgwLCAyMDAsIDI1NSwgZ2EpCiAgICAgICAgICAgICAgICApCiAgICAgICAgICAgICMgS25vYgogICAgICAgICAgICBkcmF3LmVsbGlwc2UoCiAgICAgICAgICAgICAgICAoa3ggLSAxMCwgQkFSX1kgLSAxMCwga3ggKyAxMCwgQkFSX1kgKyAxMCksCiAgICAgICAgICAgICAgICBmaWxsPSgwLCAyNTUsIDI1NSkKICAgICAgICAgICAgKQogICAgICAgICAgICBkcmF3LmVsbGlwc2UoCiAgICAgICAgICAgICAgICAoa3ggLSA1LCBCQVJfWSAtIDUsIGt4ICsgNSwgQkFSX1kgKyA1KSwKICAgICAgICAgICAgICAgIGZpbGw9KDI1NSwgMjU1LCAyNTUpCiAgICAgICAgICAgICkKCiAgICAgICAgICAgICMgVGltZSBzdGFtcHMKICAgICAgICAgICAgZHJhdy50ZXh0KChCQVJfWCwgQkFSX1kgKyAxOCksICIwMDowMCIsCiAgICAgICAgICAgICAgICAgICAgICBmaWxsPSgxODAsIDE4MCwgMTgwKSwgZm9udD1zZWxmLnNtYWxsX2ZvbnQpCiAgICAgICAgICAgIGlzX2xpdmUgPSBnZXRhdHRyKHNvbmcsICJpc19saXZlIiwgRmFsc2UpCiAgICAgICAgICAgIGVuZF90ZXh0ID0gIvCflLQgTElWRSIgaWYgaXNfbGl2ZSBlbHNlIHNvbmcuZHVyYXRpb24KICAgICAgICAgICAgdHcgPSBzZWxmLnNtYWxsX2ZvbnQuZ2V0bGVuZ3RoKGVuZF90ZXh0KQogICAgICAgICAgICBkcmF3LnRleHQoKEJBUl9YICsgQkFSX1RPVEFMX0xFTiAtIHR3LCBCQVJfWSArIDE4KSwKICAgICAgICAgICAgICAgICAgICAgIGVuZF90ZXh0LAogICAgICAgICAgICAgICAgICAgICAgZmlsbD0oMCwgMjU1LCAyNTUpIGlmIGlzX2xpdmUgZWxzZSAoMTgwLCAxODAsIDE4MCksCiAgICAgICAgICAgICAgICAgICAgICBmb250PXNlbGYuc21hbGxfZm9udCkKCiAgICAgICAgICAgICMg4pSA4pSAIDcuIFBsYXkgaWNvbnMg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACiAgICAgICAgICAgIGljb25zX3BhdGggPSAiRWxldmVueXRzL2hlbHBlcnMvcGxheV9pY29ucy5wbmciCiAgICAgICAgICAgIGlmIG9zLnBhdGguaXNmaWxlKGljb25zX3BhdGgpOgogICAgICAgICAgICAgICAgd2l0aCBJbWFnZS5vcGVuKGljb25zX3BhdGgpIGFzIGljb25zX2ltZzoKICAgICAgICAgICAgICAgICAgICBpYyA9IGljb25zX2ltZy5yZXNpemUoKElDT05TX1csIElDT05TX0gpKS5jb252ZXJ0KCJSR0JBIikKICAgICAgICAgICAgICAgICAgICByLCBnLCBiLCBhID0gaWMuc3BsaXQoKQogICAgICAgICAgICAgICAgICAgIGN5YW5faWMgPSBJbWFnZS5tZXJnZSgiUkdCQSIsICgKICAgICAgICAgICAgICAgICAgICAgICAgci5wb2ludChsYW1iZGEgXzogMCksCiAgICAgICAgICAgICAgICAgICAgICAgIGcucG9pbnQobGFtYmRhIF86IDIyMCksCiAgICAgICAgICAgICAgICAgICAgICAgIGIucG9pbnQobGFtYmRhIF86IDI1NSksCiAgICAgICAgICAgICAgICAgICAgICAgIGEKICAgICAgICAgICAgICAgICAgICApKQogICAgICAgICAgICAgICAgICAgIGJnLnBhc3RlKGN5YW5faWMsIChJQ09OU19YLCBJQ09OU19ZKSwgY3lhbl9pYykKCiAgICAgICAgICAgIGJnLnNhdmUob3V0cHV0KQogICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICBvcy5yZW1vdmUodGVtcCkKICAgICAgICAgICAgZXhjZXB0IE9TRXJyb3I6CiAgICAgICAgICAgICAgICBwYXNzCiAgICAgICAgICAgIHJldHVybiBvdXRwdXQKCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICAgICAgcmV0dXJuIGNvbmZpZy5ERUZBVUxUX1RIVU1CCg==").decode("utf-8"))
+
+from PIL import (
+    Image,
+    ImageDraw,
+    ImageEnhance,
+    ImageFilter,
+    ImageFont
+)
+
+from Elevenyts import config
+from Elevenyts.helpers import Track
+
+
+PANEL_W, PANEL_H = 1030, 610
+PANEL_X = (1280 - PANEL_W) // 2
+PANEL_Y = 55
+
+THUMB_W, THUMB_H = 930, 420
+THUMB_X = PANEL_X + (PANEL_W - THUMB_W) // 2
+THUMB_Y = PANEL_Y + 30
+
+TITLE_X = THUMB_X + 5
+TITLE_Y = THUMB_Y + THUMB_H + 25
+
+META_Y = TITLE_Y + 58
+
+BAR_X = THUMB_X + 5
+BAR_Y = META_Y + 60
+
+BAR_RED_LEN = 330
+BAR_TOTAL_LEN = 920
+
+ICONS_W, ICONS_H = 420, 45
+ICONS_X = PANEL_X + (PANEL_W - ICONS_W) // 2
+ICONS_Y = BAR_Y + 65
+
+MAX_TITLE_WIDTH = 820
+
+_f = "QXJ0aXN0Ym90cw=="
+
+
+def _decode_f():
+    decoded = base64.b64decode(_f).decode("utf-8")
+    return f"✦ {decoded} ✦"
+
+
+def trim_to_width(text: str, font, max_w: int) -> str:
+    ellipsis = "…"
+    if font.getlength(text) <= max_w:
+        return text
+    for i in range(len(text) - 1, 0, -1):
+        if font.getlength(text[:i] + ellipsis) <= max_w:
+            return text[:i] + ellipsis
+    return ellipsis
+
+
+def draw_rounded_rect_border_glow(draw, box, radius, color, width, glow_color, glow_spread):
+    """Draw a glowing rounded rectangle border."""
+    x0, y0, x1, y1 = box
+    for i in range(glow_spread, 0, -1):
+        alpha = int(80 * (i / glow_spread))
+        gc = (*glow_color[:3], alpha)
+        draw.rounded_rectangle(
+            (x0 - i, y0 - i, x1 + i, y1 + i),
+            radius=radius + i,
+            outline=gc,
+            width=1
+        )
+    draw.rounded_rectangle(box, radius=radius, outline=color, width=width)
+
+
+class Thumbnail:
+
+    def __init__(self):
+        try:
+            self.title_font = ImageFont.truetype(
+                "Elevenyts/helpers/Raleway-Bold.ttf", 42)
+            self.regular_font = ImageFont.truetype(
+                "Elevenyts/helpers/Inter-Light.ttf", 24)
+            self.signature_font = ImageFont.truetype(
+                "Elevenyts/helpers/Raleway-Bold.ttf", 26)
+            self.small_font = ImageFont.truetype(
+                "Elevenyts/helpers/Inter-Light.ttf", 20)
+        except OSError:
+            self.title_font = ImageFont.load_default()
+            self.regular_font = ImageFont.load_default()
+            self.signature_font = ImageFont.load_default()
+            self.small_font = ImageFont.load_default()
+
+    async def save_thumb(self, output_path: str, url: str):
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url) as resp:
+                with open(output_path, "wb") as f:
+                    f.write(await resp.read())
+        return output_path
+
+    async def generate(self, song: Track, size=(1280, 720)) -> str:
+        try:
+            temp = f"cache/temp_{song.id}.jpg"
+            output = f"cache/{song.id}_ultra.png"
+            if os.path.exists(output):
+                return output
+            await self.save_thumb(temp, song.thumbnail)
+            return await asyncio.get_event_loop().run_in_executor(
+                None, self._generate_sync, temp, output, song, size)
+        except Exception:
+            return config.DEFAULT_THUMB
+
+    def _generate_sync(self, temp, output, song, size=(1280, 720)):
+        try:
+            W, H = size  # 1280, 720
+
+            # ── 1. Background ─────────────────────────────────────────
+            with Image.open(temp) as tmp:
+                base = tmp.resize(size).convert("RGBA")
+
+            bg = base.filter(ImageFilter.GaussianBlur(32))
+            bg = ImageEnhance.Brightness(bg).enhance(0.22)
+            bg = ImageEnhance.Contrast(bg).enhance(1.5)
+
+            # Radial vignette overlay (dark edges)
+            vignette = Image.new("RGBA", size, (0, 0, 0, 0))
+            vd = ImageDraw.Draw(vignette)
+            for i in range(60, 0, -1):
+                alpha = int(160 * (1 - i / 60))
+                spread = i * 6
+                vd.ellipse(
+                    (W // 2 - spread, H // 2 - spread * 9 // 16,
+                     W // 2 + spread, H // 2 + spread * 9 // 16),
+                    fill=(0, 0, 0, alpha)
+                )
+            bg = Image.alpha_composite(bg, vignette)
+
+            # Subtle dark overlay
+            dark = Image.new("RGBA", size, (0, 0, 0, 100))
+            bg = Image.alpha_composite(bg, dark)
+
+            draw = ImageDraw.Draw(bg)
+
+            # ── 2. Glass panel with glow border ───────────────────────
+            panel = Image.new("RGBA", (PANEL_W, PANEL_H), (0, 0, 0, 0))
+            pd = ImageDraw.Draw(panel)
+
+            # Outer glow rings
+            CYAN = (0, 255, 255)
+            for gi in range(8, 0, -1):
+                ga = int(35 * (gi / 8))
+                pd.rounded_rectangle(
+                    (0 - gi, 0 - gi, PANEL_W - 1 + gi, PANEL_H - 1 + gi),
+                    radius=42 + gi,
+                    outline=(0, 220, 255, ga),
+                    width=1
+                )
+
+            # Glass fill
+            pd.rounded_rectangle(
+                (0, 0, PANEL_W - 1, PANEL_H - 1),
+                radius=42,
+                fill=(8, 8, 18, 165)
+            )
+            # Inner border
+            pd.rounded_rectangle(
+                (0, 0, PANEL_W - 1, PANEL_H - 1),
+                radius=42,
+                outline=(0, 255, 255, 230),
+                width=2
+            )
+            # Subtle inner highlight (top edge)
+            pd.rounded_rectangle(
+                (3, 3, PANEL_W - 4, PANEL_H // 3),
+                radius=40,
+                outline=(255, 255, 255, 18),
+                width=1
+            )
+
+            pmask = Image.new("L", (PANEL_W, PANEL_H), 0)
+            ImageDraw.Draw(pmask).rounded_rectangle(
+                (0, 0, PANEL_W, PANEL_H), radius=42, fill=255)
+            bg.paste(panel, (PANEL_X, PANEL_Y), pmask)
+
+            # ── 3. Thumbnail image with border glow ───────────────────
+            thumb = base.resize((THUMB_W, THUMB_H))
+
+            # Glow frame behind thumbnail
+            glow_layer = Image.new("RGBA", size, (0, 0, 0, 0))
+            gd = ImageDraw.Draw(glow_layer)
+            for gi in range(10, 0, -1):
+                ga = int(50 * (gi / 10))
+                gd.rounded_rectangle(
+                    (THUMB_X - gi, THUMB_Y - gi,
+                     THUMB_X + THUMB_W + gi, THUMB_Y + THUMB_H + gi),
+                    radius=28 + gi,
+                    fill=(0, 200, 255, ga)
+                )
+            bg = Image.alpha_composite(bg, glow_layer)
+            draw = ImageDraw.Draw(bg)
+
+            tmask = Image.new("L", thumb.size, 0)
+            ImageDraw.Draw(tmask).rounded_rectangle(
+                (0, 0, THUMB_W, THUMB_H), radius=26, fill=255)
+            bg.paste(thumb, (THUMB_X, THUMB_Y), tmask)
+
+            # Thin cyan border around thumbnail
+            draw.rounded_rectangle(
+                (THUMB_X, THUMB_Y, THUMB_X + THUMB_W, THUMB_Y + THUMB_H),
+                radius=26, outline=(0, 255, 255, 160), width=2
+            )
+
+            # ── 4. Cyan accent bar + Title ────────────────────────────
+            # Vertical accent bar
+            draw.rounded_rectangle(
+                (TITLE_X, TITLE_Y + 2, TITLE_X + 5, TITLE_Y + 46),
+                radius=3, fill=(0, 255, 255)
+            )
+
+            clean_title = re.sub(r"\W+", " ", song.title).title() + " | Artistbots"
+            final_title = trim_to_width(clean_title, self.title_font, MAX_TITLE_WIDTH)
+
+            # Drop shadow
+            draw.text((TITLE_X + 13, TITLE_Y + 3), final_title,
+                      fill=(0, 0, 0, 160), font=self.title_font)
+            # Main title
+            draw.text((TITLE_X + 12, TITLE_Y + 1), final_title,
+                      fill=(255, 255, 255), font=self.title_font)
+
+            # ── 5. Meta info ──────────────────────────────────────────
+            meta_text = f"▷  Now Playing   ·   YouTube   ·   {song.view_count or 'Unknown Views'}"
+            draw.text((TITLE_X + 12, META_Y), meta_text,
+                      fill=(140, 200, 220), font=self.regular_font)
+
+            # ── 6. Progress bar ───────────────────────────────────────
+            # Track BG
+            draw.rounded_rectangle(
+                (BAR_X, BAR_Y - 5, BAR_X + BAR_TOTAL_LEN, BAR_Y + 5),
+                radius=12, fill=(45, 45, 55)
+            )
+            # Played portion
+            draw.rounded_rectangle(
+                (BAR_X, BAR_Y - 5, BAR_X + BAR_RED_LEN, BAR_Y + 5),
+                radius=12, fill=(0, 220, 255)
+            )
+            # Knob glow
+            kx = BAR_X + BAR_RED_LEN
+            for gi in range(8, 0, -1):
+                ga = int(60 * (gi / 8))
+                draw.ellipse(
+                    (kx - 10 - gi, BAR_Y - 10 - gi,
+                     kx + 10 + gi, BAR_Y + 10 + gi),
+                    fill=(0, 200, 255, ga)
+                )
+            # Knob
+            draw.ellipse(
+                (kx - 10, BAR_Y - 10, kx + 10, BAR_Y + 10),
+                fill=(0, 255, 255)
+            )
+            draw.ellipse(
+                (kx - 5, BAR_Y - 5, kx + 5, BAR_Y + 5),
+                fill=(255, 255, 255)
+            )
+
+            # Time stamps
+            draw.text((BAR_X, BAR_Y + 18), "00:00",
+                      fill=(180, 180, 180), font=self.small_font)
+            is_live = getattr(song, "is_live", False)
+            end_text = "🔴 LIVE" if is_live else song.duration
+            tw = self.small_font.getlength(end_text)
+            draw.text((BAR_X + BAR_TOTAL_LEN - tw, BAR_Y + 18),
+                      end_text,
+                      fill=(0, 255, 255) if is_live else (180, 180, 180),
+                      font=self.small_font)
+
+            # ── 7. Play icons ─────────────────────────────────────────
+            icons_path = "Elevenyts/helpers/play_icons.png"
+            if os.path.isfile(icons_path):
+                with Image.open(icons_path) as icons_img:
+                    ic = icons_img.resize((ICONS_W, ICONS_H)).convert("RGBA")
+                    r, g, b, a = ic.split()
+                    cyan_ic = Image.merge("RGBA", (
+                        r.point(lambda _: 0),
+                        g.point(lambda _: 220),
+                        b.point(lambda _: 255),
+                        a
+                    ))
+                    bg.paste(cyan_ic, (ICONS_X, ICONS_Y), cyan_ic)
+
+            bg.save(output)
+            try:
+                os.remove(temp)
+            except OSError:
+                pass
+            return output
+
+        except Exception:
+            return config.DEFAULT_THUMB
+

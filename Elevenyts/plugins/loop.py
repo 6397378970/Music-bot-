@@ -13,5 +13,81 @@
   # Unauthorized copying, modification, or redistribution
   # of this source code without permission is prohibited.
   # ==========================================================
-import base64
-exec(base64.b64decode("IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ29weXJpZ2h0IChjKSAyMDI2IEFydGlzdEJvdHMKIyBBbGwgUmlnaHRzIFJlc2VydmVkLgojCiMgUHJvamVjdCAgICAgIDogQXJ0aXN0Qm90cyBBUEkgVGVsZWdyYW0gTXVzaWMgQm90CiMgUG93ZXJlZCBCeSAgIDogQXJ0aXN0CiMgVHlwZSAgICAgICAgIDogQVBJIEJhc2VkIFRlbGVncmFtIE11c2ljIEJvdAojCiMgQm90ICAgICAgICAgIDogQEFydGlzdEFwaWJvdAojIENoYW5uZWwgICAgICA6IGh0dHBzOi8vdC5tZS9hcnRpc3Rib3RzCiMgR2l0SHViICAgICAgIDogaHR0cHM6Ly9naXRodWIuY29tL2VsZXZlbnl0cwojCiMgVW5hdXRob3JpemVkIGNvcHlpbmcsIG1vZGlmaWNhdGlvbiwgb3IgcmVkaXN0cmlidXRpb24KIyBvZiB0aGlzIHNvdXJjZSBjb2RlIHdpdGhvdXQgcGVybWlzc2lvbiBpcyBwcm9oaWJpdGVkLgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KCmZyb20gcHlyb2dyYW0gaW1wb3J0IGZpbHRlcnMsIHR5cGVzCgpmcm9tIEVsZXZlbnl0cyBpbXBvcnQgYXBwLCBkYiwgbGFuZwpmcm9tIEVsZXZlbnl0cy5oZWxwZXJzIGltcG9ydCBjYW5fbWFuYWdlX3ZjCgoKQGFwcC5vbl9tZXNzYWdlKGZpbHRlcnMuY29tbWFuZChbImxvb3AiLCAiY2xvb3AiXSkgJiBmaWx0ZXJzLmdyb3VwICYgfmFwcC5ibF91c2VycykKQGxhbmcubGFuZ3VhZ2UoKQpAY2FuX21hbmFnZV92Ywphc3luYyBkZWYgX2xvb3AoXywgbTogdHlwZXMuTWVzc2FnZSk6CiAgICB0cnk6CiAgICAgICAgYXdhaXQgbS5kZWxldGUoKQogICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICBwYXNzCiAgICAKICAgICMgQ2hlY2sgZm9yIGNoYW5uZWwgcGxheSBtb2RlCiAgICBpc19jaGFubmVsID0gbS5jb21tYW5kWzBdLmxvd2VyKCkgPT0gImNsb29wIgogICAgY2hhdF9pZCA9IG0uY2hhdC5pZAogICAgCiAgICBpZiBpc19jaGFubmVsOgogICAgICAgIGNoYW5uZWxfaWQgPSBhd2FpdCBkYi5nZXRfY21vZGUobS5jaGF0LmlkKQogICAgICAgIGlmIGNoYW5uZWxfaWQgaXMgTm9uZToKICAgICAgICAgICAgcmV0dXJuIGF3YWl0IG0ucmVwbHlfdGV4dCgiQ2hhbm5lbCBwbGF5IGlzIG5vdCBlbmFibGVkLiBVc2UgL2NoYW5uZWxwbGF5IHRvIGVuYWJsZS4iKQogICAgICAgIGNoYXRfaWQgPSBjaGFubmVsX2lkCiAgICAKICAgIGN1cnJlbnRfbG9vcCA9IGF3YWl0IGRiLmdldF9sb29wKGNoYXRfaWQpCiAgICAKICAgIGlmIGxlbihtLmNvbW1hbmQpID4gMToKICAgICAgICBtb2RlX2FyZyA9IG0uY29tbWFuZFsxXS5sb3dlcigpCiAgICAgICAgaWYgbW9kZV9hcmcgaW4gWyIwIiwgImRpc2FibGUiXToKICAgICAgICAgICAgbmV3X2xvb3AgPSAwCiAgICAgICAgICAgIHRleHQgPSAiTG9vcCBtb2RlIGRpc2FibGVkIgogICAgICAgIGVsaWYgbW9kZV9hcmcgaW4gWyJzaW5nbGUiLCAiMSIsICJvbmUiXToKICAgICAgICAgICAgbmV3X2xvb3AgPSAxCiAgICAgICAgICAgIHRleHQgPSAiTG9vcCBtb2RlIHNldCB0byBTaW5nbGUgVHJhY2siCiAgICAgICAgZWxpZiBtb2RlX2FyZyBpbiBbInF1ZXVlIiwgImFsbCIsICIxMCJdOgogICAgICAgICAgICBuZXdfbG9vcCA9IDEwCiAgICAgICAgICAgIHRleHQgPSAiTG9vcCBtb2RlIHNldCB0byBRdWV1ZSIKICAgICAgICBlbHNlOgogICAgICAgICAgICByZXR1cm4gYXdhaXQgbS5yZXBseV90ZXh0KAogICAgICAgICAgICAgICAgIlVzYWdlOlxuIgogICAgICAgICAgICAgICAgIi9sb29wIC0gQ3ljbGUgdGhyb3VnaCBtb2Rlc1xuIgogICAgICAgICAgICAgICAgIi9sb29wIGRpc2FibGUgLSBEaXNhYmxlIGxvb3BcbiIKICAgICAgICAgICAgICAgICIvbG9vcCBzaW5nbGUgLSBMb29wIGN1cnJlbnQgdHJhY2tcbiIKICAgICAgICAgICAgICAgICIvbG9vcCBxdWV1ZSAtIExvb3AgZW50aXJlIHF1ZXVlXG5cbiIKICAgICAgICAgICAgICAgICJDaGFubmVsIGNvbW1hbmRzOlxuIgogICAgICAgICAgICAgICAgIi9jbG9vcCAtIFNhbWUgYXMgL2xvb3AgYnV0IGZvciBjaGFubmVsIgogICAgICAgICAgICApCiAgICBlbHNlOgogICAgICAgIGlmIGN1cnJlbnRfbG9vcCA9PSAwOgogICAgICAgICAgICBuZXdfbG9vcCA9IDEKICAgICAgICAgICAgdGV4dCA9ICJMb29wIG1vZGUgc2V0IHRvIFNpbmdsZSBUcmFjayIKICAgICAgICBlbGlmIGN1cnJlbnRfbG9vcCA9PSAxOgogICAgICAgICAgICBuZXdfbG9vcCA9IDEwCiAgICAgICAgICAgIHRleHQgPSAiTG9vcCBtb2RlIHNldCB0byBRdWV1ZSIKICAgICAgICBlbHNlOgogICAgICAgICAgICBuZXdfbG9vcCA9IDAKICAgICAgICAgICAgdGV4dCA9ICJMb29wIG1vZGUgZGlzYWJsZWQiCiAgICAKICAgIGF3YWl0IGRiLnNldF9sb29wKGNoYXRfaWQsIG5ld19sb29wKQogICAgYXdhaXQgbS5yZXBseV90ZXh0KHRleHQpCg==").decode("utf-8"))
+# ==========================================================
+# Copyright (c) 2026 ArtistBots
+# All Rights Reserved.
+#
+# Project      : ArtistBots API Telegram Music Bot
+# Powered By   : Artist
+# Type         : API Based Telegram Music Bot
+#
+# Bot          : @ArtistApibot
+# Channel      : https://t.me/artistbots
+# GitHub       : https://github.com/elevenyts
+#
+# Unauthorized copying, modification, or redistribution
+# of this source code without permission is prohibited.
+# ==========================================================
+
+from pyrogram import filters, types
+
+from Elevenyts import app, db, lang
+from Elevenyts.helpers import can_manage_vc
+
+
+@app.on_message(filters.command(["loop", "cloop"]) & filters.group & ~app.bl_users)
+@lang.language()
+@can_manage_vc
+async def _loop(_, m: types.Message):
+    try:
+        await m.delete()
+    except Exception:
+        pass
+    
+    # Check for channel play mode
+    is_channel = m.command[0].lower() == "cloop"
+    chat_id = m.chat.id
+    
+    if is_channel:
+        channel_id = await db.get_cmode(m.chat.id)
+        if channel_id is None:
+            return await m.reply_text("Channel play is not enabled. Use /channelplay to enable.")
+        chat_id = channel_id
+    
+    current_loop = await db.get_loop(chat_id)
+    
+    if len(m.command) > 1:
+        mode_arg = m.command[1].lower()
+        if mode_arg in ["0", "disable"]:
+            new_loop = 0
+            text = "Loop mode disabled"
+        elif mode_arg in ["single", "1", "one"]:
+            new_loop = 1
+            text = "Loop mode set to Single Track"
+        elif mode_arg in ["queue", "all", "10"]:
+            new_loop = 10
+            text = "Loop mode set to Queue"
+        else:
+            return await m.reply_text(
+                "Usage:\n"
+                "/loop - Cycle through modes\n"
+                "/loop disable - Disable loop\n"
+                "/loop single - Loop current track\n"
+                "/loop queue - Loop entire queue\n\n"
+                "Channel commands:\n"
+                "/cloop - Same as /loop but for channel"
+            )
+    else:
+        if current_loop == 0:
+            new_loop = 1
+            text = "Loop mode set to Single Track"
+        elif current_loop == 1:
+            new_loop = 10
+            text = "Loop mode set to Queue"
+        else:
+            new_loop = 0
+            text = "Loop mode disabled"
+    
+    await db.set_loop(chat_id, new_loop)
+    await m.reply_text(text)
+

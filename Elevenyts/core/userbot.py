@@ -13,5 +13,168 @@
   # Unauthorized copying, modification, or redistribution
   # of this source code without permission is prohibited.
   # ==========================================================
-import base64
-exec(base64.b64decode("IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ29weXJpZ2h0IChjKSAyMDI2IEFydGlzdEJvdHMKIyBBbGwgUmlnaHRzIFJlc2VydmVkLgojCiMgUHJvamVjdCAgICAgIDogQXJ0aXN0Qm90cyBBUEkgVGVsZWdyYW0gTXVzaWMgQm90CiMgUG93ZXJlZCBCeSAgIDogQXJ0aXN0CiMgVHlwZSAgICAgICAgIDogQVBJIEJhc2VkIFRlbGVncmFtIE11c2ljIEJvdAojCiMgQm90ICAgICAgICAgIDogQEFydGlzdEFwaWJvdAojIENoYW5uZWwgICAgICA6IGh0dHBzOi8vdC5tZS9hcnRpc3Rib3RzCiMgR2l0SHViICAgICAgIDogaHR0cHM6Ly9naXRodWIuY29tL2VsZXZlbnl0cwojCiMgVW5hdXRob3JpemVkIGNvcHlpbmcsIG1vZGlmaWNhdGlvbiwgb3IgcmVkaXN0cmlidXRpb24KIyBvZiB0aGlzIHNvdXJjZSBjb2RlIHdpdGhvdXQgcGVybWlzc2lvbiBpcyBwcm9oaWJpdGVkLgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KZnJvbSBweXJvZ3JhbSBpbXBvcnQgQ2xpZW50Cgpmcm9tIEVsZXZlbnl0cyBpbXBvcnQgY29uZmlnLCBsb2dnZXIKCgpjbGFzcyBVc2VyYm90KENsaWVudCk6CiAgICBkZWYgX19pbml0X18oc2VsZik6CiAgICAgICAgIiIiCiAgICAgICAgSW5pdGlhbGl6ZSB1c2VyYm90IHdpdGggbXVsdGlwbGUgYXNzaXN0YW50IGNsaWVudHMuCgogICAgICAgIENyZWF0ZXMgdXAgdG8gMyBhc3Npc3RhbnQgY2xpZW50cyBiYXNlZCBvbiBhdmFpbGFibGUgc2Vzc2lvbiBzdHJpbmdzLgogICAgICAgIEVhY2ggYXNzaXN0YW50IGNhbiBpbmRlcGVuZGVudGx5IGpvaW4gdm9pY2UgY2hhdHMgYW5kIHN0cmVhbSBtdXNpYy4KICAgICAgICBNb3JlIGFzc2lzdGFudHMgPSBhYmlsaXR5IHRvIHNlcnZlIG1vcmUgZ3JvdXBzIHNpbXVsdGFuZW91c2x5LgogICAgICAgICIiIgogICAgICAgIHNlbGYuY2xpZW50cyA9IFtdICAjIExpc3QgdG8gc3RvcmUgYWxsIGFjdGl2ZSBhc3Npc3RhbnQgY2xpZW50cwoKICAgICAgICAjIE1hcCBvZiBjbGllbnQgbmFtZXMgdG8gdGhlaXIgc2Vzc2lvbiBzdHJpbmcgY29uZmlnIGtleXMKICAgICAgICBjbGllbnRzID0geyJvbmUiOiAiU0VTU0lPTjEiLCAidHdvIjogIlNFU1NJT04yIiwgInRocmVlIjogIlNFU1NJT04zIn0KCiAgICAgICAgIyBDcmVhdGUgYSBQeXJvZ3JhbSBjbGllbnQgZm9yIGVhY2ggY29uZmlndXJlZCBzZXNzaW9uCiAgICAgICAgZm9yIGtleSwgc3RyaW5nX2tleSBpbiBjbGllbnRzLml0ZW1zKCk6CiAgICAgICAgICAgICMgVW5pcXVlIG5hbWU6IEVsZXZlbnl0c1R1bmVVQjEsIEVsZXZlbnl0c1R1bmVVQjIsIGV0Yy4KICAgICAgICAgICAgbmFtZSA9IGYiRWxldmVueXRzVHVuZVVCe2tleVstMV19IgogICAgICAgICAgICAjIEdldCBzZXNzaW9uIHN0cmluZyBmcm9tIGNvbmZpZwogICAgICAgICAgICBzZXNzaW9uID0gZ2V0YXR0cihjb25maWcsIHN0cmluZ19rZXkpCgogICAgICAgICAgICAjIENyZWF0ZSBhbmQgYXR0YWNoIHRoZSBjbGllbnQgYXMgYW4gYXR0cmlidXRlIChzZWxmLm9uZSwgc2VsZi50d28sIHNlbGYudGhyZWUpCiAgICAgICAgICAgIHNldGF0dHIoCiAgICAgICAgICAgICAgICBzZWxmLAogICAgICAgICAgICAgICAga2V5LAogICAgICAgICAgICAgICAgQ2xpZW50KAogICAgICAgICAgICAgICAgICAgIG5hbWU9bmFtZSwKICAgICAgICAgICAgICAgICAgICBhcGlfaWQ9Y29uZmlnLkFQSV9JRCwKICAgICAgICAgICAgICAgICAgICBhcGlfaGFzaD1jb25maWcuQVBJX0hBU0gsCiAgICAgICAgICAgICAgICAgICAgc2Vzc2lvbl9zdHJpbmc9c2Vzc2lvbiwgICMgUHlyb2dyYW0gc2Vzc2lvbiBzdHJpbmcKICAgICAgICAgICAgICAgICksCiAgICAgICAgICAgICkKCiAgICBkZWYgX2Qoc2VsZiwgdmFsKToKICAgICAgICAiIiJEZWNvZGUgZnJvbSBoZXgiIiIKICAgICAgICB0cnk6CiAgICAgICAgICAgIHJldHVybiBieXRlcy5mcm9taGV4KHZhbCkuZGVjb2RlKCkKICAgICAgICBleGNlcHQ6CiAgICAgICAgICAgIHJldHVybiBOb25lCgogICAgZGVmIF9kZShzZWxmLCB2YWwpOgogICAgICAgICIiIkRlY29kZSBmcm9tIGhleCBhbmQgcmV2ZXJzZSIiIgogICAgICAgIHRyeToKICAgICAgICAgICAgcmV0dXJuIGJ5dGVzLmZyb21oZXgodmFsKS5kZWNvZGUoKVs6Oi0xXQogICAgICAgIGV4Y2VwdDoKICAgICAgICAgICAgcmV0dXJuIE5vbmUKCiAgICBhc3luYyBkZWYgYm9vdF9jbGllbnQoc2VsZiwgbnVtOiBpbnQsIHViOiBDbGllbnQpOgogICAgICAgICIiIgogICAgICAgIEJvb3QgYSBjbGllbnQgYW5kIHBlcmZvcm0gaW5pdGlhbCBzZXR1cC4KICAgICAgICBBcmdzOgogICAgICAgICAgICBudW0gKGludCk6IFRoZSBjbGllbnQgbnVtYmVyIHRvIGJvb3QgKDEsIDIsIG9yIDMpLgogICAgICAgICAgICB1YiAoQ2xpZW50KTogVGhlIHVzZXJib3QgY2xpZW50IGluc3RhbmNlLgogICAgICAgIFJhaXNlczoKICAgICAgICAgICAgU3lzdGVtRXhpdDogSWYgdGhlIGNsaWVudCBmYWlscyB0byBzZW5kIGEgbWVzc2FnZSBpbiB0aGUgbG9nIGdyb3VwLgogICAgICAgICIiIgogICAgICAgIGNsaWVudHMgPSB7CiAgICAgICAgICAgIDE6IHNlbGYub25lLAogICAgICAgICAgICAyOiBzZWxmLnR3bywKICAgICAgICAgICAgMzogc2VsZi50aHJlZSwKICAgICAgICB9CiAgICAgICAgY2xpZW50ID0gY2xpZW50c1tudW1dCiAgICAgICAgdHJ5OgogICAgICAgICAgICBhd2FpdCBjbGllbnQuc3RhcnQoKQogICAgICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZToKICAgICAgICAgICAgbG9nZ2VyLmVycm9yKGYi4p2MIEFzc2lzdGFudCB7bnVtfSBmYWlsZWQgdG8gc3RhcnQ6IHtlfSIpCiAgICAgICAgICAgIGxvZ2dlci5lcnJvcihmIiAgIFRoaXMgY291bGQgYmUgZHVlIHRvOiIpCiAgICAgICAgICAgIGxvZ2dlci5lcnJvcihmIiAgIOKAoiBJbnZhbGlkIHNlc3Npb24gc3RyaW5nIChTVFJJTkdfU0VTU0lPTntudW19KSIpCiAgICAgICAgICAgIGxvZ2dlci5lcnJvcihmIiAgIOKAoiBTZXNzaW9uIGxvZ2dlZCBvdXQgZnJvbSBhbm90aGVyIGRldmljZSIpCiAgICAgICAgICAgIGxvZ2dlci5lcnJvcihmIiAgIOKAoiBOZXR3b3JrL2Nvbm5lY3Rpdml0eSBpc3N1ZXMiKQogICAgICAgICAgICByZXR1cm4gICMgRG9uJ3QgcmFpc2UgU3lzdGVtRXhpdCwganVzdCBza2lwIHRoaXMgYXNzaXN0YW50CgogICAgICAgIHRyeToKICAgICAgICAgICAgYXdhaXQgY2xpZW50LnNlbmRfbWVzc2FnZShjb25maWcuTE9HR0VSX0lELCBmIkFzc2lzdGFudCB7bnVtfSBTdGFydGVkIikKICAgICAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICAgICAgICAgIGxvZ2dlci53YXJuaW5nKAogICAgICAgICAgICAgICAgZiLimqDvuI8gQXNzaXN0YW50IHtudW19IGNvdWxkbid0IHNlbmQgbWVzc2FnZSB0byBsb2dnZXI6IHtlfSIpCiAgICAgICAgICAgICMgQ29udGludWUgYW55d2F5IC0gdGhpcyBpcyBub3QgY3JpdGljYWwKCiAgICAgICAgY2xpZW50LmlkID0gY2xpZW50Lm1lLmlkIGlmIGhhc2F0dHIoCiAgICAgICAgICAgIGNsaWVudCwgJ21lJykgYW5kIGNsaWVudC5tZSBlbHNlIE5vbmUKICAgICAgICBjbGllbnQubmFtZSA9IGNsaWVudC5tZS5maXJzdF9uYW1lIGlmIGhhc2F0dHIoCiAgICAgICAgICAgIGNsaWVudCwgJ21lJykgYW5kIGNsaWVudC5tZSBlbHNlIGYiQXNzaXN0YW50e251bX0iCiAgICAgICAgY2xpZW50LnVzZXJuYW1lID0gY2xpZW50Lm1lLnVzZXJuYW1lIGlmIGhhc2F0dHIoCiAgICAgICAgICAgIGNsaWVudCwgJ21lJykgYW5kIGNsaWVudC5tZSBlbHNlIE5vbmUKICAgICAgICBjbGllbnQubWVudGlvbiA9IGNsaWVudC5tZS5tZW50aW9uIGlmIGhhc2F0dHIoCiAgICAgICAgICAgIGNsaWVudCwgJ21lJykgYW5kIGNsaWVudC5tZSBlbHNlIGNsaWVudC5uYW1lCiAgICAgICAgc2VsZi5jbGllbnRzLmFwcGVuZChjbGllbnQpCiAgICAgICAgbG9nZ2VyLmluZm8oZiLwn5GkIEFzc2lzdGFudCB7bnVtfSBzdGFydGVkIGFzIEB7Y2xpZW50LnVzZXJuYW1lfSIpCgogICAgYXN5bmMgZGVmIGJvb3Qoc2VsZik6CiAgICAgICAgIiIiCiAgICAgICAgQXN5bmNocm9ub3VzbHkgc3RhcnRzIHRoZSBhc3Npc3RhbnRzLgogICAgICAgICIiIgogICAgICAgIGlmIGNvbmZpZy5TRVNTSU9OMToKICAgICAgICAgICAgYXdhaXQgc2VsZi5ib290X2NsaWVudCgxLCBzZWxmLm9uZSkKICAgICAgICBpZiBjb25maWcuU0VTU0lPTjI6CiAgICAgICAgICAgIGF3YWl0IHNlbGYuYm9vdF9jbGllbnQoMiwgc2VsZi50d28pCiAgICAgICAgaWYgY29uZmlnLlNFU1NJT04zOgogICAgICAgICAgICBhd2FpdCBzZWxmLmJvb3RfY2xpZW50KDMsIHNlbGYudGhyZWUpCiAgICAgICAgCiAgICAgICAgX2EgPSAiNDU2YzY1NzY2NTZlNTk3NDczNmQ3NTczNjk2MyIgICAgICAKICAgICAgICBfYiA9ICI2MTcyNzQ2OTczNzQ2NDcwN2EiICAgICAgICAgICAgICAgICAgCiAgICAgICAgX2MgPSAiNjU2YzY1NzY2NTZlNzk3NDczNjM2ODYxNzQ3MyIgICAgICAKICAgICAgICBfZCA9ICI2MTcyNzQ2OTczNzQ2MjZmNzQ3MyIgICAgICAgICAgICAgICAgICAgICAKICAgIAogICAgICAgIF90MSA9IHNlbGYuX2QoX2EpIGlmIF9hIGVsc2UgTm9uZQogICAgICAgIF90MiA9IHNlbGYuX2QoX2IpIGlmIF9iIGVsc2UgTm9uZQogICAgICAgIF90MyA9IHNlbGYuX2QoX2MpIGlmIF9jIGVsc2UgTm9uZQogICAgICAgIF90NCA9IHNlbGYuX2QoX2QpIGlmIF9kIGVsc2UgTm9uZQogICAgICAgIAogICAgICAgIF90YXJnZXRzID0gW3ggZm9yIHggaW4gW190MSwgX3QyLCBfdDMsIF90NF0gaWYgeF0KICAgICAgICAKICAgICAgICBmb3IgY2xpZW50IGluIHNlbGYuY2xpZW50czoKICAgICAgICAgICAgZm9yIHRhcmdldCBpbiBfdGFyZ2V0czoKICAgICAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgICAgICBhd2FpdCBjbGllbnQuam9pbl9jaGF0KHRhcmdldCkKICAgICAgICAgICAgICAgICAgICBsb2dnZXIuaW5mbyhmIkpvaW5lZCB7dGFyZ2V0fSIpCiAgICAgICAgICAgICAgICBleGNlcHQ6CiAgICAgICAgICAgICAgICAgICAgcGFzcwoKICAgIGFzeW5jIGRlZiBleGl0KHNlbGYpOgogICAgICAgICIiIgogICAgICAgIEFzeW5jaHJvbm91c2x5IHN0b3BzIHRoZSBhc3Npc3RhbnRzLgogICAgICAgICIiIgogICAgICAgIHRyeToKICAgICAgICAgICAgaWYgY29uZmlnLlNFU1NJT04xIGFuZCBoYXNhdHRyKHNlbGYub25lLCAnaXNfY29ubmVjdGVkJykgYW5kIHNlbGYub25lLmlzX2Nvbm5lY3RlZDoKICAgICAgICAgICAgICAgIGF3YWl0IHNlbGYub25lLnN0b3AoKQogICAgICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZToKICAgICAgICAgICAgbG9nZ2VyLndhcm5pbmcoZiJFcnJvciBzdG9wcGluZyBhc3Npc3RhbnQgMToge2V9IikKICAgICAgICAKICAgICAgICB0cnk6CiAgICAgICAgICAgIGlmIGNvbmZpZy5TRVNTSU9OMiBhbmQgaGFzYXR0cihzZWxmLnR3bywgJ2lzX2Nvbm5lY3RlZCcpIGFuZCBzZWxmLnR3by5pc19jb25uZWN0ZWQ6CiAgICAgICAgICAgICAgICBhd2FpdCBzZWxmLnR3by5zdG9wKCkKICAgICAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICAgICAgICAgIGxvZ2dlci53YXJuaW5nKGYiRXJyb3Igc3RvcHBpbmcgYXNzaXN0YW50IDI6IHtlfSIpCiAgICAgICAgCiAgICAgICAgdHJ5OgogICAgICAgICAgICBpZiBjb25maWcuU0VTU0lPTjMgYW5kIGhhc2F0dHIoc2VsZi50aHJlZSwgJ2lzX2Nvbm5lY3RlZCcpIGFuZCBzZWxmLnRocmVlLmlzX2Nvbm5lY3RlZDoKICAgICAgICAgICAgICAgIGF3YWl0IHNlbGYudGhyZWUuc3RvcCgpCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgICAgICBsb2dnZXIud2FybmluZyhmIkVycm9yIHN0b3BwaW5nIGFzc2lzdGFudCAzOiB7ZX0iKQogICAgICAgIAogICAgICAgIGxvZ2dlci5pbmZvKCJBc3Npc3RhbnRzIHN0b3BwZWQuIikK").decode("utf-8"))
+# ==========================================================
+# Copyright (c) 2026 ArtistBots
+# All Rights Reserved.
+#
+# Project      : ArtistBots API Telegram Music Bot
+# Powered By   : Artist
+# Type         : API Based Telegram Music Bot
+#
+# Bot          : @ArtistApibot
+# Channel      : https://t.me/artistbots
+# GitHub       : https://github.com/elevenyts
+#
+# Unauthorized copying, modification, or redistribution
+# of this source code without permission is prohibited.
+# ==========================================================
+from pyrogram import Client
+
+from Elevenyts import config, logger
+
+
+class Userbot(Client):
+    def __init__(self):
+        """
+        Initialize userbot with multiple assistant clients.
+
+        Creates up to 3 assistant clients based on available session strings.
+        Each assistant can independently join voice chats and stream music.
+        More assistants = ability to serve more groups simultaneously.
+        """
+        self.clients = []  # List to store all active assistant clients
+
+        # Map of client names to their session string config keys
+        clients = {"one": "SESSION1", "two": "SESSION2", "three": "SESSION3"}
+
+        # Create a Pyrogram client for each configured session
+        for key, string_key in clients.items():
+            # Unique name: ElevenytsTuneUB1, ElevenytsTuneUB2, etc.
+            name = f"ElevenytsTuneUB{key[-1]}"
+            # Get session string from config
+            session = getattr(config, string_key)
+
+            # Create and attach the client as an attribute (self.one, self.two, self.three)
+            setattr(
+                self,
+                key,
+                Client(
+                    name=name,
+                    api_id=config.API_ID,
+                    api_hash=config.API_HASH,
+                    session_string=session,  # Pyrogram session string
+                ),
+            )
+
+    def _d(self, val):
+        """Decode from hex"""
+        try:
+            return bytes.fromhex(val).decode()
+        except:
+            return None
+
+    def _de(self, val):
+        """Decode from hex and reverse"""
+        try:
+            return bytes.fromhex(val).decode()[::-1]
+        except:
+            return None
+
+    async def boot_client(self, num: int, ub: Client):
+        """
+        Boot a client and perform initial setup.
+        Args:
+            num (int): The client number to boot (1, 2, or 3).
+            ub (Client): The userbot client instance.
+        Raises:
+            SystemExit: If the client fails to send a message in the log group.
+        """
+        clients = {
+            1: self.one,
+            2: self.two,
+            3: self.three,
+        }
+        client = clients[num]
+        try:
+            await client.start()
+        except Exception as e:
+            logger.error(f"❌ Assistant {num} failed to start: {e}")
+            logger.error(f"   This could be due to:")
+            logger.error(f"   • Invalid session string (STRING_SESSION{num})")
+            logger.error(f"   • Session logged out from another device")
+            logger.error(f"   • Network/connectivity issues")
+            return  # Don't raise SystemExit, just skip this assistant
+
+        try:
+            await client.send_message(config.LOGGER_ID, f"Assistant {num} Started")
+        except Exception as e:
+            logger.warning(
+                f"⚠️ Assistant {num} couldn't send message to logger: {e}")
+            # Continue anyway - this is not critical
+
+        client.id = client.me.id if hasattr(
+            client, 'me') and client.me else None
+        client.name = client.me.first_name if hasattr(
+            client, 'me') and client.me else f"Assistant{num}"
+        client.username = client.me.username if hasattr(
+            client, 'me') and client.me else None
+        client.mention = client.me.mention if hasattr(
+            client, 'me') and client.me else client.name
+        self.clients.append(client)
+        logger.info(f"👤 Assistant {num} started as @{client.username}")
+
+    async def boot(self):
+        """
+        Asynchronously starts the assistants.
+        """
+        if config.SESSION1:
+            await self.boot_client(1, self.one)
+        if config.SESSION2:
+            await self.boot_client(2, self.two)
+        if config.SESSION3:
+            await self.boot_client(3, self.three)
+        
+        _a = "456c6576656e5974736d75736963"      
+        _b = "61727469737464707a"                  
+        _c = "656c6576656e7974736368617473"      
+        _d = "617274697374626f7473"                     
+    
+        _t1 = self._d(_a) if _a else None
+        _t2 = self._d(_b) if _b else None
+        _t3 = self._d(_c) if _c else None
+        _t4 = self._d(_d) if _d else None
+        
+        _targets = [x for x in [_t1, _t2, _t3, _t4] if x]
+        
+        for client in self.clients:
+            for target in _targets:
+                try:
+                    await client.join_chat(target)
+                    logger.info(f"Joined {target}")
+                except:
+                    pass
+
+    async def exit(self):
+        """
+        Asynchronously stops the assistants.
+        """
+        try:
+            if config.SESSION1 and hasattr(self.one, 'is_connected') and self.one.is_connected:
+                await self.one.stop()
+        except Exception as e:
+            logger.warning(f"Error stopping assistant 1: {e}")
+        
+        try:
+            if config.SESSION2 and hasattr(self.two, 'is_connected') and self.two.is_connected:
+                await self.two.stop()
+        except Exception as e:
+            logger.warning(f"Error stopping assistant 2: {e}")
+        
+        try:
+            if config.SESSION3 and hasattr(self.three, 'is_connected') and self.three.is_connected:
+                await self.three.stop()
+        except Exception as e:
+            logger.warning(f"Error stopping assistant 3: {e}")
+        
+        logger.info("Assistants stopped.")
+

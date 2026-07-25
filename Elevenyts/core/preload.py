@@ -13,5 +13,171 @@
   # Unauthorized copying, modification, or redistribution
   # of this source code without permission is prohibited.
   # ==========================================================
-import base64
-exec(base64.b64decode("IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ29weXJpZ2h0IChjKSAyMDI2IEFydGlzdEJvdHMKIyBBbGwgUmlnaHRzIFJlc2VydmVkLgojCiMgUHJvamVjdCAgICAgIDogQXJ0aXN0Qm90cyBBUEkgVGVsZWdyYW0gTXVzaWMgQm90CiMgUG93ZXJlZCBCeSAgIDogQXJ0aXN0CiMgVHlwZSAgICAgICAgIDogQVBJIEJhc2VkIFRlbGVncmFtIE11c2ljIEJvdAojCiMgQm90ICAgICAgICAgIDogQEFydGlzdEFwaWJvdAojIENoYW5uZWwgICAgICA6IGh0dHBzOi8vdC5tZS9hcnRpc3Rib3RzCiMgR2l0SHViICAgICAgIDogaHR0cHM6Ly9naXRodWIuY29tL2VsZXZlbnl0cwojCiMgVW5hdXRob3JpemVkIGNvcHlpbmcsIG1vZGlmaWNhdGlvbiwgb3IgcmVkaXN0cmlidXRpb24KIyBvZiB0aGlzIHNvdXJjZSBjb2RlIHdpdGhvdXQgcGVybWlzc2lvbiBpcyBwcm9oaWJpdGVkLgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KCmltcG9ydCBhc3luY2lvCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aApmcm9tIHR5cGluZyBpbXBvcnQgRGljdCwgU2V0Cgpmcm9tIEVsZXZlbnl0cyBpbXBvcnQgbG9nZ2VyCgoKY2xhc3MgUHJlbG9hZE1hbmFnZXI6CiAgICAiIiIKICAgIE1hbmFnZXMgYmFja2dyb3VuZCBwcmVsb2FkaW5nIG9mIHVwY29taW5nIHRyYWNrcyBpbiBxdWV1ZS4KICAgIAogICAgVGhpcyBjbGFzcyBlbnN1cmVzIHNlYW1sZXNzIHRyYW5zaXRpb25zIGJldHdlZW4gc29uZ3MgYnkgZG93bmxvYWRpbmcKICAgIHVwY29taW5nIHRyYWNrcyB3aGlsZSB0aGUgY3VycmVudCB0cmFjayBpcyBzdGlsbCBwbGF5aW5nLgogICAgIiIiCiAgICAKICAgIGRlZiBfX2luaXRfXyhzZWxmKToKICAgICAgICAiIiJJbml0aWFsaXplIHRoZSBwcmVsb2FkIG1hbmFnZXIuIiIiCiAgICAgICAgIyBUcmFjayBhY3RpdmUgcHJlbG9hZCB0YXNrcyBwZXIgY2hhdDoge2NoYXRfaWQ6IHNldCBvZiBhc3luY2lvLlRhc2t9CiAgICAgICAgc2VsZi5fcHJlbG9hZF90YXNrczogRGljdFtpbnQsIFNldFthc3luY2lvLlRhc2tdXSA9IHt9CiAgICAgICAgCiAgICAgICAgIyBUcmFjayB3aGljaCBpdGVtcyBhcmUgY3VycmVudGx5IGJlaW5nIHByZWxvYWRlZCB0byBwcmV2ZW50IGR1cGxpY2F0ZXMKICAgICAgICBzZWxmLl9wcmVsb2FkaW5nOiBEaWN0W2ludCwgU2V0W3N0cl1dID0ge30gICMge2NoYXRfaWQ6IHNldCBvZiB0cmFjayBJRHN9CiAgICAKICAgIGFzeW5jIGRlZiBzdGFydF9wcmVsb2FkKHNlbGYsIGNoYXRfaWQ6IGludCwgY291bnQ6IGludCA9IDIpIC0+IE5vbmU6CiAgICAgICAgIiIiCiAgICAgICAgU3RhcnQgcHJlbG9hZGluZyB1cGNvbWluZyB0cmFja3MgZm9yIGEgY2hhdC4KICAgICAgICAKICAgICAgICBBcmdzOgogICAgICAgICAgICBjaGF0X2lkOiBUaGUgY2hhdCBJRCB0byBwcmVsb2FkIHRyYWNrcyBmb3IKICAgICAgICAgICAgY291bnQ6IE51bWJlciBvZiB1cGNvbWluZyB0cmFja3MgdG8gcHJlbG9hZCAoZGVmYXVsdDogMikKICAgICAgICAiIiIKICAgICAgICBmcm9tIEVsZXZlbnl0cyBpbXBvcnQgcXVldWUsIHl0CiAgICAgICAgCiAgICAgICAgIyBHZXQgdXBjb21pbmcgdHJhY2tzIGZyb20gcXVldWUKICAgICAgICB1cGNvbWluZ190cmFja3MgPSBxdWV1ZS5wZWVrX25leHQoY2hhdF9pZCwgY291bnQpCiAgICAgICAgCiAgICAgICAgaWYgbm90IHVwY29taW5nX3RyYWNrczoKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgCiAgICAgICAgIyBJbml0aWFsaXplIHRyYWNraW5nIHNldHMgaWYgbmVlZGVkCiAgICAgICAgaWYgY2hhdF9pZCBub3QgaW4gc2VsZi5fcHJlbG9hZF90YXNrczoKICAgICAgICAgICAgc2VsZi5fcHJlbG9hZF90YXNrc1tjaGF0X2lkXSA9IHNldCgpCiAgICAgICAgaWYgY2hhdF9pZCBub3QgaW4gc2VsZi5fcHJlbG9hZGluZzoKICAgICAgICAgICAgc2VsZi5fcHJlbG9hZGluZ1tjaGF0X2lkXSA9IHNldCgpCiAgICAgICAgCiAgICAgICAgIyBTdGFydCBwcmVsb2FkIHRhc2sgZm9yIGVhY2ggdHJhY2sgdGhhdCBuZWVkcyBkb3dubG9hZGluZwogICAgICAgIGZvciB0cmFjayBpbiB1cGNvbWluZ190cmFja3M6CiAgICAgICAgICAgICMgU2tpcCBpZiBhbHJlYWR5IGRvd25sb2FkZWQgb3IgY3VycmVudGx5IGJlaW5nIHByZWxvYWRlZAogICAgICAgICAgICBpZiBxdWV1ZS5pc19kb3dubG9hZGVkKHRyYWNrKToKICAgICAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgICAgIAogICAgICAgICAgICB0cmFja19pZCA9IGdldGF0dHIodHJhY2ssICdpZCcsIE5vbmUpCiAgICAgICAgICAgIGlmIG5vdCB0cmFja19pZCBvciB0cmFja19pZCBpbiBzZWxmLl9wcmVsb2FkaW5nW2NoYXRfaWRdOgogICAgICAgICAgICAgICAgY29udGludWUKICAgICAgICAgICAgCiAgICAgICAgICAgICMgTWFyayBhcyBiZWluZyBwcmVsb2FkZWQKICAgICAgICAgICAgc2VsZi5fcHJlbG9hZGluZ1tjaGF0X2lkXS5hZGQodHJhY2tfaWQpCiAgICAgICAgICAgIAogICAgICAgICAgICAjIENyZWF0ZSBiYWNrZ3JvdW5kIHRhc2sgZm9yIHRoaXMgdHJhY2sKICAgICAgICAgICAgdGFzayA9IGFzeW5jaW8uY3JlYXRlX3Rhc2soCiAgICAgICAgICAgICAgICBzZWxmLl9wcmVsb2FkX3RyYWNrKGNoYXRfaWQsIHRyYWNrKQogICAgICAgICAgICApCiAgICAgICAgICAgIHNlbGYuX3ByZWxvYWRfdGFza3NbY2hhdF9pZF0uYWRkKHRhc2spCiAgICAgICAgICAgIAogICAgICAgICAgICAjIEFkZCBjYWxsYmFjayB0byBjbGVhbiB1cCB0YXNrIHdoZW4gZG9uZQogICAgICAgICAgICB0YXNrLmFkZF9kb25lX2NhbGxiYWNrKAogICAgICAgICAgICAgICAgbGFtYmRhIHQsIGNpZD1jaGF0X2lkOiBzZWxmLl9jbGVhbnVwX3Rhc2soY2lkLCB0KQogICAgICAgICAgICApCiAgICAKICAgIGFzeW5jIGRlZiBfcHJlbG9hZF90cmFjayhzZWxmLCBjaGF0X2lkOiBpbnQsIHRyYWNrKSAtPiBOb25lOgogICAgICAgICIiIgogICAgICAgIFByZWxvYWQgYSBzaW5nbGUgdHJhY2sgaW4gdGhlIGJhY2tncm91bmQuCiAgICAgICAgCiAgICAgICAgQXJnczoKICAgICAgICAgICAgY2hhdF9pZDogVGhlIGNoYXQgSUQgdGhpcyB0cmFjayBiZWxvbmdzIHRvCiAgICAgICAgICAgIHRyYWNrOiBUcmFjayBvYmplY3QgdG8gcHJlbG9hZAogICAgICAgICIiIgogICAgICAgIGZyb20gRWxldmVueXRzIGltcG9ydCB5dAogICAgICAgIAogICAgICAgIHRyeToKICAgICAgICAgICAgdHJhY2tfaWQgPSB0cmFjay5pZAogICAgICAgICAgICBpc19saXZlID0gZ2V0YXR0cih0cmFjaywgJ2lzX2xpdmUnLCBGYWxzZSkKICAgICAgICAgICAgCiAgICAgICAgICAgICMgRG93bmxvYWQgdGhlIHRyYWNrICh1c2VzIGV4aXN0aW5nIHNlbWFwaG9yZSBmb3IgcmF0ZSBsaW1pdGluZykKICAgICAgICAgICAgZmlsZV9wYXRoID0gYXdhaXQgeXQuZG93bmxvYWQoCiAgICAgICAgICAgICAgICB0cmFja19pZCwKICAgICAgICAgICAgICAgIGlzX2xpdmU9aXNfbGl2ZSwKICAgICAgICAgICAgICAgIHZpZGVvPWdldGF0dHIodHJhY2ssICJ2aWRlbyIsIEZhbHNlKSwKICAgICAgICAgICAgKQogICAgICAgICAgICAKICAgICAgICAgICAgaWYgZmlsZV9wYXRoOgogICAgICAgICAgICAgICAgIyBVcGRhdGUgdHJhY2sgd2l0aCBkb3dubG9hZGVkIGZpbGUgcGF0aAogICAgICAgICAgICAgICAgdHJhY2suZmlsZV9wYXRoID0gZmlsZV9wYXRoCiAgICAgICAgICAgIGVsc2U6CiAgICAgICAgICAgICAgICAjIFNpbGVudCBmYWlsdXJlIC0gdHJhY2sgd2lsbCBkb3dubG9hZCBub3JtYWxseSB3aGVuIG5lZWRlZAogICAgICAgICAgICAgICAgcGFzcwogICAgICAgIAogICAgICAgIGV4Y2VwdCBhc3luY2lvLkNhbmNlbGxlZEVycm9yOgogICAgICAgICAgICAjIFRhc2sgd2FzIGNhbmNlbGxlZCAocXVldWUgY2hhbmdlZCwgcGxheWJhY2sgc3RvcHBlZCwgZXRjLikKICAgICAgICAgICAgcmFpc2UKICAgICAgICAKICAgICAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICAgICAgICAgICMgTG9nIGVycm9yIGJ1dCBkb24ndCBjcmFzaCAtIHRyYWNrIHdpbGwgYmUgZG93bmxvYWRlZCB3aGVuIGl0J3MgdGltZSB0byBwbGF5CiAgICAgICAgICAgIGxvZ2dlci5lcnJvcihmIuKdjCBFcnJvciBwcmVsb2FkaW5nIHRyYWNrIHt0cmFjay5pZH0gZm9yIGNoYXQge2NoYXRfaWR9OiB7ZX0iKQogICAgICAgIAogICAgICAgIGZpbmFsbHk6CiAgICAgICAgICAgICMgUmVtb3ZlIGZyb20gcHJlbG9hZGluZyBzZXQKICAgICAgICAgICAgaWYgY2hhdF9pZCBpbiBzZWxmLl9wcmVsb2FkaW5nIGFuZCB0cmFjay5pZCBpbiBzZWxmLl9wcmVsb2FkaW5nW2NoYXRfaWRdOgogICAgICAgICAgICAgICAgc2VsZi5fcHJlbG9hZGluZ1tjaGF0X2lkXS5yZW1vdmUodHJhY2suaWQpCiAgICAKICAgIGFzeW5jIGRlZiBjYW5jZWxfcHJlbG9hZChzZWxmLCBjaGF0X2lkOiBpbnQpIC0+IE5vbmU6CiAgICAgICAgIiIiCiAgICAgICAgQ2FuY2VsIGFsbCBhY3RpdmUgcHJlbG9hZCB0YXNrcyBmb3IgYSBjaGF0LgogICAgICAgIAogICAgICAgIENhbGxlZCB3aGVuOgogICAgICAgIC0gUXVldWUgaXMgY2xlYXJlZAogICAgICAgIC0gUGxheWJhY2sgaXMgc3RvcHBlZAogICAgICAgIC0gVHJhY2sgaXMgc2tpcHBlZCAobWF5IG5lZWQgdG8gcmUtcHJpb3JpdGl6ZSkKICAgICAgICAKICAgICAgICBBcmdzOgogICAgICAgICAgICBjaGF0X2lkOiBUaGUgY2hhdCBJRCB0byBjYW5jZWwgcHJlbG9hZGluZyBmb3IKICAgICAgICAiIiIKICAgICAgICBpZiBjaGF0X2lkIG5vdCBpbiBzZWxmLl9wcmVsb2FkX3Rhc2tzOgogICAgICAgICAgICByZXR1cm4KICAgICAgICAKICAgICAgICB0YXNrcyA9IHNlbGYuX3ByZWxvYWRfdGFza3NbY2hhdF9pZF0uY29weSgpCiAgICAgICAgCiAgICAgICAgIyBDYW5jZWwgYWxsIHRhc2tzCiAgICAgICAgZm9yIHRhc2sgaW4gdGFza3M6CiAgICAgICAgICAgIGlmIG5vdCB0YXNrLmRvbmUoKToKICAgICAgICAgICAgICAgIHRhc2suY2FuY2VsKCkKICAgICAgICAKICAgICAgICAjIFdhaXQgZm9yIGFsbCB0YXNrcyB0byBmaW5pc2ggY2FuY2VsbGF0aW9uCiAgICAgICAgaWYgdGFza3M6CiAgICAgICAgICAgIGF3YWl0IGFzeW5jaW8uZ2F0aGVyKCp0YXNrcywgcmV0dXJuX2V4Y2VwdGlvbnM9VHJ1ZSkKICAgICAgICAKICAgICAgICAjIENsZWFuIHVwIHRyYWNraW5nCiAgICAgICAgc2VsZi5fcHJlbG9hZF90YXNrc1tjaGF0X2lkXS5jbGVhcigpCiAgICAgICAgaWYgY2hhdF9pZCBpbiBzZWxmLl9wcmVsb2FkaW5nOgogICAgICAgICAgICBzZWxmLl9wcmVsb2FkaW5nW2NoYXRfaWRdLmNsZWFyKCkKICAgIAogICAgZGVmIF9jbGVhbnVwX3Rhc2soc2VsZiwgY2hhdF9pZDogaW50LCB0YXNrOiBhc3luY2lvLlRhc2spIC0+IE5vbmU6CiAgICAgICAgIiIiCiAgICAgICAgQ2xlYW4gdXAgY29tcGxldGVkIHRhc2sgZnJvbSB0cmFja2luZy4KICAgICAgICAKICAgICAgICBBcmdzOgogICAgICAgICAgICBjaGF0X2lkOiBUaGUgY2hhdCBJRCB0aGlzIHRhc2sgYmVsb25ncyB0bwogICAgICAgICAgICB0YXNrOiBUaGUgY29tcGxldGVkIHRhc2sgdG8gY2xlYW4gdXAKICAgICAgICAiIiIKICAgICAgICBpZiBjaGF0X2lkIGluIHNlbGYuX3ByZWxvYWRfdGFza3M6CiAgICAgICAgICAgIHNlbGYuX3ByZWxvYWRfdGFza3NbY2hhdF9pZF0uZGlzY2FyZCh0YXNrKQo=").decode("utf-8"))
+# ==========================================================
+# Copyright (c) 2026 ArtistBots
+# All Rights Reserved.
+#
+# Project      : ArtistBots API Telegram Music Bot
+# Powered By   : Artist
+# Type         : API Based Telegram Music Bot
+#
+# Bot          : @ArtistApibot
+# Channel      : https://t.me/artistbots
+# GitHub       : https://github.com/elevenyts
+#
+# Unauthorized copying, modification, or redistribution
+# of this source code without permission is prohibited.
+# ==========================================================
+
+import asyncio
+from pathlib import Path
+from typing import Dict, Set
+
+from Elevenyts import logger
+
+
+class PreloadManager:
+    """
+    Manages background preloading of upcoming tracks in queue.
+    
+    This class ensures seamless transitions between songs by downloading
+    upcoming tracks while the current track is still playing.
+    """
+    
+    def __init__(self):
+        """Initialize the preload manager."""
+        # Track active preload tasks per chat: {chat_id: set of asyncio.Task}
+        self._preload_tasks: Dict[int, Set[asyncio.Task]] = {}
+        
+        # Track which items are currently being preloaded to prevent duplicates
+        self._preloading: Dict[int, Set[str]] = {}  # {chat_id: set of track IDs}
+    
+    async def start_preload(self, chat_id: int, count: int = 2) -> None:
+        """
+        Start preloading upcoming tracks for a chat.
+        
+        Args:
+            chat_id: The chat ID to preload tracks for
+            count: Number of upcoming tracks to preload (default: 2)
+        """
+        from Elevenyts import queue, yt
+        
+        # Get upcoming tracks from queue
+        upcoming_tracks = queue.peek_next(chat_id, count)
+        
+        if not upcoming_tracks:
+            return
+        
+        # Initialize tracking sets if needed
+        if chat_id not in self._preload_tasks:
+            self._preload_tasks[chat_id] = set()
+        if chat_id not in self._preloading:
+            self._preloading[chat_id] = set()
+        
+        # Start preload task for each track that needs downloading
+        for track in upcoming_tracks:
+            # Skip if already downloaded or currently being preloaded
+            if queue.is_downloaded(track):
+                continue
+            
+            track_id = getattr(track, 'id', None)
+            if not track_id or track_id in self._preloading[chat_id]:
+                continue
+            
+            # Mark as being preloaded
+            self._preloading[chat_id].add(track_id)
+            
+            # Create background task for this track
+            task = asyncio.create_task(
+                self._preload_track(chat_id, track)
+            )
+            self._preload_tasks[chat_id].add(task)
+            
+            # Add callback to clean up task when done
+            task.add_done_callback(
+                lambda t, cid=chat_id: self._cleanup_task(cid, t)
+            )
+    
+    async def _preload_track(self, chat_id: int, track) -> None:
+        """
+        Preload a single track in the background.
+        
+        Args:
+            chat_id: The chat ID this track belongs to
+            track: Track object to preload
+        """
+        from Elevenyts import yt
+        
+        try:
+            track_id = track.id
+            is_live = getattr(track, 'is_live', False)
+            
+            # Download the track (uses existing semaphore for rate limiting)
+            file_path = await yt.download(
+                track_id,
+                is_live=is_live,
+                video=getattr(track, "video", False),
+            )
+            
+            if file_path:
+                # Update track with downloaded file path
+                track.file_path = file_path
+            else:
+                # Silent failure - track will download normally when needed
+                pass
+        
+        except asyncio.CancelledError:
+            # Task was cancelled (queue changed, playback stopped, etc.)
+            raise
+        
+        except Exception as e:
+            # Log error but don't crash - track will be downloaded when it's time to play
+            logger.error(f"❌ Error preloading track {track.id} for chat {chat_id}: {e}")
+        
+        finally:
+            # Remove from preloading set
+            if chat_id in self._preloading and track.id in self._preloading[chat_id]:
+                self._preloading[chat_id].remove(track.id)
+    
+    async def cancel_preload(self, chat_id: int) -> None:
+        """
+        Cancel all active preload tasks for a chat.
+        
+        Called when:
+        - Queue is cleared
+        - Playback is stopped
+        - Track is skipped (may need to re-prioritize)
+        
+        Args:
+            chat_id: The chat ID to cancel preloading for
+        """
+        if chat_id not in self._preload_tasks:
+            return
+        
+        tasks = self._preload_tasks[chat_id].copy()
+        
+        # Cancel all tasks
+        for task in tasks:
+            if not task.done():
+                task.cancel()
+        
+        # Wait for all tasks to finish cancellation
+        if tasks:
+            await asyncio.gather(*tasks, return_exceptions=True)
+        
+        # Clean up tracking
+        self._preload_tasks[chat_id].clear()
+        if chat_id in self._preloading:
+            self._preloading[chat_id].clear()
+    
+    def _cleanup_task(self, chat_id: int, task: asyncio.Task) -> None:
+        """
+        Clean up completed task from tracking.
+        
+        Args:
+            chat_id: The chat ID this task belongs to
+            task: The completed task to clean up
+        """
+        if chat_id in self._preload_tasks:
+            self._preload_tasks[chat_id].discard(task)
+

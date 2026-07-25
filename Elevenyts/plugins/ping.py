@@ -13,5 +13,77 @@
   # Unauthorized copying, modification, or redistribution
   # of this source code without permission is prohibited.
   # ==========================================================
-import base64
-exec(base64.b64decode("IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ29weXJpZ2h0IChjKSAyMDI2IEFydGlzdEJvdHMKIyBBbGwgUmlnaHRzIFJlc2VydmVkLgojCiMgUHJvamVjdCAgICAgIDogQXJ0aXN0Qm90cyBBUEkgVGVsZWdyYW0gTXVzaWMgQm90CiMgUG93ZXJlZCBCeSAgIDogQXJ0aXN0CiMgVHlwZSAgICAgICAgIDogQVBJIEJhc2VkIFRlbGVncmFtIE11c2ljIEJvdAojCiMgQm90ICAgICAgICAgIDogQEFydGlzdEFwaWJvdAojIENoYW5uZWwgICAgICA6IGh0dHBzOi8vdC5tZS9hcnRpc3Rib3RzCiMgR2l0SHViICAgICAgIDogaHR0cHM6Ly9naXRodWIuY29tL2VsZXZlbnl0cwojCiMgVW5hdXRob3JpemVkIGNvcHlpbmcsIG1vZGlmaWNhdGlvbiwgb3IgcmVkaXN0cmlidXRpb24KIyBvZiB0aGlzIHNvdXJjZSBjb2RlIHdpdGhvdXQgcGVybWlzc2lvbiBpcyBwcm9oaWJpdGVkLgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KaW1wb3J0IHRpbWUKaW1wb3J0IHBzdXRpbAoKZnJvbSBweXJvZ3JhbSBpbXBvcnQgZmlsdGVycywgdHlwZXMKZnJvbSBFbGV2ZW55dHMgaW1wb3J0IGFwcCwgdHVuZSwgYm9vdCwgY29uZmlnLCBsYW5nCmZyb20gRWxldmVueXRzLmhlbHBlcnMgaW1wb3J0IGJ1dHRvbnMKCgpAYXBwLm9uX21lc3NhZ2UoZmlsdGVycy5jb21tYW5kKFsiYWxpdmUiLCAicGluZyJdKSAmIH5hcHAuYmxfdXNlcnMpCkBsYW5nLmxhbmd1YWdlKCkKYXN5bmMgZGVmIF9waW5nKF8sIG06IHR5cGVzLk1lc3NhZ2UpOgogICAgIyBBdXRvLWRlbGV0ZSBjb21tYW5kIG1lc3NhZ2UKICAgIHRyeToKICAgICAgICBhd2FpdCBtLmRlbGV0ZSgpCiAgICBleGNlcHQgRXhjZXB0aW9uOgogICAgICAgIHBhc3MKICAgIAogICAgc3RhcnQgPSB0aW1lLnRpbWUoKQogICAgc2VudCA9IGF3YWl0IG0ucmVwbHlfdGV4dChtLmxhbmdbInBpbmdpbmciXSkKCiAgICBkZWYgZ2V0X3RpbWUocyk6IHJldHVybiAobGFtYmRhIHI6IChmIntyWy0xXX0sICIgaWYgclstMV1bOi00XSAhPSAiMCIgZWxzZSAiIikgKyAiOiIuam9pbihyZXZlcnNlZChyWzotMV0pKSkoCiAgICAgICAgW2Yie3Z9e3V9IiBmb3IgdiwgdSBpbiB6aXAoW3MgJSA2MCwgKHMvLzYwKSAlIDYwLCAocy8vMzYwMCkgJSAyNCwgcy8vODY0MDBdLCBbInMiLCAibSIsICJoIiwgImRheXMiXSldKQogICAgdXB0aW1lID0gZ2V0X3RpbWUoaW50KHRpbWUudGltZSgpIC0gYm9vdCkpCiAgICBsYXRlbmN5ID0gcm91bmQoKHRpbWUudGltZSgpIC0gc3RhcnQpICogMTAwMCwgMikKICAgIAogICAgIyBHZXQgc3lzdGVtIHN0YXRzCiAgICBtZW0gPSBwc3V0aWwudmlydHVhbF9tZW1vcnkoKQogICAgcmFtX3VzYWdlID0gZiJ7cm91bmQobWVtLnVzZWQgLyAoMTAyNCAqKiAzKSwgMSl9R0IgLyB7cm91bmQobWVtLnRvdGFsIC8gKDEwMjQgKiogMyksIDEpfUdCIgogICAgY3B1X3BlcmNlbnQgPSBwc3V0aWwuY3B1X3BlcmNlbnQoaW50ZXJ2YWw9MC41KQogICAgCiAgICAjIEdldCBhY3RpdmUgY2hhdHMgY291bnQKICAgIGZyb20gRWxldmVueXRzIGltcG9ydCBkYgogICAgYWN0aXZlX2NoYXRzID0gbGVuKGF3YWl0IGRiLmdldF9jaGF0cygpKQogICAgCiAgICBjYXB0aW9uX3RleHQgPSBtLmxhbmdbInBpbmdfcG9uZyJdLmZvcm1hdCgKICAgICAgICBsYXRlbmN5LAogICAgICAgIHVwdGltZSwKICAgICAgICBhd2FpdCB0dW5lLnBpbmcoKSwKICAgICAgICByYW1fdXNhZ2UsCiAgICAgICAgY3B1X3BlcmNlbnQsCiAgICAgICAgYWN0aXZlX2NoYXRzLAogICAgKQogICAgCiAgICAjIFRyeSB0byBzZW5kIHdpdGggbWVkaWEsIGZhbGxiYWNrIHRvIHRleHQgaWYgaXQgZmFpbHMKICAgIHRyeToKICAgICAgICBhd2FpdCBzZW50LmVkaXRfbWVkaWEoCiAgICAgICAgICAgIG1lZGlhPXR5cGVzLklucHV0TWVkaWFQaG90bygKICAgICAgICAgICAgICAgIG1lZGlhPWNvbmZpZy5QSU5HX0lNRywKICAgICAgICAgICAgICAgIGNhcHRpb249Y2FwdGlvbl90ZXh0CiAgICAgICAgICAgICksCiAgICAgICAgICAgIHJlcGx5X21hcmt1cD1idXR0b25zLnBpbmdfbWFya3VwKG0ubGFuZ1sic3VwcG9ydCJdKSwKICAgICAgICApCiAgICBleGNlcHQgRXhjZXB0aW9uOgogICAgICAgICMgRmFsbGJhY2sgdG8gdGV4dCBpZiBtZWRpYSBmYWlscwogICAgICAgIGF3YWl0IHNlbnQuZWRpdF90ZXh0KAogICAgICAgICAgICB0ZXh0PWNhcHRpb25fdGV4dCwKICAgICAgICAgICAgcmVwbHlfbWFya3VwPWJ1dHRvbnMucGluZ19tYXJrdXAobS5sYW5nWyJzdXBwb3J0Il0pLAogICAgICAgICkK").decode("utf-8"))
+# ==========================================================
+# Copyright (c) 2026 ArtistBots
+# All Rights Reserved.
+#
+# Project      : ArtistBots API Telegram Music Bot
+# Powered By   : Artist
+# Type         : API Based Telegram Music Bot
+#
+# Bot          : @ArtistApibot
+# Channel      : https://t.me/artistbots
+# GitHub       : https://github.com/elevenyts
+#
+# Unauthorized copying, modification, or redistribution
+# of this source code without permission is prohibited.
+# ==========================================================
+import time
+import psutil
+
+from pyrogram import filters, types
+from Elevenyts import app, tune, boot, config, lang
+from Elevenyts.helpers import buttons
+
+
+@app.on_message(filters.command(["alive", "ping"]) & ~app.bl_users)
+@lang.language()
+async def _ping(_, m: types.Message):
+    # Auto-delete command message
+    try:
+        await m.delete()
+    except Exception:
+        pass
+    
+    start = time.time()
+    sent = await m.reply_text(m.lang["pinging"])
+
+    def get_time(s): return (lambda r: (f"{r[-1]}, " if r[-1][:-4] != "0" else "") + ":".join(reversed(r[:-1])))(
+        [f"{v}{u}" for v, u in zip([s % 60, (s//60) % 60, (s//3600) % 24, s//86400], ["s", "m", "h", "days"])])
+    uptime = get_time(int(time.time() - boot))
+    latency = round((time.time() - start) * 1000, 2)
+    
+    # Get system stats
+    mem = psutil.virtual_memory()
+    ram_usage = f"{round(mem.used / (1024 ** 3), 1)}GB / {round(mem.total / (1024 ** 3), 1)}GB"
+    cpu_percent = psutil.cpu_percent(interval=0.5)
+    
+    # Get active chats count
+    from Elevenyts import db
+    active_chats = len(await db.get_chats())
+    
+    caption_text = m.lang["ping_pong"].format(
+        latency,
+        uptime,
+        await tune.ping(),
+        ram_usage,
+        cpu_percent,
+        active_chats,
+    )
+    
+    # Try to send with media, fallback to text if it fails
+    try:
+        await sent.edit_media(
+            media=types.InputMediaPhoto(
+                media=config.PING_IMG,
+                caption=caption_text
+            ),
+            reply_markup=buttons.ping_markup(m.lang["support"]),
+        )
+    except Exception:
+        # Fallback to text if media fails
+        await sent.edit_text(
+            text=caption_text,
+            reply_markup=buttons.ping_markup(m.lang["support"]),
+        )
+

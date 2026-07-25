@@ -13,5 +13,78 @@
   # Unauthorized copying, modification, or redistribution
   # of this source code without permission is prohibited.
   # ==========================================================
-import base64
-exec(base64.b64decode("IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ29weXJpZ2h0IChjKSAyMDI2IEFydGlzdEJvdHMKIyBBbGwgUmlnaHRzIFJlc2VydmVkLgojCiMgUHJvamVjdCAgICAgIDogQXJ0aXN0Qm90cyBBUEkgVGVsZWdyYW0gTXVzaWMgQm90CiMgUG93ZXJlZCBCeSAgIDogQXJ0aXN0CiMgVHlwZSAgICAgICAgIDogQVBJIEJhc2VkIFRlbGVncmFtIE11c2ljIEJvdAojCiMgQm90ICAgICAgICAgIDogQEFydGlzdEFwaWJvdAojIENoYW5uZWwgICAgICA6IGh0dHBzOi8vdC5tZS9hcnRpc3Rib3RzCiMgR2l0SHViICAgICAgIDogaHR0cHM6Ly9naXRodWIuY29tL2VsZXZlbnl0cwojCiMgVW5hdXRob3JpemVkIGNvcHlpbmcsIG1vZGlmaWNhdGlvbiwgb3IgcmVkaXN0cmlidXRpb24KIyBvZiB0aGlzIHNvdXJjZSBjb2RlIHdpdGhvdXQgcGVybWlzc2lvbiBpcyBwcm9oaWJpdGVkLgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KCmltcG9ydCBhc3luY2lvCmltcG9ydCBsb2dnaW5nCmZyb20gcHlyb2dyYW0gaW1wb3J0IGZpbHRlcnMsIHR5cGVzCmZyb20gcHlyb2dyYW0uZXJyb3JzIGltcG9ydCBDaGF0U2VuZFBsYWluRm9yYmlkZGVuLCBDaGF0V3JpdGVGb3JiaWRkZW4KCmZyb20gRWxldmVueXRzIGltcG9ydCB0dW5lLCBhcHAsIGRiLCBsYW5nCmZyb20gRWxldmVueXRzLmhlbHBlcnMgaW1wb3J0IGNhbl9tYW5hZ2VfdmMKCmxvZ2dlciA9IGxvZ2dpbmcuZ2V0TG9nZ2VyKF9fbmFtZV9fKQoKCkBhcHAub25fbWVzc2FnZShmaWx0ZXJzLmNvbW1hbmQoWyJlbmQiLCAic3RvcCIsICJjZW5kIiwgImNzdG9wIl0pICYgZmlsdGVycy5ncm91cCAmIH5hcHAuYmxfdXNlcnMpCkBsYW5nLmxhbmd1YWdlKCkKQGNhbl9tYW5hZ2VfdmMKYXN5bmMgZGVmIF9zdG9wKF8sIG06IHR5cGVzLk1lc3NhZ2UpOgogICAgdHJ5OgogICAgICAgIGF3YWl0IG0uZGVsZXRlKCkKICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgcGFzcwogICAgCiAgICBpZiBsZW4obS5jb21tYW5kKSA+IDE6CiAgICAgICAgcmV0dXJuCiAgICAKICAgICMgQ2hlY2sgZm9yIGNoYW5uZWwgcGxheSBtb2RlCiAgICBpc19jaGFubmVsID0gbS5jb21tYW5kWzBdLmxvd2VyKCkgaW4gWyJjZW5kIiwgImNzdG9wIl0KICAgIGNoYXRfaWQgPSBtLmNoYXQuaWQKICAgIAogICAgaWYgaXNfY2hhbm5lbDoKICAgICAgICBjaGFubmVsX2lkID0gYXdhaXQgZGIuZ2V0X2Ntb2RlKG0uY2hhdC5pZCkKICAgICAgICBpZiBjaGFubmVsX2lkIGlzIE5vbmU6CiAgICAgICAgICAgIHJldHVybiBhd2FpdCBtLnJlcGx5X3RleHQoIkNoYW5uZWwgcGxheSBpcyBub3QgZW5hYmxlZC4gVXNlIC9jaGFubmVscGxheSB0byBlbmFibGUuIikKICAgICAgICBjaGF0X2lkID0gY2hhbm5lbF9pZAogICAgCiAgICBpZiBub3QgYXdhaXQgZGIuZ2V0X2NhbGwoY2hhdF9pZCk6CiAgICAgICAgdHJ5OgogICAgICAgICAgICByZXR1cm4gYXdhaXQgbS5yZXBseV90ZXh0KCJOb3RoaW5nIGlzIHBsYXlpbmcuIikKICAgICAgICBleGNlcHQgKENoYXRTZW5kUGxhaW5Gb3JiaWRkZW4sIENoYXRXcml0ZUZvcmJpZGRlbik6CiAgICAgICAgICAgIGxvZ2dlci53YXJuaW5nKCJDYW5ub3Qgc2VuZCB0ZXh0IGluIHRoaXMgY2hhdCwgc2tpcHBpbmcgcmVwbHkuIikKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgICAgICBsb2dnZXIuZXJyb3IoZiJGYWlsZWQgdG8gc2VuZCByZXBseToge2V9IikKICAgICAgICAgICAgcmV0dXJuCgogICAgYXdhaXQgdHVuZS5zdG9wKGNoYXRfaWQpCiAgICB0cnk6CiAgICAgICAgc2VudF9tc2cgPSBhd2FpdCBtLnJlcGx5X3RleHQoZiJTdG9wcGVkIGJ5IHttLmZyb21fdXNlci5tZW50aW9ufSIpCiAgICBleGNlcHQgKENoYXRTZW5kUGxhaW5Gb3JiaWRkZW4sIENoYXRXcml0ZUZvcmJpZGRlbik6CiAgICAgICAgbG9nZ2VyLndhcm5pbmcoIkNhbm5vdCBzZW5kIHRleHQgaW4gdGhpcyBjaGF0LCBzdHJlYW0gc3RvcHBlZCBzaWxlbnRseS4iKQogICAgICAgIHJldHVybgogICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgIGxvZ2dlci5lcnJvcihmIkZhaWxlZCB0byBzZW5kIHN0b3AgY29uZmlybWF0aW9uOiB7ZX0iKQogICAgICAgIHJldHVybgogICAgCiAgICBhd2FpdCBhc3luY2lvLnNsZWVwKDUpCiAgICB0cnk6CiAgICAgICAgYXdhaXQgc2VudF9tc2cuZGVsZXRlKCkKICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgcGFzcwo=").decode("utf-8"))
+# ==========================================================
+# Copyright (c) 2026 ArtistBots
+# All Rights Reserved.
+#
+# Project      : ArtistBots API Telegram Music Bot
+# Powered By   : Artist
+# Type         : API Based Telegram Music Bot
+#
+# Bot          : @ArtistApibot
+# Channel      : https://t.me/artistbots
+# GitHub       : https://github.com/elevenyts
+#
+# Unauthorized copying, modification, or redistribution
+# of this source code without permission is prohibited.
+# ==========================================================
+
+import asyncio
+import logging
+from pyrogram import filters, types
+from pyrogram.errors import ChatSendPlainForbidden, ChatWriteForbidden
+
+from Elevenyts import tune, app, db, lang
+from Elevenyts.helpers import can_manage_vc
+
+logger = logging.getLogger(__name__)
+
+
+@app.on_message(filters.command(["end", "stop", "cend", "cstop"]) & filters.group & ~app.bl_users)
+@lang.language()
+@can_manage_vc
+async def _stop(_, m: types.Message):
+    try:
+        await m.delete()
+    except Exception:
+        pass
+    
+    if len(m.command) > 1:
+        return
+    
+    # Check for channel play mode
+    is_channel = m.command[0].lower() in ["cend", "cstop"]
+    chat_id = m.chat.id
+    
+    if is_channel:
+        channel_id = await db.get_cmode(m.chat.id)
+        if channel_id is None:
+            return await m.reply_text("Channel play is not enabled. Use /channelplay to enable.")
+        chat_id = channel_id
+    
+    if not await db.get_call(chat_id):
+        try:
+            return await m.reply_text("Nothing is playing.")
+        except (ChatSendPlainForbidden, ChatWriteForbidden):
+            logger.warning("Cannot send text in this chat, skipping reply.")
+            return
+        except Exception as e:
+            logger.error(f"Failed to send reply: {e}")
+            return
+
+    await tune.stop(chat_id)
+    try:
+        sent_msg = await m.reply_text(f"Stopped by {m.from_user.mention}")
+    except (ChatSendPlainForbidden, ChatWriteForbidden):
+        logger.warning("Cannot send text in this chat, stream stopped silently.")
+        return
+    except Exception as e:
+        logger.error(f"Failed to send stop confirmation: {e}")
+        return
+    
+    await asyncio.sleep(5)
+    try:
+        await sent_msg.delete()
+    except Exception:
+        pass
+

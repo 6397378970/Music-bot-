@@ -13,5 +13,69 @@
   # Unauthorized copying, modification, or redistribution
   # of this source code without permission is prohibited.
   # ==========================================================
-import base64
-exec(base64.b64decode("IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ29weXJpZ2h0IChjKSAyMDI2IEFydGlzdEJvdHMKIyBBbGwgUmlnaHRzIFJlc2VydmVkLgojCiMgUHJvamVjdCAgICAgIDogQXJ0aXN0Qm90cyBBUEkgVGVsZWdyYW0gTXVzaWMgQm90CiMgUG93ZXJlZCBCeSAgIDogQXJ0aXN0CiMgVHlwZSAgICAgICAgIDogQVBJIEJhc2VkIFRlbGVncmFtIE11c2ljIEJvdAojCiMgQm90ICAgICAgICAgIDogQEFydGlzdEFwaWJvdAojIENoYW5uZWwgICAgICA6IGh0dHBzOi8vdC5tZS9hcnRpc3Rib3RzCiMgR2l0SHViICAgICAgIDogaHR0cHM6Ly9naXRodWIuY29tL2VsZXZlbnl0cwojCiMgVW5hdXRob3JpemVkIGNvcHlpbmcsIG1vZGlmaWNhdGlvbiwgb3IgcmVkaXN0cmlidXRpb24KIyBvZiB0aGlzIHNvdXJjZSBjb2RlIHdpdGhvdXQgcGVybWlzc2lvbiBpcyBwcm9oaWJpdGVkLgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KCmltcG9ydCBsb2dnaW5nCmZyb20gcHlyb2dyYW0gaW1wb3J0IGZpbHRlcnMsIHR5cGVzCmZyb20gcHlyb2dyYW0uZXJyb3JzIGltcG9ydCBDaGF0U2VuZFBsYWluRm9yYmlkZGVuLCBDaGF0V3JpdGVGb3JiaWRkZW4KCmZyb20gRWxldmVueXRzIGltcG9ydCB0dW5lLCBhcHAsIGRiLCBsYW5nCmZyb20gRWxldmVueXRzLmhlbHBlcnMgaW1wb3J0IGJ1dHRvbnMsIGNhbl9tYW5hZ2VfdmMKCmxvZ2dlciA9IGxvZ2dpbmcuZ2V0TG9nZ2VyKF9fbmFtZV9fKQoKCkBhcHAub25fbWVzc2FnZShmaWx0ZXJzLmNvbW1hbmQoWyJyZXN1bWUiLCAiY3Jlc3VtZSJdKSAmIGZpbHRlcnMuZ3JvdXAgJiB+YXBwLmJsX3VzZXJzKQpAbGFuZy5sYW5ndWFnZSgpCkBjYW5fbWFuYWdlX3ZjCmFzeW5jIGRlZiBfcmVzdW1lKF8sIG06IHR5cGVzLk1lc3NhZ2UpOgogICAgdHJ5OgogICAgICAgIGF3YWl0IG0uZGVsZXRlKCkKICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgcGFzcwogICAgCiAgICAjIENoZWNrIGZvciBjaGFubmVsIHBsYXkgbW9kZQogICAgaXNfY2hhbm5lbCA9IG0uY29tbWFuZFswXS5sb3dlcigpID09ICJjcmVzdW1lIgogICAgY2hhdF9pZCA9IG0uY2hhdC5pZAogICAgCiAgICBpZiBpc19jaGFubmVsOgogICAgICAgIGNoYW5uZWxfaWQgPSBhd2FpdCBkYi5nZXRfY21vZGUobS5jaGF0LmlkKQogICAgICAgIGlmIGNoYW5uZWxfaWQgaXMgTm9uZToKICAgICAgICAgICAgcmV0dXJuIGF3YWl0IG0ucmVwbHlfdGV4dCgiQ2hhbm5lbCBwbGF5IGlzIG5vdCBlbmFibGVkLiBVc2UgL2NoYW5uZWxwbGF5IHRvIGVuYWJsZS4iKQogICAgICAgIGNoYXRfaWQgPSBjaGFubmVsX2lkCiAgICAKICAgIGlmIG5vdCBhd2FpdCBkYi5nZXRfY2FsbChjaGF0X2lkKToKICAgICAgICB0cnk6CiAgICAgICAgICAgIHJldHVybiBhd2FpdCBtLnJlcGx5X3RleHQoIk5vdGhpbmcgaXMgcGxheWluZy4iKQogICAgICAgIGV4Y2VwdCAoQ2hhdFNlbmRQbGFpbkZvcmJpZGRlbiwgQ2hhdFdyaXRlRm9yYmlkZGVuKToKICAgICAgICAgICAgcmV0dXJuCgogICAgaWYgYXdhaXQgZGIucGxheWluZyhjaGF0X2lkKToKICAgICAgICB0cnk6CiAgICAgICAgICAgIHJldHVybiBhd2FpdCBtLnJlcGx5X3RleHQoIlBsYXliYWNrIGlzIGFscmVhZHkgcGxheWluZy4iKQogICAgICAgIGV4Y2VwdCAoQ2hhdFNlbmRQbGFpbkZvcmJpZGRlbiwgQ2hhdFdyaXRlRm9yYmlkZGVuKToKICAgICAgICAgICAgcmV0dXJuCgogICAgYXdhaXQgdHVuZS5yZXN1bWUoY2hhdF9pZCkKICAgIHRyeToKICAgICAgICBhd2FpdCBtLnJlcGx5X3RleHQoCiAgICAgICAgICAgIGYiUmVzdW1lZCBieSB7bS5mcm9tX3VzZXIubWVudGlvbn0iLAogICAgICAgICAgICByZXBseV9tYXJrdXA9YnV0dG9ucy5jb250cm9scyhjaGF0X2lkKSwKICAgICAgICApCiAgICBleGNlcHQgKENoYXRTZW5kUGxhaW5Gb3JiaWRkZW4sIENoYXRXcml0ZUZvcmJpZGRlbik6CiAgICAgICAgbG9nZ2VyLndhcm5pbmcoIkNhbm5vdCBzZW5kIHRleHQgaW4gbWVkaWEtb25seSBjaGF0IikK").decode("utf-8"))
+# ==========================================================
+# Copyright (c) 2026 ArtistBots
+# All Rights Reserved.
+#
+# Project      : ArtistBots API Telegram Music Bot
+# Powered By   : Artist
+# Type         : API Based Telegram Music Bot
+#
+# Bot          : @ArtistApibot
+# Channel      : https://t.me/artistbots
+# GitHub       : https://github.com/elevenyts
+#
+# Unauthorized copying, modification, or redistribution
+# of this source code without permission is prohibited.
+# ==========================================================
+
+import logging
+from pyrogram import filters, types
+from pyrogram.errors import ChatSendPlainForbidden, ChatWriteForbidden
+
+from Elevenyts import tune, app, db, lang
+from Elevenyts.helpers import buttons, can_manage_vc
+
+logger = logging.getLogger(__name__)
+
+
+@app.on_message(filters.command(["resume", "cresume"]) & filters.group & ~app.bl_users)
+@lang.language()
+@can_manage_vc
+async def _resume(_, m: types.Message):
+    try:
+        await m.delete()
+    except Exception:
+        pass
+    
+    # Check for channel play mode
+    is_channel = m.command[0].lower() == "cresume"
+    chat_id = m.chat.id
+    
+    if is_channel:
+        channel_id = await db.get_cmode(m.chat.id)
+        if channel_id is None:
+            return await m.reply_text("Channel play is not enabled. Use /channelplay to enable.")
+        chat_id = channel_id
+    
+    if not await db.get_call(chat_id):
+        try:
+            return await m.reply_text("Nothing is playing.")
+        except (ChatSendPlainForbidden, ChatWriteForbidden):
+            return
+
+    if await db.playing(chat_id):
+        try:
+            return await m.reply_text("Playback is already playing.")
+        except (ChatSendPlainForbidden, ChatWriteForbidden):
+            return
+
+    await tune.resume(chat_id)
+    try:
+        await m.reply_text(
+            f"Resumed by {m.from_user.mention}",
+            reply_markup=buttons.controls(chat_id),
+        )
+    except (ChatSendPlainForbidden, ChatWriteForbidden):
+        logger.warning("Cannot send text in media-only chat")
+

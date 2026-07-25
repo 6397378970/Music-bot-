@@ -13,5 +13,114 @@
   # Unauthorized copying, modification, or redistribution
   # of this source code without permission is prohibited.
   # ==========================================================
-import base64
-exec(base64.b64decode("IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ29weXJpZ2h0IChjKSAyMDI2IEFydGlzdEJvdHMKIyBBbGwgUmlnaHRzIFJlc2VydmVkLgojCiMgUHJvamVjdCAgICAgIDogQXJ0aXN0Qm90cyBBUEkgVGVsZWdyYW0gTXVzaWMgQm90CiMgUG93ZXJlZCBCeSAgIDogQXJ0aXN0CiMgVHlwZSAgICAgICAgIDogQVBJIEJhc2VkIFRlbGVncmFtIE11c2ljIEJvdAojCiMgQm90ICAgICAgICAgIDogQEFydGlzdEFwaWJvdAojIENoYW5uZWwgICAgICA6IGh0dHBzOi8vdC5tZS9hcnRpc3Rib3RzCiMgR2l0SHViICAgICAgIDogaHR0cHM6Ly9naXRodWIuY29tL2VsZXZlbnl0cwojCiMgVW5hdXRob3JpemVkIGNvcHlpbmcsIG1vZGlmaWNhdGlvbiwgb3IgcmVkaXN0cmlidXRpb24KIyBvZiB0aGlzIHNvdXJjZSBjb2RlIHdpdGhvdXQgcGVybWlzc2lvbiBpcyBwcm9oaWJpdGVkLgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KaW1wb3J0IHJlCmZyb20gcHlyb2dyYW0gaW1wb3J0IGZpbHRlcnMsIHR5cGVzLCBlbnVtcwoKZnJvbSBFbGV2ZW55dHMgaW1wb3J0IGFwcCwgY29uZmlnCgoKIyBQYXR0ZXJuIHRvIGRldGVjdCBhZG1pbiB0cmlnZ2VycwpUUklHR0VSX1BBVFRFUk4gPSByZS5jb21waWxlKHIiKD9pKShcLnxAfFwvKWFkbWluIikKCgpAYXBwLm9uX21lc3NhZ2UoZmlsdGVycy5ncm91cCAmIGZpbHRlcnMucmVnZXgociIoP2kpKFwufEB8XC8pYWRtaW4iKSkKYXN5bmMgZGVmIG1lbnRpb25fYWRtaW5zKF8sIG1lc3NhZ2U6IHR5cGVzLk1lc3NhZ2UpOgogICAgIiIiCiAgICBNZW50aW9uIGFsbCBncm91cCBhZG1pbnMgd2hlbiBzb21lb25lIHR5cGVzIEBhZG1pbiwgLmFkbWluLCBvciAvYWRtaW4KICAgICIiIgogICAgdHJ5OgogICAgICAgICMgRXh0cmFjdCB0aGUgbWVzc2FnZSB3aXRob3V0IHRoZSB0cmlnZ2VyCiAgICAgICAgbWVzc2FnZV90ZXh0ID0gbWVzc2FnZS50ZXh0IG9yIG1lc3NhZ2UuY2FwdGlvbiBvciAiIgogICAgICAgIGNsZWFuZWRfdGV4dCA9IFRSSUdHRVJfUEFUVEVSTi5zdWIoIiIsIG1lc3NhZ2VfdGV4dCkuc3RyaXAoKQoKICAgICAgICAjIEdldCB1c2VyIGluZm8gKGhhbmRsZSBhbm9ueW1vdXMgYWRtaW5zKQogICAgICAgIHNlbmRlciA9IG1lc3NhZ2UuZnJvbV91c2VyCiAgICAgICAgaWYgc2VuZGVyOgogICAgICAgICAgICB1c2VyX2Rpc3BsYXkgPSBmIntzZW5kZXIuZmlyc3RfbmFtZX0iCiAgICAgICAgICAgIGlmIHNlbmRlci51c2VybmFtZToKICAgICAgICAgICAgICAgIHVzZXJfZGlzcGxheSArPSBmIiAoQHtzZW5kZXIudXNlcm5hbWV9KSIKICAgICAgICBlbHNlOgogICAgICAgICAgICAjIEFub255bW91cyBhZG1pbiBvciBjaGFubmVsCiAgICAgICAgICAgIHVzZXJfZGlzcGxheSA9ICLhtIDJtOG0j8m0yo/htI3htI/htJzqnLEg4bSA4bSF4bSNyarJtCIKCiAgICAgICAgIyBCdWlsZCBmb3JtYXR0ZWQgcmVwbHkgbWVzc2FnZQogICAgICAgIGlmIGNsZWFuZWRfdGV4dDoKICAgICAgICAgICAgcmVwbHlfbXNnID0gKAogICAgICAgICAgICAgICAgZiI8YmxvY2txdW90ZT48Yj48aT5cIntjbGVhbmVkX3RleHR9XCI8L2k+PC9iPlxuIgogICAgICAgICAgICAgICAgZiLKgOG0h+G0mOG0j8qA4bSb4bSH4bSFIMqZyo86IHt1c2VyX2Rpc3BsYXl9IPCflJQ8L2Jsb2NrcXVvdGU+XG5cbiIKICAgICAgICAgICAgKQogICAgICAgIGVsc2U6CiAgICAgICAgICAgIHJlcGx5X21zZyA9ICgKICAgICAgICAgICAgICAgIGYiPGJsb2NrcXVvdGU+yoDhtIfhtJjhtI/KgOG0m+G0h+G0hSDKmcqPOiB7dXNlcl9kaXNwbGF5fSDwn5SUPC9ibG9ja3F1b3RlPlxuXG4iCiAgICAgICAgICAgICkKCiAgICAgICAgIyBHZXQgYWxsIGFkbWluaXN0cmF0b3JzCiAgICAgICAgbWVudGlvbnMgPSBbXQogICAgICAgIHRyeToKICAgICAgICAgICAgYXN5bmMgZm9yIGFkbWluIGluIGFwcC5nZXRfY2hhdF9tZW1iZXJzKAogICAgICAgICAgICAgICAgbWVzc2FnZS5jaGF0LmlkLAogICAgICAgICAgICAgICAgZmlsdGVyPWVudW1zLkNoYXRNZW1iZXJzRmlsdGVyLkFETUlOSVNUUkFUT1JTCiAgICAgICAgICAgICk6CiAgICAgICAgICAgICAgICB1c2VyID0gYWRtaW4udXNlcgoKICAgICAgICAgICAgICAgICMgU2tpcCBib3RzIGFuZCBkZWxldGVkIGFjY291bnRzCiAgICAgICAgICAgICAgICBpZiB1c2VyLmlzX2JvdCBvciB1c2VyLmlzX2RlbGV0ZWQ6CiAgICAgICAgICAgICAgICAgICAgY29udGludWUKCiAgICAgICAgICAgICAgICAjIFNraXAgYWRtaW5zIHdobyBoYXZlICJSZW1haW4gQW5vbnltb3VzIiBlbmFibGVkCiAgICAgICAgICAgICAgICAjIENoZWNrIHByaXZpbGVnZXMgLSBpZiBpc19hbm9ueW1vdXMgcHJpdmlsZWdlIGlzIFRydWUsIHNraXAgdGhlbQogICAgICAgICAgICAgICAgaWYgaGFzYXR0cihhZG1pbiwgJ3ByaXZpbGVnZXMnKSBhbmQgYWRtaW4ucHJpdmlsZWdlczoKICAgICAgICAgICAgICAgICAgICBpZiBnZXRhdHRyKGFkbWluLnByaXZpbGVnZXMsICdpc19hbm9ueW1vdXMnLCBGYWxzZSk6CiAgICAgICAgICAgICAgICAgICAgICAgIGNvbnRpbnVlCgogICAgICAgICAgICAgICAgIyBTa2lwIHVzZXJuYW1lcyBpbiB0aGUgZXhjbHVkZWQgbGlzdAogICAgICAgICAgICAgICAgaWYgdXNlci51c2VybmFtZSBhbmQgdXNlci51c2VybmFtZS5sb3dlcigpIGluIFt1Lmxvd2VyKCkgZm9yIHUgaW4gY29uZmlnLkVYQ0xVREVEX1VTRVJOQU1FU106CiAgICAgICAgICAgICAgICAgICAgY29udGludWUKCiAgICAgICAgICAgICAgICAjIEFkZCBtZW50aW9uCiAgICAgICAgICAgICAgICBpZiB1c2VyLnVzZXJuYW1lOgogICAgICAgICAgICAgICAgICAgIG1lbnRpb25zLmFwcGVuZChmIkB7dXNlci51c2VybmFtZX0iKQogICAgICAgICAgICAgICAgZWxzZToKICAgICAgICAgICAgICAgICAgICAjIFVzZSBIVE1MIGxpbmsgZm9ybWF0IHRvIG1lbnRpb24gdXNlcnMgd2l0aG91dCB1c2VybmFtZQogICAgICAgICAgICAgICAgICAgIG1lbnRpb25zLmFwcGVuZCgKICAgICAgICAgICAgICAgICAgICAgICAgZiI8YSBocmVmPSd0ZzovL3VzZXI/aWQ9e3VzZXIuaWR9Jz57dXNlci5maXJzdF9uYW1lfTwvYT4iKQogICAgICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZToKICAgICAgICAgICAgYXdhaXQgbWVzc2FnZS5yZXBseV90ZXh0KAogICAgICAgICAgICAgICAgIjxibG9ja3F1b3RlPuKdjCBGYWlsZWQgdG8gZmV0Y2ggYWRtaW5pc3RyYXRvcnMuIE1ha2Ugc3VyZSB0aGUgYm90IGhhcyBwcm9wZXIgcGVybWlzc2lvbnMuPC9ibG9ja3F1b3RlPiIKICAgICAgICAgICAgKQogICAgICAgICAgICByZXR1cm4KCiAgICAgICAgaWYgbWVudGlvbnM6CiAgICAgICAgICAgIHJlcGx5X21zZyArPSAiLCAiLmpvaW4obWVudGlvbnMpCiAgICAgICAgZWxzZToKICAgICAgICAgICAgcmVwbHlfbXNnICs9ICI8aT5ObyB2aXNpYmxlIGh1bWFuIGFkbWlucyBmb3VuZCB0byBtZW50aW9uLjwvaT4iCgogICAgICAgICMgU2VuZCB0aGUgcmVwbHkKICAgICAgICB0cnk6CiAgICAgICAgICAgIGF3YWl0IG1lc3NhZ2UucmVwbHlfdGV4dChyZXBseV9tc2csIGRpc2FibGVfd2ViX3BhZ2VfcHJldmlldz1UcnVlKQogICAgICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZToKICAgICAgICAgICAgYXdhaXQgbWVzc2FnZS5yZXBseV90ZXh0KAogICAgICAgICAgICAgICAgIjxibG9ja3F1b3RlPuKdjCBGYWlsZWQgdG8gc2VuZCBhZG1pbiBub3RpZmljYXRpb24uPC9ibG9ja3F1b3RlPiIKICAgICAgICAgICAgKQogICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgICMgQ2F0Y2ggYWxsIGV4Y2VwdGlvbnMgdG8gcHJldmVudCBib3QgY3Jhc2hlcwogICAgICAgIHRyeToKICAgICAgICAgICAgYXdhaXQgbWVzc2FnZS5yZXBseV90ZXh0KCI8YmxvY2txdW90ZT7inYwgQW4gZXJyb3Igb2NjdXJyZWQgd2hpbGUgcHJvY2Vzc2luZyBhZG1pbiBtZW50aW9uLjwvYmxvY2txdW90ZT4iKQogICAgICAgIGV4Y2VwdDoKICAgICAgICAgICAgcGFzcyAgIyBTaWxlbnQgZmFpbHVyZSBpZiByZXBseSBmYWlscwo=").decode("utf-8"))
+# ==========================================================
+# Copyright (c) 2026 ArtistBots
+# All Rights Reserved.
+#
+# Project      : ArtistBots API Telegram Music Bot
+# Powered By   : Artist
+# Type         : API Based Telegram Music Bot
+#
+# Bot          : @ArtistApibot
+# Channel      : https://t.me/artistbots
+# GitHub       : https://github.com/elevenyts
+#
+# Unauthorized copying, modification, or redistribution
+# of this source code without permission is prohibited.
+# ==========================================================
+import re
+from pyrogram import filters, types, enums
+
+from Elevenyts import app, config
+
+
+# Pattern to detect admin triggers
+TRIGGER_PATTERN = re.compile(r"(?i)(\.|@|\/)admin")
+
+
+@app.on_message(filters.group & filters.regex(r"(?i)(\.|@|\/)admin"))
+async def mention_admins(_, message: types.Message):
+    """
+    Mention all group admins when someone types @admin, .admin, or /admin
+    """
+    try:
+        # Extract the message without the trigger
+        message_text = message.text or message.caption or ""
+        cleaned_text = TRIGGER_PATTERN.sub("", message_text).strip()
+
+        # Get user info (handle anonymous admins)
+        sender = message.from_user
+        if sender:
+            user_display = f"{sender.first_name}"
+            if sender.username:
+                user_display += f" (@{sender.username})"
+        else:
+            # Anonymous admin or channel
+            user_display = "ᴀɴᴏɴʏᴍᴏᴜꜱ ᴀᴅᴍɪɴ"
+
+        # Build formatted reply message
+        if cleaned_text:
+            reply_msg = (
+                f"<blockquote><b><i>\"{cleaned_text}\"</i></b>\n"
+                f"ʀᴇᴘᴏʀᴛᴇᴅ ʙʏ: {user_display} 🔔</blockquote>\n\n"
+            )
+        else:
+            reply_msg = (
+                f"<blockquote>ʀᴇᴘᴏʀᴛᴇᴅ ʙʏ: {user_display} 🔔</blockquote>\n\n"
+            )
+
+        # Get all administrators
+        mentions = []
+        try:
+            async for admin in app.get_chat_members(
+                message.chat.id,
+                filter=enums.ChatMembersFilter.ADMINISTRATORS
+            ):
+                user = admin.user
+
+                # Skip bots and deleted accounts
+                if user.is_bot or user.is_deleted:
+                    continue
+
+                # Skip admins who have "Remain Anonymous" enabled
+                # Check privileges - if is_anonymous privilege is True, skip them
+                if hasattr(admin, 'privileges') and admin.privileges:
+                    if getattr(admin.privileges, 'is_anonymous', False):
+                        continue
+
+                # Skip usernames in the excluded list
+                if user.username and user.username.lower() in [u.lower() for u in config.EXCLUDED_USERNAMES]:
+                    continue
+
+                # Add mention
+                if user.username:
+                    mentions.append(f"@{user.username}")
+                else:
+                    # Use HTML link format to mention users without username
+                    mentions.append(
+                        f"<a href='tg://user?id={user.id}'>{user.first_name}</a>")
+        except Exception as e:
+            await message.reply_text(
+                "<blockquote>❌ Failed to fetch administrators. Make sure the bot has proper permissions.</blockquote>"
+            )
+            return
+
+        if mentions:
+            reply_msg += ", ".join(mentions)
+        else:
+            reply_msg += "<i>No visible human admins found to mention.</i>"
+
+        # Send the reply
+        try:
+            await message.reply_text(reply_msg, disable_web_page_preview=True)
+        except Exception as e:
+            await message.reply_text(
+                "<blockquote>❌ Failed to send admin notification.</blockquote>"
+            )
+    except Exception as e:
+        # Catch all exceptions to prevent bot crashes
+        try:
+            await message.reply_text("<blockquote>❌ An error occurred while processing admin mention.</blockquote>")
+        except:
+            pass  # Silent failure if reply fails
+

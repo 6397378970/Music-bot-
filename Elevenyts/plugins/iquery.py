@@ -13,5 +13,73 @@
   # Unauthorized copying, modification, or redistribution
   # of this source code without permission is prohibited.
   # ==========================================================
-import base64
-exec(base64.b64decode("IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ29weXJpZ2h0IChjKSAyMDI2IEFydGlzdEJvdHMKIyBBbGwgUmlnaHRzIFJlc2VydmVkLgojCiMgUHJvamVjdCAgICAgIDogQXJ0aXN0Qm90cyBBUEkgVGVsZWdyYW0gTXVzaWMgQm90CiMgUG93ZXJlZCBCeSAgIDogQXJ0aXN0CiMgVHlwZSAgICAgICAgIDogQVBJIEJhc2VkIFRlbGVncmFtIE11c2ljIEJvdAojCiMgQm90ICAgICAgICAgIDogQEFydGlzdEFwaWJvdAojIENoYW5uZWwgICAgICA6IGh0dHBzOi8vdC5tZS9hcnRpc3Rib3RzCiMgR2l0SHViICAgICAgIDogaHR0cHM6Ly9naXRodWIuY29tL2VsZXZlbnl0cwojCiMgVW5hdXRob3JpemVkIGNvcHlpbmcsIG1vZGlmaWNhdGlvbiwgb3IgcmVkaXN0cmlidXRpb24KIyBvZiB0aGlzIHNvdXJjZSBjb2RlIHdpdGhvdXQgcGVybWlzc2lvbiBpcyBwcm9oaWJpdGVkLgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KZnJvbSBweV95dCBpbXBvcnQgVmlkZW9zU2VhcmNoCmZyb20gcHlyb2dyYW0gaW1wb3J0IHR5cGVzCgpmcm9tIEVsZXZlbnl0cyBpbXBvcnQgYXBwCmZyb20gRWxldmVueXRzLmhlbHBlcnMgaW1wb3J0IGJ1dHRvbnMKCgpAYXBwLm9uX2lubGluZV9xdWVyeSh+YXBwLmJsX3VzZXJzKQphc3luYyBkZWYgaW5saW5lX3F1ZXJ5X2hhbmRsZXIoXywgcXVlcnk6IHR5cGVzLklubGluZVF1ZXJ5KToKICAgIHRleHQgPSBxdWVyeS5xdWVyeS5zdHJpcCgpLmxvd2VyKCkKICAgIGlmIG5vdCB0ZXh0OgogICAgICAgIHJldHVybgoKICAgIHRyeToKICAgICAgICBzZWFyY2ggPSBWaWRlb3NTZWFyY2godGV4dCwgbGltaXQ9MTUpCiAgICAgICAgcmVzdWx0cyA9IChhd2FpdCBzZWFyY2gubmV4dCgpKS5nZXQoInJlc3VsdCIsIFtdKQoKICAgICAgICBhbnN3ZXJzID0gW10KICAgICAgICBmb3IgdmlkZW8gaW4gcmVzdWx0czoKICAgICAgICAgICAgdGl0bGUgPSB2aWRlby5nZXQoInRpdGxlIiwgIlVua25vd24gVGl0bGUiKS50aXRsZSgpCiAgICAgICAgICAgIGR1cmF0aW9uID0gdmlkZW8uZ2V0KCJkdXJhdGlvbiIsICJOL0EiKQogICAgICAgICAgICB2aWV3cyA9IHZpZGVvLmdldCgidmlld0NvdW50Iiwge30pLmdldCgic2hvcnQiLCAiTi9BIikKICAgICAgICAgICAgdGh1bWJuYWlsID0gdmlkZW8uZ2V0KCJ0aHVtYm5haWxzIiwgW3t9XSlbCiAgICAgICAgICAgICAgICAwXS5nZXQoInVybCIsICIiKS5zcGxpdCgiPyIpWzBdCiAgICAgICAgICAgIGNoYW5uZWwgPSB2aWRlby5nZXQoImNoYW5uZWwiLCB7fSkuZ2V0KCJuYW1lIiwgIlVua25vd24gQ2hhbm5lbCIpCiAgICAgICAgICAgIGNoYW5uZWxsaW5rID0gdmlkZW8uZ2V0KCJjaGFubmVsIiwge30pLmdldCgKICAgICAgICAgICAgICAgICJsaW5rIiwgImh0dHBzOi8veW91dHViZS5jb20iKQogICAgICAgICAgICBsaW5rID0gdmlkZW8uZ2V0KCJsaW5rIiwgImh0dHBzOi8veW91dHViZS5jb20iKQogICAgICAgICAgICBwdWJsaXNoZWQgPSB2aWRlby5nZXQoInB1Ymxpc2hlZFRpbWUiLCAiTi9BIikKCiAgICAgICAgICAgIGRlc2NyaXB0aW9uID0gZiJ7dmlld3N9IHwge2R1cmF0aW9ufSB8IHtjaGFubmVsfSB8IHtwdWJsaXNoZWR9IgogICAgICAgICAgICBjYXB0aW9uID0gKAogICAgICAgICAgICAgICAgZiI8Yj5UaXRsZTo8L2I+IDxhIGhyZWY9J3tsaW5rfSc+e3RpdGxlWzoyNTBdfTwvYT5cblxuIgogICAgICAgICAgICAgICAgZiI8Yj5EdXJhdGlvbjo8L2I+IHtkdXJhdGlvbn1cbiIKICAgICAgICAgICAgICAgIGYiPGI+Vmlld3M6PC9iPiA8Y29kZT57dmlld3N9PC9jb2RlPlxuIgogICAgICAgICAgICAgICAgZiI8Yj5DaGFubmVsOjwvYj4gPGEgaHJlZj0ne2NoYW5uZWxsaW5rfSc+e2NoYW5uZWx9PC9hPlxuIgogICAgICAgICAgICAgICAgZiI8Yj5QdWJsaXNoZWQ6PC9iPiB7cHVibGlzaGVkfVxuXG4iCiAgICAgICAgICAgICAgICBmIjx1PjxpPkZldGNoZWQgYnkge2FwcC5uYW1lfTwvaT48L3U+IgogICAgICAgICAgICApCgogICAgICAgICAgICBhbnN3ZXJzLmFwcGVuZCgKICAgICAgICAgICAgICAgIHR5cGVzLklubGluZVF1ZXJ5UmVzdWx0UGhvdG8oCiAgICAgICAgICAgICAgICAgICAgcGhvdG9fdXJsPXRodW1ibmFpbCwKICAgICAgICAgICAgICAgICAgICB0aXRsZT10aXRsZSwKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbj1kZXNjcmlwdGlvbiwKICAgICAgICAgICAgICAgICAgICBjYXB0aW9uPWNhcHRpb24sCiAgICAgICAgICAgICAgICAgICAgcmVwbHlfbWFya3VwPWJ1dHRvbnMueXRfa2V5KGxpbmspLAogICAgICAgICAgICAgICAgKQogICAgICAgICAgICApCgogICAgICAgIGlmIGFuc3dlcnM6CiAgICAgICAgICAgIGF3YWl0IGFwcC5hbnN3ZXJfaW5saW5lX3F1ZXJ5KHF1ZXJ5LmlkLCByZXN1bHRzPWFuc3dlcnMsIGNhY2hlX3RpbWU9NSkKICAgIGV4Y2VwdDoKICAgICAgICBwYXNzCg==").decode("utf-8"))
+# ==========================================================
+# Copyright (c) 2026 ArtistBots
+# All Rights Reserved.
+#
+# Project      : ArtistBots API Telegram Music Bot
+# Powered By   : Artist
+# Type         : API Based Telegram Music Bot
+#
+# Bot          : @ArtistApibot
+# Channel      : https://t.me/artistbots
+# GitHub       : https://github.com/elevenyts
+#
+# Unauthorized copying, modification, or redistribution
+# of this source code without permission is prohibited.
+# ==========================================================
+from py_yt import VideosSearch
+from pyrogram import types
+
+from Elevenyts import app
+from Elevenyts.helpers import buttons
+
+
+@app.on_inline_query(~app.bl_users)
+async def inline_query_handler(_, query: types.InlineQuery):
+    text = query.query.strip().lower()
+    if not text:
+        return
+
+    try:
+        search = VideosSearch(text, limit=15)
+        results = (await search.next()).get("result", [])
+
+        answers = []
+        for video in results:
+            title = video.get("title", "Unknown Title").title()
+            duration = video.get("duration", "N/A")
+            views = video.get("viewCount", {}).get("short", "N/A")
+            thumbnail = video.get("thumbnails", [{}])[
+                0].get("url", "").split("?")[0]
+            channel = video.get("channel", {}).get("name", "Unknown Channel")
+            channellink = video.get("channel", {}).get(
+                "link", "https://youtube.com")
+            link = video.get("link", "https://youtube.com")
+            published = video.get("publishedTime", "N/A")
+
+            description = f"{views} | {duration} | {channel} | {published}"
+            caption = (
+                f"<b>Title:</b> <a href='{link}'>{title[:250]}</a>\n\n"
+                f"<b>Duration:</b> {duration}\n"
+                f"<b>Views:</b> <code>{views}</code>\n"
+                f"<b>Channel:</b> <a href='{channellink}'>{channel}</a>\n"
+                f"<b>Published:</b> {published}\n\n"
+                f"<u><i>Fetched by {app.name}</i></u>"
+            )
+
+            answers.append(
+                types.InlineQueryResultPhoto(
+                    photo_url=thumbnail,
+                    title=title,
+                    description=description,
+                    caption=caption,
+                    reply_markup=buttons.yt_key(link),
+                )
+            )
+
+        if answers:
+            await app.answer_inline_query(query.id, results=answers, cache_time=5)
+    except:
+        pass
+

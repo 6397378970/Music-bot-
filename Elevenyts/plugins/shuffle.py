@@ -13,5 +13,66 @@
   # Unauthorized copying, modification, or redistribution
   # of this source code without permission is prohibited.
   # ==========================================================
-import base64
-exec(base64.b64decode("IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ29weXJpZ2h0IChjKSAyMDI2IEFydGlzdEJvdHMKIyBBbGwgUmlnaHRzIFJlc2VydmVkLgojCiMgUHJvamVjdCAgICAgIDogQXJ0aXN0Qm90cyBBUEkgVGVsZWdyYW0gTXVzaWMgQm90CiMgUG93ZXJlZCBCeSAgIDogQXJ0aXN0CiMgVHlwZSAgICAgICAgIDogQVBJIEJhc2VkIFRlbGVncmFtIE11c2ljIEJvdAojCiMgQm90ICAgICAgICAgIDogQEFydGlzdEFwaWJvdAojIENoYW5uZWwgICAgICA6IGh0dHBzOi8vdC5tZS9hcnRpc3Rib3RzCiMgR2l0SHViICAgICAgIDogaHR0cHM6Ly9naXRodWIuY29tL2VsZXZlbnl0cwojCiMgVW5hdXRob3JpemVkIGNvcHlpbmcsIG1vZGlmaWNhdGlvbiwgb3IgcmVkaXN0cmlidXRpb24KIyBvZiB0aGlzIHNvdXJjZSBjb2RlIHdpdGhvdXQgcGVybWlzc2lvbiBpcyBwcm9oaWJpdGVkLgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KCmltcG9ydCByYW5kb20KZnJvbSBweXJvZ3JhbSBpbXBvcnQgZmlsdGVycywgdHlwZXMKCmZyb20gRWxldmVueXRzIGltcG9ydCBhcHAsIGRiLCBsYW5nLCBxdWV1ZQpmcm9tIEVsZXZlbnl0cy5oZWxwZXJzIGltcG9ydCBjYW5fbWFuYWdlX3ZjCgoKQGFwcC5vbl9tZXNzYWdlKGZpbHRlcnMuY29tbWFuZChbInNodWZmbGUiLCAiY3NodWZmbGUiXSkgJiBmaWx0ZXJzLmdyb3VwICYgfmFwcC5ibF91c2VycykKQGxhbmcubGFuZ3VhZ2UoKQpAY2FuX21hbmFnZV92Ywphc3luYyBkZWYgX3NodWZmbGUoXywgbTogdHlwZXMuTWVzc2FnZSk6CiAgICB0cnk6CiAgICAgICAgYXdhaXQgbS5kZWxldGUoKQogICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICBwYXNzCiAgICAKICAgICMgQ2hlY2sgZm9yIGNoYW5uZWwgcGxheSBtb2RlCiAgICBpc19jaGFubmVsID0gbS5jb21tYW5kWzBdLmxvd2VyKCkgPT0gImNzaHVmZmxlIgogICAgY2hhdF9pZCA9IG0uY2hhdC5pZAogICAgCiAgICBpZiBpc19jaGFubmVsOgogICAgICAgIGNoYW5uZWxfaWQgPSBhd2FpdCBkYi5nZXRfY21vZGUobS5jaGF0LmlkKQogICAgICAgIGlmIGNoYW5uZWxfaWQgaXMgTm9uZToKICAgICAgICAgICAgcmV0dXJuIGF3YWl0IG0ucmVwbHlfdGV4dCgiQ2hhbm5lbCBwbGF5IGlzIG5vdCBlbmFibGVkLiBVc2UgL2NoYW5uZWxwbGF5IHRvIGVuYWJsZS4iKQogICAgICAgIGNoYXRfaWQgPSBjaGFubmVsX2lkCiAgICAKICAgIGl0ZW1zID0gcXVldWUuZ2V0X2FsbChjaGF0X2lkKQogICAgCiAgICBpZiBub3QgaXRlbXMgb3IgbGVuKGl0ZW1zKSA8PSAxOgogICAgICAgIHJldHVybiBhd2FpdCBtLnJlcGx5X3RleHQoIlF1ZXVlIGlzIGVtcHR5IG9yIGhhcyBvbmx5IG9uZSB0cmFjayEiKQogICAgCiAgICBjdXJyZW50ID0gaXRlbXNbMF0gaWYgaXRlbXMgZWxzZSBOb25lCiAgICByZW1haW5pbmcgPSBpdGVtc1sxOl0gaWYgbGVuKGl0ZW1zKSA+IDEgZWxzZSBbXQogICAgCiAgICBpZiBub3QgcmVtYWluaW5nOgogICAgICAgIHJldHVybiBhd2FpdCBtLnJlcGx5X3RleHQoIk5vIHRyYWNrcyB0byBzaHVmZmxlISIpCiAgICAKICAgIHJhbmRvbS5zaHVmZmxlKHJlbWFpbmluZykKICAgIAogICAgcXVldWUuY2xlYXIoY2hhdF9pZCkKICAgIGlmIGN1cnJlbnQ6CiAgICAgICAgcXVldWUuYWRkKGNoYXRfaWQsIGN1cnJlbnQpCiAgICBmb3IgaXRlbSBpbiByZW1haW5pbmc6CiAgICAgICAgcXVldWUuYWRkKGNoYXRfaWQsIGl0ZW0pCiAgICAKICAgIGF3YWl0IG0ucmVwbHlfdGV4dChmIlF1ZXVlIHNodWZmbGVkISAoe2xlbihyZW1haW5pbmcpfSB0cmFja3MgcmFuZG9taXplZCkiKQo=").decode("utf-8"))
+# ==========================================================
+# Copyright (c) 2026 ArtistBots
+# All Rights Reserved.
+#
+# Project      : ArtistBots API Telegram Music Bot
+# Powered By   : Artist
+# Type         : API Based Telegram Music Bot
+#
+# Bot          : @ArtistApibot
+# Channel      : https://t.me/artistbots
+# GitHub       : https://github.com/elevenyts
+#
+# Unauthorized copying, modification, or redistribution
+# of this source code without permission is prohibited.
+# ==========================================================
+
+import random
+from pyrogram import filters, types
+
+from Elevenyts import app, db, lang, queue
+from Elevenyts.helpers import can_manage_vc
+
+
+@app.on_message(filters.command(["shuffle", "cshuffle"]) & filters.group & ~app.bl_users)
+@lang.language()
+@can_manage_vc
+async def _shuffle(_, m: types.Message):
+    try:
+        await m.delete()
+    except Exception:
+        pass
+    
+    # Check for channel play mode
+    is_channel = m.command[0].lower() == "cshuffle"
+    chat_id = m.chat.id
+    
+    if is_channel:
+        channel_id = await db.get_cmode(m.chat.id)
+        if channel_id is None:
+            return await m.reply_text("Channel play is not enabled. Use /channelplay to enable.")
+        chat_id = channel_id
+    
+    items = queue.get_all(chat_id)
+    
+    if not items or len(items) <= 1:
+        return await m.reply_text("Queue is empty or has only one track!")
+    
+    current = items[0] if items else None
+    remaining = items[1:] if len(items) > 1 else []
+    
+    if not remaining:
+        return await m.reply_text("No tracks to shuffle!")
+    
+    random.shuffle(remaining)
+    
+    queue.clear(chat_id)
+    if current:
+        queue.add(chat_id, current)
+    for item in remaining:
+        queue.add(chat_id, item)
+    
+    await m.reply_text(f"Queue shuffled! ({len(remaining)} tracks randomized)")
+

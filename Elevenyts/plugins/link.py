@@ -13,5 +13,24 @@
   # Unauthorized copying, modification, or redistribution
   # of this source code without permission is prohibited.
   # ==========================================================
-import base64
-exec(base64.b64decode("ZnJvbSBweXJvZ3JhbSBpbXBvcnQgZmlsdGVycwpmcm9tIHB5cm9ncmFtLnR5cGVzIGltcG9ydCBNZXNzYWdlCgpmcm9tIEVsZXZlbnl0cyBpbXBvcnQgYXBwCgoKQGFwcC5vbl9tZXNzYWdlKGZpbHRlcnMuY29tbWFuZCgibGluayIpICYgZmlsdGVycy5wcml2YXRlICYgYXBwLnN1ZG9fZmlsdGVyKQphc3luYyBkZWYgZ3JvdXBfbGluayhfLCBtZXNzYWdlOiBNZXNzYWdlKToKICAgIGlmIGxlbihtZXNzYWdlLmNvbW1hbmQpIDwgMjoKICAgICAgICByZXR1cm4gYXdhaXQgbWVzc2FnZS5yZXBseV90ZXh0KCJVc2FnZTpcbi9saW5rIDxncm91cF9pZD4iKQoKICAgIHRyeToKICAgICAgICBjaGF0X2lkID0gaW50KG1lc3NhZ2UuY29tbWFuZFsxXSkKICAgICAgICBpbnZpdGUgPSBhd2FpdCBhcHAuY3JlYXRlX2NoYXRfaW52aXRlX2xpbmsoY2hhdF9pZCkKCiAgICAgICAgYXdhaXQgbWVzc2FnZS5yZXBseV90ZXh0KAogICAgICAgICAgICBmIvCflJcgR3JvdXAgTGluazpcbntpbnZpdGUuaW52aXRlX2xpbmt9IgogICAgICAgICkKICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZToKICAgICAgICBhd2FpdCBtZXNzYWdlLnJlcGx5X3RleHQoZiJFcnJvcjoge2V9IikK").decode("utf-8"))
+from pyrogram import filters
+from pyrogram.types import Message
+
+from Elevenyts import app
+
+
+@app.on_message(filters.command("link") & filters.private & app.sudo_filter)
+async def group_link(_, message: Message):
+    if len(message.command) < 2:
+        return await message.reply_text("Usage:\n/link <group_id>")
+
+    try:
+        chat_id = int(message.command[1])
+        invite = await app.create_chat_invite_link(chat_id)
+
+        await message.reply_text(
+            f"🔗 Group Link:\n{invite.invite_link}"
+        )
+    except Exception as e:
+        await message.reply_text(f"Error: {e}")
+

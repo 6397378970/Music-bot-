@@ -13,5 +13,119 @@
   # Unauthorized copying, modification, or redistribution
   # of this source code without permission is prohibited.
   # ==========================================================
-import base64
-exec(base64.b64decode("IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ29weXJpZ2h0IChjKSAyMDI2IEFydGlzdEJvdHMKIyBBbGwgUmlnaHRzIFJlc2VydmVkLgojCiMgUHJvamVjdCAgICAgIDogQXJ0aXN0Qm90cyBBUEkgVGVsZWdyYW0gTXVzaWMgQm90CiMgUG93ZXJlZCBCeSAgIDogQXJ0aXN0CiMgVHlwZSAgICAgICAgIDogQVBJIEJhc2VkIFRlbGVncmFtIE11c2ljIEJvdAojCiMgQm90ICAgICAgICAgIDogQEFydGlzdEFwaWJvdAojIENoYW5uZWwgICAgICA6IGh0dHBzOi8vdC5tZS9hcnRpc3Rib3RzCiMgR2l0SHViICAgICAgIDogaHR0cHM6Ly9naXRodWIuY29tL2VsZXZlbnl0cwojCiMgVW5hdXRob3JpemVkIGNvcHlpbmcsIG1vZGlmaWNhdGlvbiwgb3IgcmVkaXN0cmlidXRpb24KIyBvZiB0aGlzIHNvdXJjZSBjb2RlIHdpdGhvdXQgcGVybWlzc2lvbiBpcyBwcm9oaWJpdGVkLgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KaW1wb3J0IHB5cm9ncmFtCmZyb20gdHlwaW5nIGltcG9ydCBPcHRpb25hbAoKZnJvbSBFbGV2ZW55dHMgaW1wb3J0IGNvbmZpZywgbG9nZ2VyCgoKY2xhc3MgQm90KHB5cm9ncmFtLkNsaWVudCk6CiAgICAiIiIKICAgIE1haW4gYm90IGNsaWVudCBjbGFzcyBleHRlbmRpbmcgUHlyb2dyYW0ncyBDbGllbnQuCgogICAgVGhpcyBjbGFzcyBpbml0aWFsaXplcyB0aGUgVGVsZWdyYW0gYm90IHdpdGggcHJvcGVyIGNvbmZpZ3VyYXRpb24KICAgIGFuZCBwcm92aWRlcyBtZXRob2RzIGZvciBzdGFydGluZyBhbmQgc3RvcHBpbmcgdGhlIGJvdC4KCiAgICBBdHRyaWJ1dGVzOgogICAgICAgIG93bmVyIChpbnQpOiBPd25lcidzIHVzZXIgSUQKICAgICAgICBsb2dnZXIgKGludCk6IExvZ2dlciBncm91cC9jaGFubmVsIElECiAgICAgICAgYmxfdXNlcnMgKEZpbHRlcik6IEZpbHRlciBmb3IgYmxhY2tsaXN0ZWQgdXNlcnMKICAgICAgICBzdWRvZXJzIChzZXQpOiBTZXQgb2Ygc3VkbyB1c2VyIElEcwogICAgICAgIHN1ZG9fZmlsdGVyIChGaWx0ZXIpOiBGaWx0ZXIgZm9yIHN1ZG8gdXNlcnMKICAgICAgICBpZCAoaW50KTogQm90J3MgdXNlciBJRCAoc2V0IGFmdGVyIGJvb3QpCiAgICAgICAgbmFtZSAoc3RyKTogQm90J3MgZmlyc3QgbmFtZSAoc2V0IGFmdGVyIGJvb3QpCiAgICAgICAgdXNlcm5hbWUgKHN0cik6IEJvdCdzIHVzZXJuYW1lIChzZXQgYWZ0ZXIgYm9vdCkKICAgICAgICBtZW50aW9uIChzdHIpOiBCb3QncyBtZW50aW9uIHRhZyAoc2V0IGFmdGVyIGJvb3QpCiAgICAiIiIKCiAgICBkZWYgX19pbml0X18oc2VsZik6CiAgICAgICAgIiIiSW5pdGlhbGl6ZSB0aGUgYm90IGNsaWVudCB3aXRoIGNvbmZpZ3VyYXRpb24gc2V0dGluZ3MuIiIiCiAgICAgICAgc3VwZXIoKS5fX2luaXRfXygKICAgICAgICAgICAgbmFtZT0iRWxldmVueXRzIiwKICAgICAgICAgICAgYXBpX2lkPWNvbmZpZy5BUElfSUQsCiAgICAgICAgICAgIGFwaV9oYXNoPWNvbmZpZy5BUElfSEFTSCwKICAgICAgICAgICAgYm90X3Rva2VuPWNvbmZpZy5CT1RfVE9LRU4sCiAgICAgICAgICAgIHBhcnNlX21vZGU9cHlyb2dyYW0uZW51bXMuUGFyc2VNb2RlLkhUTUwsCiAgICAgICAgICAgIG1heF9jb25jdXJyZW50X3RyYW5zbWlzc2lvbnM9NywKICAgICAgICAgICAgbGlua19wcmV2aWV3X29wdGlvbnM9cHlyb2dyYW0udHlwZXMuTGlua1ByZXZpZXdPcHRpb25zKAogICAgICAgICAgICAgICAgaXNfZGlzYWJsZWQ9VHJ1ZSksCiAgICAgICAgKQoKICAgICAgICBzZWxmLm93bmVyOiBpbnQgPSBjb25maWcuT1dORVJfSUQKICAgICAgICBzZWxmLmxvZ2dlcjogaW50ID0gY29uZmlnLkxPR0dFUl9JRAogICAgICAgIHNlbGYuYmxfdXNlcnM6IHB5cm9ncmFtLmZpbHRlcnMuRmlsdGVyID0gcHlyb2dyYW0uZmlsdGVycy51c2VyKCkKICAgICAgICBzZWxmLnN1ZG9lcnM6IHNldCA9IHtzZWxmLm93bmVyfSAgIyBTZXQgb2Ygc3VkbyB1c2VyIElEcwogICAgICAgIHNlbGYuc3Vkb19maWx0ZXI6IHB5cm9ncmFtLmZpbHRlcnMuRmlsdGVyID0gcHlyb2dyYW0uZmlsdGVycy51c2VyKAogICAgICAgICAgICBzZWxmLm93bmVyKQoKICAgICAgICAjIFRoZXNlIHdpbGwgYmUgc2V0IGFmdGVyIGJvb3QoKQogICAgICAgIHNlbGYuaWQ6IE9wdGlvbmFsW2ludF0gPSBOb25lCiAgICAgICAgc2VsZi5uYW1lOiBPcHRpb25hbFtzdHJdID0gTm9uZQogICAgICAgIHNlbGYudXNlcm5hbWU6IE9wdGlvbmFsW3N0cl0gPSBOb25lCiAgICAgICAgc2VsZi5tZW50aW9uOiBPcHRpb25hbFtzdHJdID0gTm9uZQoKICAgIGFzeW5jIGRlZiBib290KHNlbGYpIC0+IE5vbmU6CiAgICAgICAgIiIiCiAgICAgICAgU3RhcnQgdGhlIGJvdCBhbmQgcGVyZm9ybSBpbml0aWFsIHNldHVwLgoKICAgICAgICBUaGlzIG1ldGhvZDoKICAgICAgICAtIFN0YXJ0cyB0aGUgUHlyb2dyYW0gY2xpZW50CiAgICAgICAgLSBSZXRyaWV2ZXMgYm90IGluZm9ybWF0aW9uCiAgICAgICAgLSBWZXJpZmllcyBhY2Nlc3MgdG8gbG9nZ2VyIGdyb3VwCiAgICAgICAgLSBDaGVja3MgYm90IGFkbWluIHN0YXR1cyBpbiBsb2dnZXIgZ3JvdXAKCiAgICAgICAgUmFpc2VzOgogICAgICAgICAgICBTeXN0ZW1FeGl0OiBJZiBib3QgY2Fubm90IGFjY2VzcyBsb2dnZXIgZ3JvdXAgb3IgaXMgbm90IGFuIGFkbWluLgogICAgICAgICIiIgogICAgICAgIGF3YWl0IHN1cGVyKCkuc3RhcnQoKQoKICAgICAgICAjIFNldCBib3QgaW5mb3JtYXRpb24KICAgICAgICBzZWxmLmlkID0gc2VsZi5tZS5pZAogICAgICAgIHNlbGYubmFtZSA9IHNlbGYubWUuZmlyc3RfbmFtZQogICAgICAgIHNlbGYudXNlcm5hbWUgPSBzZWxmLm1lLnVzZXJuYW1lCiAgICAgICAgc2VsZi5tZW50aW9uID0gc2VsZi5tZS5tZW50aW9uCgogICAgICAgICMgVmVyaWZ5IGxvZ2dlciBncm91cCBhY2Nlc3MKICAgICAgICB0cnk6CiAgICAgICAgICAgIGF3YWl0IHNlbGYuc2VuZF9tZXNzYWdlKHNlbGYubG9nZ2VyLCAi8J+kliDKmeG0j+G0myDqnLHhtJvhtIDKgOG0m+G0h+G0hSIpCiAgICAgICAgICAgIG1lbWJlciA9IGF3YWl0IHNlbGYuZ2V0X2NoYXRfbWVtYmVyKHNlbGYubG9nZ2VyLCBzZWxmLmlkKQogICAgICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZXg6CiAgICAgICAgICAgIHJhaXNlIFN5c3RlbUV4aXQoCiAgICAgICAgICAgICAgICBmIuKdjCDKmeG0j+G0myDqnLDhtIDJqsqf4bSH4bSFIOG0m+G0jyDhtIDhtIThtIThtIfqnLHqnLEgyp/htI/Josmi4bSHyoAgyaLKgOG0j+G0nOG0mDoge3NlbGYubG9nZ2VyfVxuIgogICAgICAgICAgICAgICAgZiLKgOG0h+G0gOqcseG0j8m0OiB7ZXh9XG4iCiAgICAgICAgICAgICAgICBmIuG0mMqf4bSH4bSA6pyx4bSHIOG0h8m06pyx4bScyoDhtIcg4bSbypzhtIcgypnhtI/htJsgyarqnLEg4bSA4bSF4bSF4bSH4bSFIOG0m+G0jyDhtJvKnOG0hyDKn+G0j8miyaLhtIfKgCDJosqA4bSP4bSc4bSYLiIKICAgICAgICAgICAgKQoKICAgICAgICAjIFZlcmlmeSBhZG1pbiBzdGF0dXMKICAgICAgICBpZiBtZW1iZXIuc3RhdHVzICE9IHB5cm9ncmFtLmVudW1zLkNoYXRNZW1iZXJTdGF0dXMuQURNSU5JU1RSQVRPUjoKICAgICAgICAgICAgcmFpc2UgU3lzdGVtRXhpdCgKICAgICAgICAgICAgICAgIGYi4p2MIMqZ4bSP4bSbIMmq6pyxIMm04bSP4bSbIOG0gMm0IOG0gOG0heG0jcmqybTJquqcseG0m8qA4bSA4bSb4bSPyoAgyarJtCDKn+G0j8miyaLhtIfKgCDJosqA4bSP4bSc4bSYOiB7c2VsZi5sb2dnZXJ9XG4iCiAgICAgICAgICAgICAgICBmIuG0mMqf4bSH4bSA6pyx4bSHIOG0mMqA4bSP4bSN4bSP4bSb4bSHIOG0m8qc4bSHIMqZ4bSP4bSbIOG0m+G0jyDhtIDhtIXhtI3Jqsm0yarqnLHhtJvKgOG0gOG0m+G0j8qAIOG0ocmq4bSbypwgybThtIfhtIThtIfqnLHqnLHhtIDKgMqPIOG0mOG0h8qA4bSNyarqnLHqnLHJquG0j8m06pyxLiIKICAgICAgICAgICAgKQoKICAgICAgICBsb2dnZXIuaW5mbyhmIvCfpJYgQm90IHN0YXJ0ZWQgc3VjY2Vzc2Z1bGx5IGFzIEB7c2VsZi51c2VybmFtZX0iKQoKICAgIGFzeW5jIGRlZiBleGl0KHNlbGYpIC0+IE5vbmU6CiAgICAgICAgIiIiCiAgICAgICAgR3JhY2VmdWxseSBzdG9wIHRoZSBib3QgY2xpZW50LgoKICAgICAgICBUaGlzIG1ldGhvZCBzdG9wcyB0aGUgUHlyb2dyYW0gY2xpZW50IGFuZCBsb2dzIHRoZSBzaHV0ZG93bi4KICAgICAgICAiIiIKICAgICAgICBhd2FpdCBzdXBlcigpLnN0b3AoKQogICAgICAgIGxvZ2dlci5pbmZvKCLwn6SWIEJvdCBjbGllbnQgc3RvcHBlZC4iKQo=").decode("utf-8"))
+# ==========================================================
+# Copyright (c) 2026 ArtistBots
+# All Rights Reserved.
+#
+# Project      : ArtistBots API Telegram Music Bot
+# Powered By   : Artist
+# Type         : API Based Telegram Music Bot
+#
+# Bot          : @ArtistApibot
+# Channel      : https://t.me/artistbots
+# GitHub       : https://github.com/elevenyts
+#
+# Unauthorized copying, modification, or redistribution
+# of this source code without permission is prohibited.
+# ==========================================================
+import pyrogram
+from typing import Optional
+
+from Elevenyts import config, logger
+
+
+class Bot(pyrogram.Client):
+    """
+    Main bot client class extending Pyrogram's Client.
+
+    This class initializes the Telegram bot with proper configuration
+    and provides methods for starting and stopping the bot.
+
+    Attributes:
+        owner (int): Owner's user ID
+        logger (int): Logger group/channel ID
+        bl_users (Filter): Filter for blacklisted users
+        sudoers (set): Set of sudo user IDs
+        sudo_filter (Filter): Filter for sudo users
+        id (int): Bot's user ID (set after boot)
+        name (str): Bot's first name (set after boot)
+        username (str): Bot's username (set after boot)
+        mention (str): Bot's mention tag (set after boot)
+    """
+
+    def __init__(self):
+        """Initialize the bot client with configuration settings."""
+        super().__init__(
+            name="Elevenyts",
+            api_id=config.API_ID,
+            api_hash=config.API_HASH,
+            bot_token=config.BOT_TOKEN,
+            parse_mode=pyrogram.enums.ParseMode.HTML,
+            max_concurrent_transmissions=7,
+            link_preview_options=pyrogram.types.LinkPreviewOptions(
+                is_disabled=True),
+        )
+
+        self.owner: int = config.OWNER_ID
+        self.logger: int = config.LOGGER_ID
+        self.bl_users: pyrogram.filters.Filter = pyrogram.filters.user()
+        self.sudoers: set = {self.owner}  # Set of sudo user IDs
+        self.sudo_filter: pyrogram.filters.Filter = pyrogram.filters.user(
+            self.owner)
+
+        # These will be set after boot()
+        self.id: Optional[int] = None
+        self.name: Optional[str] = None
+        self.username: Optional[str] = None
+        self.mention: Optional[str] = None
+
+    async def boot(self) -> None:
+        """
+        Start the bot and perform initial setup.
+
+        This method:
+        - Starts the Pyrogram client
+        - Retrieves bot information
+        - Verifies access to logger group
+        - Checks bot admin status in logger group
+
+        Raises:
+            SystemExit: If bot cannot access logger group or is not an admin.
+        """
+        await super().start()
+
+        # Set bot information
+        self.id = self.me.id
+        self.name = self.me.first_name
+        self.username = self.me.username
+        self.mention = self.me.mention
+
+        # Verify logger group access
+        try:
+            await self.send_message(self.logger, "🤖 ʙᴏᴛ ꜱᴛᴀʀᴛᴇᴅ")
+            member = await self.get_chat_member(self.logger, self.id)
+        except Exception as ex:
+            raise SystemExit(
+                f"❌ ʙᴏᴛ ꜰᴀɪʟᴇᴅ ᴛᴏ ᴀᴄᴄᴇꜱꜱ ʟᴏɢɢᴇʀ ɢʀᴏᴜᴘ: {self.logger}\n"
+                f"ʀᴇᴀꜱᴏɴ: {ex}\n"
+                f"ᴘʟᴇᴀꜱᴇ ᴇɴꜱᴜʀᴇ ᴛʜᴇ ʙᴏᴛ ɪꜱ ᴀᴅᴅᴇᴅ ᴛᴏ ᴛʜᴇ ʟᴏɢɢᴇʀ ɢʀᴏᴜᴘ."
+            )
+
+        # Verify admin status
+        if member.status != pyrogram.enums.ChatMemberStatus.ADMINISTRATOR:
+            raise SystemExit(
+                f"❌ ʙᴏᴛ ɪꜱ ɴᴏᴛ ᴀɴ ᴀᴅᴍɪɴɪꜱᴛʀᴀᴛᴏʀ ɪɴ ʟᴏɢɢᴇʀ ɢʀᴏᴜᴘ: {self.logger}\n"
+                f"ᴘʟᴇᴀꜱᴇ ᴘʀᴏᴍᴏᴛᴇ ᴛʜᴇ ʙᴏᴛ ᴛᴏ ᴀᴅᴍɪɴɪꜱᴛʀᴀᴛᴏʀ ᴡɪᴛʜ ɴᴇᴄᴇꜱꜱᴀʀʏ ᴘᴇʀᴍɪꜱꜱɪᴏɴꜱ."
+            )
+
+        logger.info(f"🤖 Bot started successfully as @{self.username}")
+
+    async def exit(self) -> None:
+        """
+        Gracefully stop the bot client.
+
+        This method stops the Pyrogram client and logs the shutdown.
+        """
+        await super().stop()
+        logger.info("🤖 Bot client stopped.")
+

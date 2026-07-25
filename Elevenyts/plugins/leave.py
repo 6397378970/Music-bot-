@@ -13,5 +13,127 @@
   # Unauthorized copying, modification, or redistribution
   # of this source code without permission is prohibited.
   # ==========================================================
-import base64
-exec(base64.b64decode("IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ29weXJpZ2h0IChjKSAyMDI2IEFydGlzdEJvdHMKIyBBbGwgUmlnaHRzIFJlc2VydmVkLgojCiMgUHJvamVjdCAgICAgIDogQXJ0aXN0Qm90cyBBUEkgVGVsZWdyYW0gTXVzaWMgQm90CiMgUG93ZXJlZCBCeSAgIDogQXJ0aXN0CiMgVHlwZSAgICAgICAgIDogQVBJIEJhc2VkIFRlbGVncmFtIE11c2ljIEJvdAojCiMgQm90ICAgICAgICAgIDogQEFydGlzdEFwaWJvdAojIENoYW5uZWwgICAgICA6IGh0dHBzOi8vdC5tZS9hcnRpc3Rib3RzCiMgR2l0SHViICAgICAgIDogaHR0cHM6Ly9naXRodWIuY29tL2VsZXZlbnl0cwojCiMgVW5hdXRob3JpemVkIGNvcHlpbmcsIG1vZGlmaWNhdGlvbiwgb3IgcmVkaXN0cmlidXRpb24KIyBvZiB0aGlzIHNvdXJjZSBjb2RlIHdpdGhvdXQgcGVybWlzc2lvbiBpcyBwcm9oaWJpdGVkLgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KaW1wb3J0IGFzeW5jaW8KZnJvbSBweXJvZ3JhbSBpbXBvcnQgZmlsdGVycywgdHlwZXMsIGVycm9ycywgZW51bXMKCmZyb20gRWxldmVueXRzIGltcG9ydCBhcHAsIGRiLCBsYW5nLCBsb2dnZXIsIHVzZXJib3QsIGNvbmZpZwoKCkBhcHAub25fbWVzc2FnZShmaWx0ZXJzLmNvbW1hbmQoWyJsZWF2ZSJdKSAmIGFwcC5zdWRvX2ZpbHRlcikKQGxhbmcubGFuZ3VhZ2UoKQphc3luYyBkZWYgX2xlYXZlKF8sIG06IHR5cGVzLk1lc3NhZ2UpOgogICAgIiIiCiAgICBDb21tYW5kIGhhbmRsZXIgZm9yIC9sZWF2ZQogICAgTWFrZXMgYm90aCBib3QgYW5kIGFzc2lzdGFudCBsZWF2ZSB0aGUgY3VycmVudCBjaGF0LgogICAgIiIiCiAgICAjIEF1dG8tZGVsZXRlIGNvbW1hbmQgbWVzc2FnZQogICAgdHJ5OgogICAgICAgIGF3YWl0IG0uZGVsZXRlKCkKICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgcGFzcwogICAgCiAgICBjaGF0X2lkID0gbS5jaGF0LmlkCiAgICBjaGF0X25hbWUgPSBtLmNoYXQudGl0bGUgb3IgInRoaXMgY2hhdCIKCiAgICAjIFNlbmQgY29uZmlybWF0aW9uIG1lc3NhZ2UKICAgIHNlbnQgPSBhd2FpdCBtLnJlcGx5X3RleHQoCiAgICAgICAgZiI8YmxvY2txdW90ZT48Yj7wn5GLIExlYXZpbmcgQ2hhdDwvYj48L2Jsb2NrcXVvdGU+XG5cbiIKICAgICAgICBmIjxibG9ja3F1b3RlPkJvdCBhbmQgYXNzaXN0YW50IGFyZSBsZWF2aW5nIDxiPntjaGF0X25hbWV9PC9iPi4uLjwvYmxvY2txdW90ZT4iCiAgICApCgogICAgIyBUcnkgdG8gbWFrZSBhc3Npc3RhbnQgbGVhdmUgaWYgaXQncyBpbiB0aGUgY2hhdAogICAgdHJ5OgogICAgICAgIGNsaWVudCA9IGF3YWl0IGRiLmdldF9jbGllbnQoY2hhdF9pZCkKICAgICAgICB0cnk6CiAgICAgICAgICAgIGF3YWl0IGNsaWVudC5sZWF2ZV9jaGF0KGNoYXRfaWQpCiAgICAgICAgZXhjZXB0IGVycm9ycy5Vc2VyTm90UGFydGljaXBhbnQ6CiAgICAgICAgICAgICMgQXNzaXN0YW50IGlzIG5vdCBpbiB0aGUgY2hhdCwgc2tpcAogICAgICAgICAgICBwYXNzCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgICAgICAjIExvZyBhbnkgb3RoZXIgZXJyb3JzIGJ1dCBjb250aW51ZSB3aXRoIGJvdCBsZWF2aW5nCiAgICAgICAgICAgIHBhc3MKICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgIyBJZiBnZXR0aW5nIGNsaWVudCBmYWlscywganVzdCBjb250aW51ZSB3aXRoIGJvdCBsZWF2aW5nCiAgICAgICAgcGFzcwoKICAgICMgTWFrZSBib3QgbGVhdmUgdGhlIGNoYXQKICAgIHRyeToKICAgICAgICBhd2FpdCBhcHAubGVhdmVfY2hhdChjaGF0X2lkKQogICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgICMgSWYgYm90IGNhbid0IGxlYXZlLCBpbmZvcm0gdGhlIHN1ZG8gdXNlcgogICAgICAgIGF3YWl0IHNlbnQuZWRpdF90ZXh0KAogICAgICAgICAgICBmIjxibG9ja3F1b3RlPjxiPuKdjCBFcnJvcjwvYj48L2Jsb2NrcXVvdGU+XG5cbiIKICAgICAgICAgICAgZiI8YmxvY2txdW90ZT5GYWlsZWQgdG8gbGVhdmUgY2hhdDoge3N0cihlKX08L2Jsb2NrcXVvdGU+IgogICAgICAgICkKCgpAYXBwLm9uX21lc3NhZ2UoZmlsdGVycy5jb21tYW5kKFsibGVhdmVhbGwiXSkgJiBhcHAuc3Vkb19maWx0ZXIpCkBsYW5nLmxhbmd1YWdlKCkKYXN5bmMgZGVmIF9sZWF2ZWFsbChfLCBtOiB0eXBlcy5NZXNzYWdlKToKICAgICIiIgogICAgQ29tbWFuZCBoYW5kbGVyIGZvciAvbGVhdmVhbGwKICAgIE1ha2VzIGFsbCBhc3Npc3RhbnRzIGxlYXZlIGFsbCBpbmFjdGl2ZSBncm91cHMgKG5vdCBpbiBhY3RpdmUgY2FsbHMpLgogICAgIiIiCiAgICAjIEF1dG8tZGVsZXRlIGNvbW1hbmQgbWVzc2FnZQogICAgdHJ5OgogICAgICAgIGF3YWl0IG0uZGVsZXRlKCkKICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgcGFzcwogICAgCiAgICBzZW50ID0gYXdhaXQgbS5yZXBseV90ZXh0KAogICAgICAgIGYiPGJsb2NrcXVvdGU+PGI+8J+UhCBQcm9jZXNzaW5nLi4uPC9iPjwvYmxvY2txdW90ZT5cblxuIgogICAgICAgIGYiPGJsb2NrcXVvdGU+TWFraW5nIGFzc2lzdGFudHMgbGVhdmUgYWxsIGluYWN0aXZlIGdyb3Vwcy4uLjwvYmxvY2txdW90ZT4iCiAgICApCiAgICAKICAgIHRvdGFsX2xlZnQgPSAwCiAgICAKICAgIGZvciB1YiBpbiB1c2VyYm90LmNsaWVudHM6CiAgICAgICAgbGVmdCA9IDAKICAgICAgICB0cnk6CiAgICAgICAgICAgIGFzeW5jIGZvciBkaWFsb2cgaW4gdWIuZ2V0X2RpYWxvZ3MoKToKICAgICAgICAgICAgICAgIGNoYXRfaWQgPSBkaWFsb2cuY2hhdC5pZAogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAjIFNraXAgbG9nZ2VyIGFuZCBleGNsdWRlZCBjaGF0cwogICAgICAgICAgICAgICAgZXhjbHVkZWQgPSBbYXBwLmxvZ2dlcl0gKyBjb25maWcuRVhDTFVERURfQ0hBVFMKICAgICAgICAgICAgICAgIGlmIGNoYXRfaWQgaW4gZXhjbHVkZWQ6CiAgICAgICAgICAgICAgICAgICAgY29udGludWUKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgIyBPbmx5IGxlYXZlIGdyb3VwcyBhbmQgc3VwZXJncm91cHMKICAgICAgICAgICAgICAgIGlmIGRpYWxvZy5jaGF0LnR5cGUgaW4gW2VudW1zLkNoYXRUeXBlLkdST1VQLCBlbnVtcy5DaGF0VHlwZS5TVVBFUkdST1VQXToKICAgICAgICAgICAgICAgICAgICAjIFNraXAgaWYgY3VycmVudGx5IGluIGFuIGFjdGl2ZSBjYWxsCiAgICAgICAgICAgICAgICAgICAgaWYgY2hhdF9pZCBpbiBkYi5hY3RpdmVfY2FsbHM6CiAgICAgICAgICAgICAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgICAgICAgICBhd2FpdCB1Yi5sZWF2ZV9jaGF0KGNoYXRfaWQpCiAgICAgICAgICAgICAgICAgICAgICAgIGxlZnQgKz0gMQogICAgICAgICAgICAgICAgICAgICAgICB0b3RhbF9sZWZ0ICs9IDEKICAgICAgICAgICAgICAgICAgICAgICAgYXdhaXQgYXN5bmNpby5zbGVlcCgxKSAgIyBSYXRlIGxpbWl0CiAgICAgICAgICAgICAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgICAgICAgICAgICAgICAgICBsb2dnZXIuZGVidWcoZiJGYWlsZWQgdG8gbGVhdmUge2NoYXRfaWR9OiB7ZX0iKQogICAgICAgICAgICAgICAgICAgICAgICBjb250aW51ZQogICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICAgICAgICAgIGxvZ2dlci5lcnJvcihmIkVycm9yIGluIGxlYXZlYWxsIGZvciBhc3Npc3RhbnQge3ViLm1lLnVzZXJuYW1lIGlmIGhhc2F0dHIodWIsICdtZScpIGFuZCB1Yi5tZSBlbHNlICdVbmtub3duJ306IHtlfSIpCiAgICAgICAgICAgIGNvbnRpbnVlCiAgICAKICAgIGF3YWl0IHNlbnQuZWRpdF90ZXh0KAogICAgICAgIGYiPGJsb2NrcXVvdGU+PGI+4pyFIENsZWFudXAgQ29tcGxldGU8L2I+PC9ibG9ja3F1b3RlPlxuXG4iCiAgICAgICAgZiI8YmxvY2txdW90ZT5Bc3Npc3RhbnRzIGxlZnQgPGI+e3RvdGFsX2xlZnR9PC9iPiBpbmFjdGl2ZSBncm91cHMuPC9ibG9ja3F1b3RlPiIKICAgICkK").decode("utf-8"))
+# ==========================================================
+# Copyright (c) 2026 ArtistBots
+# All Rights Reserved.
+#
+# Project      : ArtistBots API Telegram Music Bot
+# Powered By   : Artist
+# Type         : API Based Telegram Music Bot
+#
+# Bot          : @ArtistApibot
+# Channel      : https://t.me/artistbots
+# GitHub       : https://github.com/elevenyts
+#
+# Unauthorized copying, modification, or redistribution
+# of this source code without permission is prohibited.
+# ==========================================================
+import asyncio
+from pyrogram import filters, types, errors, enums
+
+from Elevenyts import app, db, lang, logger, userbot, config
+
+
+@app.on_message(filters.command(["leave"]) & app.sudo_filter)
+@lang.language()
+async def _leave(_, m: types.Message):
+    """
+    Command handler for /leave
+    Makes both bot and assistant leave the current chat.
+    """
+    # Auto-delete command message
+    try:
+        await m.delete()
+    except Exception:
+        pass
+    
+    chat_id = m.chat.id
+    chat_name = m.chat.title or "this chat"
+
+    # Send confirmation message
+    sent = await m.reply_text(
+        f"<blockquote><b>👋 Leaving Chat</b></blockquote>\n\n"
+        f"<blockquote>Bot and assistant are leaving <b>{chat_name}</b>...</blockquote>"
+    )
+
+    # Try to make assistant leave if it's in the chat
+    try:
+        client = await db.get_client(chat_id)
+        try:
+            await client.leave_chat(chat_id)
+        except errors.UserNotParticipant:
+            # Assistant is not in the chat, skip
+            pass
+        except Exception as e:
+            # Log any other errors but continue with bot leaving
+            pass
+    except Exception:
+        # If getting client fails, just continue with bot leaving
+        pass
+
+    # Make bot leave the chat
+    try:
+        await app.leave_chat(chat_id)
+    except Exception as e:
+        # If bot can't leave, inform the sudo user
+        await sent.edit_text(
+            f"<blockquote><b>❌ Error</b></blockquote>\n\n"
+            f"<blockquote>Failed to leave chat: {str(e)}</blockquote>"
+        )
+
+
+@app.on_message(filters.command(["leaveall"]) & app.sudo_filter)
+@lang.language()
+async def _leaveall(_, m: types.Message):
+    """
+    Command handler for /leaveall
+    Makes all assistants leave all inactive groups (not in active calls).
+    """
+    # Auto-delete command message
+    try:
+        await m.delete()
+    except Exception:
+        pass
+    
+    sent = await m.reply_text(
+        f"<blockquote><b>🔄 Processing...</b></blockquote>\n\n"
+        f"<blockquote>Making assistants leave all inactive groups...</blockquote>"
+    )
+    
+    total_left = 0
+    
+    for ub in userbot.clients:
+        left = 0
+        try:
+            async for dialog in ub.get_dialogs():
+                chat_id = dialog.chat.id
+                
+                # Skip logger and excluded chats
+                excluded = [app.logger] + config.EXCLUDED_CHATS
+                if chat_id in excluded:
+                    continue
+                
+                # Only leave groups and supergroups
+                if dialog.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
+                    # Skip if currently in an active call
+                    if chat_id in db.active_calls:
+                        continue
+                    
+                    try:
+                        await ub.leave_chat(chat_id)
+                        left += 1
+                        total_left += 1
+                        await asyncio.sleep(1)  # Rate limit
+                    except Exception as e:
+                        logger.debug(f"Failed to leave {chat_id}: {e}")
+                        continue
+                        
+        except Exception as e:
+            logger.error(f"Error in leaveall for assistant {ub.me.username if hasattr(ub, 'me') and ub.me else 'Unknown'}: {e}")
+            continue
+    
+    await sent.edit_text(
+        f"<blockquote><b>✅ Cleanup Complete</b></blockquote>\n\n"
+        f"<blockquote>Assistants left <b>{total_left}</b> inactive groups.</blockquote>"
+    )
+

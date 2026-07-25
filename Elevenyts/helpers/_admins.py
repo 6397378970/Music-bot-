@@ -13,5 +13,152 @@
   # Unauthorized copying, modification, or redistribution
   # of this source code without permission is prohibited.
   # ==========================================================
-import base64
-exec(base64.b64decode("IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ29weXJpZ2h0IChjKSAyMDI2IEFydGlzdEJvdHMKIyBBbGwgUmlnaHRzIFJlc2VydmVkLgojCiMgUHJvamVjdCAgICAgIDogQXJ0aXN0Qm90cyBBUEkgVGVsZWdyYW0gTXVzaWMgQm90CiMgUG93ZXJlZCBCeSAgIDogQXJ0aXN0CiMgVHlwZSAgICAgICAgIDogQVBJIEJhc2VkIFRlbGVncmFtIE11c2ljIEJvdAojCiMgQm90ICAgICAgICAgIDogQEFydGlzdEFwaWJvdAojIENoYW5uZWwgICAgICA6IGh0dHBzOi8vdC5tZS9hcnRpc3Rib3RzCiMgR2l0SHViICAgICAgIDogaHR0cHM6Ly9naXRodWIuY29tL2VsZXZlbnl0cwojCiMgVW5hdXRob3JpemVkIGNvcHlpbmcsIG1vZGlmaWNhdGlvbiwgb3IgcmVkaXN0cmlidXRpb24KIyBvZiB0aGlzIHNvdXJjZSBjb2RlIHdpdGhvdXQgcGVybWlzc2lvbiBpcyBwcm9oaWJpdGVkLgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KCmZyb20gZnVuY3Rvb2xzIGltcG9ydCB3cmFwcwoKZnJvbSBweXJvZ3JhbSBpbXBvcnQgU3RvcFByb3BhZ2F0aW9uLCBlbnVtcywgdHlwZXMKZnJvbSBweXJvZ3JhbS5lcnJvcnMgaW1wb3J0IENoYXRTZW5kUGxhaW5Gb3JiaWRkZW4sIENoYXRXcml0ZUZvcmJpZGRlbgoKZnJvbSBFbGV2ZW55dHMgaW1wb3J0IGFwcCwgZGIKCgpkZWYgYWRtaW5fY2hlY2soZnVuYyk6CiAgICBAd3JhcHMoZnVuYykKICAgIGFzeW5jIGRlZiB3cmFwcGVyKF8sIHVwZGF0ZTogdHlwZXMuTWVzc2FnZSB8IHR5cGVzLkNhbGxiYWNrUXVlcnksICphcmdzLCAqKmt3YXJncyk6CiAgICAgICAgYXN5bmMgZGVmIHJlcGx5KHRleHQpOgogICAgICAgICAgICBpZiBpc2luc3RhbmNlKHVwZGF0ZSwgdHlwZXMuTWVzc2FnZSk6CiAgICAgICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICAgICAgcmV0dXJuIGF3YWl0IHVwZGF0ZS5yZXBseV90ZXh0KHRleHQpCiAgICAgICAgICAgICAgICBleGNlcHQgKENoYXRTZW5kUGxhaW5Gb3JiaWRkZW4sIENoYXRXcml0ZUZvcmJpZGRlbik6CiAgICAgICAgICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgICAgIGVsc2U6CiAgICAgICAgICAgICAgICByZXR1cm4gYXdhaXQgdXBkYXRlLmFuc3dlcih0ZXh0LCBzaG93X2FsZXJ0PVRydWUpCgogICAgICAgIGlmIG5vdCB1cGRhdGUuZnJvbV91c2VyOgogICAgICAgICAgICByZXR1cm4KCiAgICAgICAgY2hhdF9pZCA9ICgKICAgICAgICAgICAgdXBkYXRlLmNoYXQuaWQKICAgICAgICAgICAgaWYgaXNpbnN0YW5jZSh1cGRhdGUsIHR5cGVzLk1lc3NhZ2UpCiAgICAgICAgICAgIGVsc2UgdXBkYXRlLm1lc3NhZ2UuY2hhdC5pZAogICAgICAgICkKICAgICAgICB1c2VyX2lkID0gdXBkYXRlLmZyb21fdXNlci5pZAoKICAgICAgICBhZG1pbnMgPSBhd2FpdCBkYi5nZXRfYWRtaW5zKGNoYXRfaWQpCgogICAgICAgIGlmIHVzZXJfaWQgaW4gYXBwLnN1ZG9lcnM6CiAgICAgICAgICAgIHJldHVybiBhd2FpdCBmdW5jKF8sIHVwZGF0ZSwgKmFyZ3MsICoqa3dhcmdzKQoKICAgICAgICBpZiB1c2VyX2lkIG5vdCBpbiBhZG1pbnM6CiAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgIHJldHVybiBhd2FpdCByZXBseSh1cGRhdGUubGFuZ1sidXNlcl9ub19wZXJtcyJdKQogICAgICAgICAgICBleGNlcHQgKENoYXRTZW5kUGxhaW5Gb3JiaWRkZW4sIENoYXRXcml0ZUZvcmJpZGRlbik6CiAgICAgICAgICAgICAgICByZXR1cm4KCiAgICAgICAgcmV0dXJuIGF3YWl0IGZ1bmMoXywgdXBkYXRlLCAqYXJncywgKiprd2FyZ3MpCgogICAgcmV0dXJuIHdyYXBwZXIKCgpkZWYgY2FuX21hbmFnZV92YyhmdW5jKToKICAgIEB3cmFwcyhmdW5jKQogICAgYXN5bmMgZGVmIHdyYXBwZXIoXywgdXBkYXRlOiB0eXBlcy5NZXNzYWdlIHwgdHlwZXMuQ2FsbGJhY2tRdWVyeSwgKmFyZ3MsICoqa3dhcmdzKToKICAgICAgICBjaGF0X2lkID0gKAogICAgICAgICAgICB1cGRhdGUuY2hhdC5pZAogICAgICAgICAgICBpZiBpc2luc3RhbmNlKHVwZGF0ZSwgdHlwZXMuTWVzc2FnZSkKICAgICAgICAgICAgZWxzZSB1cGRhdGUubWVzc2FnZS5jaGF0LmlkCiAgICAgICAgKQoKICAgICAgICBpZiBub3QgdXBkYXRlLmZyb21fdXNlcjoKICAgICAgICAgICAgcmV0dXJuCgogICAgICAgIHVzZXJfaWQgPSB1cGRhdGUuZnJvbV91c2VyLmlkCgogICAgICAgIGlmIHVzZXJfaWQgaW4gYXBwLnN1ZG9lcnM6CiAgICAgICAgICAgIHJldHVybiBhd2FpdCBmdW5jKF8sIHVwZGF0ZSwgKmFyZ3MsICoqa3dhcmdzKQoKICAgICAgICBpZiBhd2FpdCBkYi5pc19hdXRoKGNoYXRfaWQsIHVzZXJfaWQpOgogICAgICAgICAgICByZXR1cm4gYXdhaXQgZnVuYyhfLCB1cGRhdGUsICphcmdzLCAqKmt3YXJncykKCiAgICAgICAgYWRtaW5zID0gYXdhaXQgZGIuZ2V0X2FkbWlucyhjaGF0X2lkKQogICAgICAgIGlmIHVzZXJfaWQgaW4gYWRtaW5zOgogICAgICAgICAgICByZXR1cm4gYXdhaXQgZnVuYyhfLCB1cGRhdGUsICphcmdzLCAqKmt3YXJncykKCiAgICAgICAgaWYgaXNpbnN0YW5jZSh1cGRhdGUsIHR5cGVzLk1lc3NhZ2UpOgogICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICByZXR1cm4gYXdhaXQgdXBkYXRlLnJlcGx5X3RleHQodXBkYXRlLmxhbmdbInVzZXJfbm9fcGVybXMiXSkKICAgICAgICAgICAgZXhjZXB0IChDaGF0U2VuZFBsYWluRm9yYmlkZGVuLCBDaGF0V3JpdGVGb3JiaWRkZW4pOgogICAgICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgZWxzZToKICAgICAgICAgICAgcmV0dXJuIGF3YWl0IHVwZGF0ZS5hbnN3ZXIodXBkYXRlLmxhbmdbInVzZXJfbm9fcGVybXMiXSwgc2hvd19hbGVydD1UcnVlKQoKICAgIHJldHVybiB3cmFwcGVyCgoKYXN5bmMgZGVmIGNhbl9tYW5hZ2VfdmNfY2hhbm5lbChjaGF0X2lkOiBpbnQsIHVzZXJfaWQ6IGludCkgLT4gYm9vbDoKICAgICIiIkNoZWNrIGlmIHVzZXIgY2FuIG1hbmFnZSBWQyBpbiBjaGFubmVsIG1vZGUiIiIKICAgIGlmIHVzZXJfaWQgaW4gYXBwLnN1ZG9lcnM6CiAgICAgICAgcmV0dXJuIFRydWUKICAgIAogICAgaWYgYXdhaXQgZGIuaXNfYXV0aChjaGF0X2lkLCB1c2VyX2lkKToKICAgICAgICByZXR1cm4gVHJ1ZQogICAgCiAgICBhZG1pbnMgPSBhd2FpdCBkYi5nZXRfYWRtaW5zKGNoYXRfaWQpCiAgICByZXR1cm4gdXNlcl9pZCBpbiBhZG1pbnMKCgphc3luYyBkZWYgaXNfYWRtaW4oY2hhdF9pZDogaW50LCB1c2VyX2lkOiBpbnQpIC0+IGJvb2w6CiAgICBpZiB1c2VyX2lkIGluIGF3YWl0IGRiLmdldF9hZG1pbnMoY2hhdF9pZCk6CiAgICAgICAgcmV0dXJuIFRydWUKICAgIHRyeToKICAgICAgICBtZW1iZXIgPSBhd2FpdCBhcHAuZ2V0X2NoYXRfbWVtYmVyKGNoYXRfaWQsIHVzZXJfaWQpCiAgICAgICAgcmV0dXJuIG1lbWJlci5zdGF0dXMgaW4gWwogICAgICAgICAgICBlbnVtcy5DaGF0TWVtYmVyU3RhdHVzLkFETUlOSVNUUkFUT1IsCiAgICAgICAgICAgIGVudW1zLkNoYXRNZW1iZXJTdGF0dXMuT1dORVIsCiAgICAgICAgXQogICAgZXhjZXB0OgogICAgICAgIHJhaXNlIFN0b3BQcm9wYWdhdGlvbgoKCmFzeW5jIGRlZiByZWxvYWRfYWRtaW5zKGNoYXRfaWQ6IGludCkgLT4gbGlzdFtpbnRdOgogICAgdHJ5OgogICAgICAgIGFkbWlucyA9IFsKICAgICAgICAgICAgYWRtaW4KICAgICAgICAgICAgYXN5bmMgZm9yIGFkbWluIGluIGFwcC5nZXRfY2hhdF9tZW1iZXJzKAogICAgICAgICAgICAgICAgY2hhdF9pZCwgZmlsdGVyPWVudW1zLkNoYXRNZW1iZXJzRmlsdGVyLkFETUlOSVNUUkFUT1JTCiAgICAgICAgICAgICkKICAgICAgICAgICAgaWYgbm90IGFkbWluLnVzZXIuaXNfYm90CiAgICAgICAgXQogICAgICAgIHJldHVybiBbYWRtaW4udXNlci5pZCBmb3IgYWRtaW4gaW4gYWRtaW5zXQogICAgZXhjZXB0OgogICAgICAgIHJldHVybiBbXQoKCmFzeW5jIGRlZiBpc19hZG1pbl9jYWxsYmFjayhxdWVyeTogdHlwZXMuQ2FsbGJhY2tRdWVyeSkgLT4gYm9vbDoKICAgIGlmIG5vdCBxdWVyeS5mcm9tX3VzZXI6CiAgICAgICAgcmV0dXJuIEZhbHNlCiAgICAKICAgIHVzZXJfaWQgPSBxdWVyeS5mcm9tX3VzZXIuaWQKICAgIGNoYXRfaWQgPSBxdWVyeS5tZXNzYWdlLmNoYXQuaWQKICAgIAogICAgaWYgdXNlcl9pZCBpbiBhcHAuc3Vkb2VyczoKICAgICAgICByZXR1cm4gVHJ1ZQogICAgCiAgICBhZG1pbnMgPSBhd2FpdCBkYi5nZXRfYWRtaW5zKGNoYXRfaWQpCiAgICByZXR1cm4gdXNlcl9pZCBpbiBhZG1pbnMK").decode("utf-8"))
+# ==========================================================
+# Copyright (c) 2026 ArtistBots
+# All Rights Reserved.
+#
+# Project      : ArtistBots API Telegram Music Bot
+# Powered By   : Artist
+# Type         : API Based Telegram Music Bot
+#
+# Bot          : @ArtistApibot
+# Channel      : https://t.me/artistbots
+# GitHub       : https://github.com/elevenyts
+#
+# Unauthorized copying, modification, or redistribution
+# of this source code without permission is prohibited.
+# ==========================================================
+
+from functools import wraps
+
+from pyrogram import StopPropagation, enums, types
+from pyrogram.errors import ChatSendPlainForbidden, ChatWriteForbidden
+
+from Elevenyts import app, db
+
+
+def admin_check(func):
+    @wraps(func)
+    async def wrapper(_, update: types.Message | types.CallbackQuery, *args, **kwargs):
+        async def reply(text):
+            if isinstance(update, types.Message):
+                try:
+                    return await update.reply_text(text)
+                except (ChatSendPlainForbidden, ChatWriteForbidden):
+                    return
+            else:
+                return await update.answer(text, show_alert=True)
+
+        if not update.from_user:
+            return
+
+        chat_id = (
+            update.chat.id
+            if isinstance(update, types.Message)
+            else update.message.chat.id
+        )
+        user_id = update.from_user.id
+
+        admins = await db.get_admins(chat_id)
+
+        if user_id in app.sudoers:
+            return await func(_, update, *args, **kwargs)
+
+        if user_id not in admins:
+            try:
+                return await reply(update.lang["user_no_perms"])
+            except (ChatSendPlainForbidden, ChatWriteForbidden):
+                return
+
+        return await func(_, update, *args, **kwargs)
+
+    return wrapper
+
+
+def can_manage_vc(func):
+    @wraps(func)
+    async def wrapper(_, update: types.Message | types.CallbackQuery, *args, **kwargs):
+        chat_id = (
+            update.chat.id
+            if isinstance(update, types.Message)
+            else update.message.chat.id
+        )
+
+        if not update.from_user:
+            return
+
+        user_id = update.from_user.id
+
+        if user_id in app.sudoers:
+            return await func(_, update, *args, **kwargs)
+
+        if await db.is_auth(chat_id, user_id):
+            return await func(_, update, *args, **kwargs)
+
+        admins = await db.get_admins(chat_id)
+        if user_id in admins:
+            return await func(_, update, *args, **kwargs)
+
+        if isinstance(update, types.Message):
+            try:
+                return await update.reply_text(update.lang["user_no_perms"])
+            except (ChatSendPlainForbidden, ChatWriteForbidden):
+                return
+        else:
+            return await update.answer(update.lang["user_no_perms"], show_alert=True)
+
+    return wrapper
+
+
+async def can_manage_vc_channel(chat_id: int, user_id: int) -> bool:
+    """Check if user can manage VC in channel mode"""
+    if user_id in app.sudoers:
+        return True
+    
+    if await db.is_auth(chat_id, user_id):
+        return True
+    
+    admins = await db.get_admins(chat_id)
+    return user_id in admins
+
+
+async def is_admin(chat_id: int, user_id: int) -> bool:
+    if user_id in await db.get_admins(chat_id):
+        return True
+    try:
+        member = await app.get_chat_member(chat_id, user_id)
+        return member.status in [
+            enums.ChatMemberStatus.ADMINISTRATOR,
+            enums.ChatMemberStatus.OWNER,
+        ]
+    except:
+        raise StopPropagation
+
+
+async def reload_admins(chat_id: int) -> list[int]:
+    try:
+        admins = [
+            admin
+            async for admin in app.get_chat_members(
+                chat_id, filter=enums.ChatMembersFilter.ADMINISTRATORS
+            )
+            if not admin.user.is_bot
+        ]
+        return [admin.user.id for admin in admins]
+    except:
+        return []
+
+
+async def is_admin_callback(query: types.CallbackQuery) -> bool:
+    if not query.from_user:
+        return False
+    
+    user_id = query.from_user.id
+    chat_id = query.message.chat.id
+    
+    if user_id in app.sudoers:
+        return True
+    
+    admins = await db.get_admins(chat_id)
+    return user_id in admins
+

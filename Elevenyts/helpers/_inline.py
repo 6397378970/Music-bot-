@@ -13,5 +13,253 @@
   # Unauthorized copying, modification, or redistribution
   # of this source code without permission is prohibited.
   # ==========================================================
-import base64
-exec(base64.b64decode("IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ29weXJpZ2h0IChjKSAyMDI2IEFydGlzdEJvdHMKIyBBbGwgUmlnaHRzIFJlc2VydmVkLgojCiMgUHJvamVjdCAgICAgIDogQXJ0aXN0Qm90cyBBUEkgVGVsZWdyYW0gTXVzaWMgQm90CiMgUG93ZXJlZCBCeSAgIDogQXJ0aXN0CiMgVHlwZSAgICAgICAgIDogQVBJIEJhc2VkIFRlbGVncmFtIE11c2ljIEJvdAojCiMgQm90ICAgICAgICAgIDogQEFydGlzdEFwaWJvdAojIENoYW5uZWwgICAgICA6IGh0dHBzOi8vdC5tZS9hcnRpc3Rib3RzCiMgR2l0SHViICAgICAgIDogaHR0cHM6Ly9naXRodWIuY29tL2VsZXZlbnl0cwojCiMgVW5hdXRob3JpemVkIGNvcHlpbmcsIG1vZGlmaWNhdGlvbiwgb3IgcmVkaXN0cmlidXRpb24KIyBvZiB0aGlzIHNvdXJjZSBjb2RlIHdpdGhvdXQgcGVybWlzc2lvbiBpcyBwcm9oaWJpdGVkLgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KZnJvbSBweXJvZ3JhbSBpbXBvcnQgdHlwZXMKZnJvbSBweXJvZ3JhbS5lbnVtcyBpbXBvcnQgQnV0dG9uU3R5bGUKCmZyb20gRWxldmVueXRzIGltcG9ydCBhcHAsIGNvbmZpZywgbGFuZwoKCmNsYXNzIElubGluZToKICAgIGRlZiBfX2luaXRfXyhzZWxmKToKICAgICAgICBzZWxmLmlrbSA9IHR5cGVzLklubGluZUtleWJvYXJkTWFya3VwCiAgICAgICAgc2VsZi5pa2IgPSB0eXBlcy5JbmxpbmVLZXlib2FyZEJ1dHRvbgoKICAgIGRlZiBjYW5jZWxfZGwoc2VsZiwgdGV4dCkgLT4gdHlwZXMuSW5saW5lS2V5Ym9hcmRNYXJrdXA6CiAgICAgICAgcmV0dXJuIHNlbGYuaWttKFtbc2VsZi5pa2IodGV4dD10ZXh0LCBjYWxsYmFja19kYXRhPWYiY2FuY2VsX2RsIiwgc3R5bGU9QnV0dG9uU3R5bGUuUFJJTUFSWSldXSkKCiAgICBkZWYgY29udHJvbHMoCiAgICAgICAgc2VsZiwKICAgICAgICBjaGF0X2lkOiBpbnQsCiAgICAgICAgc3RhdHVzOiBzdHIgPSBOb25lLAogICAgICAgIHRpbWVyOiBzdHIgPSBOb25lLAogICAgICAgIHJlbW92ZTogYm9vbCA9IEZhbHNlLAogICAgKSAtPiB0eXBlcy5JbmxpbmVLZXlib2FyZE1hcmt1cDoKICAgICAgICBrZXlib2FyZCA9IFtdCiAgICAgICAgaWYgc3RhdHVzOgogICAgICAgICAgICBrZXlib2FyZC5hcHBlbmQoCiAgICAgICAgICAgICAgICBbc2VsZi5pa2IoCiAgICAgICAgICAgICAgICAgICAgdGV4dD1zdGF0dXMsIGNhbGxiYWNrX2RhdGE9ZiJjb250cm9scyBzdGF0dXMge2NoYXRfaWR9Iiwgc3R5bGU9QnV0dG9uU3R5bGUuUFJJTUFSWSldCiAgICAgICAgICAgICkKICAgICAgICBlbGlmIHRpbWVyOgogICAgICAgICAgICBrZXlib2FyZC5hcHBlbmQoCiAgICAgICAgICAgICAgICBbc2VsZi5pa2IoCiAgICAgICAgICAgICAgICAgICAgdGV4dD10aW1lciwgY2FsbGJhY2tfZGF0YT1mImNvbnRyb2xzIHN0YXR1cyB7Y2hhdF9pZH0iLCBzdHlsZT1CdXR0b25TdHlsZS5QUklNQVJZKV0KICAgICAgICAgICAgKQoKICAgICAgICBpZiBub3QgcmVtb3ZlOgogICAgICAgICAgICAjIFNlZWsgYnV0dG9ucyByb3cKICAgICAgICAgICAgCiAgICAgICAgICAgICMgTWFpbiBjb250cm9sIGJ1dHRvbnMgcm93CiAgICAgICAgICAgIGtleWJvYXJkLmFwcGVuZCgKICAgICAgICAgICAgICAgIFsKICAgICAgICAgICAgICAgICAgICBzZWxmLmlrYigKICAgICAgICAgICAgICAgICAgICAgICAgdGV4dD0i4oij4oijIiwgY2FsbGJhY2tfZGF0YT1mImNvbnRyb2xzIHBhdXNlIHtjaGF0X2lkfSIpLAogICAgICAgICAgICAgICAgICAgIHNlbGYuaWtiKAogICAgICAgICAgICAgICAgICAgICAgICB0ZXh0PSLilrciLCBjYWxsYmFja19kYXRhPWYiY29udHJvbHMgcmVzdW1lIHtjaGF0X2lkfSIpLAogICAgICAgICAgICAgICAgICAgIHNlbGYuaWtiKAogICAgICAgICAgICAgICAgICAgICAgICB0ZXh0PSLihrsiLCBjYWxsYmFja19kYXRhPWYiY29udHJvbHMgcmVwbGF5IHtjaGF0X2lkfSIpLAogICAgICAgICAgICAgICAgICAgIHNlbGYuaWtiKAogICAgICAgICAgICAgICAgICAgICAgICB0ZXh0PSLigKPigKNJIiwgY2FsbGJhY2tfZGF0YT1mImNvbnRyb2xzIHNraXAge2NoYXRfaWR9IiksCiAgICAgICAgICAgICAgICAgICAgc2VsZi5pa2IoCiAgICAgICAgICAgICAgICAgICAgICAgIHRleHQ9IuKWoyIsIGNhbGxiYWNrX2RhdGE9ZiJjb250cm9scyBzdG9wIHtjaGF0X2lkfSIpLAogICAgICAgICAgICAgICAgXQogICAgICAgICAgICApCiAgICAgICAgICAgICMgRGVsZXRlIGJ1dHRvbiBhcyBmdWxsLXdpZHRoIGJ1dHRvbiBhdCBib3R0b20KICAgICAgICAgICAga2V5Ym9hcmQuYXBwZW5kKAogICAgICAgICAgICAgICAgWwogICAgICAgICAgICAgICAgICAgIHNlbGYuaWtiKAogICAgICAgICAgICAgICAgICAgICAgICB0ZXh0PSJBdXRvIiwgY2FsbGJhY2tfZGF0YT1mImNvbnRyb2xzIGF1dG9wbGF5IHtjaGF0X2lkfSIsIHN0eWxlPUJ1dHRvblN0eWxlLlNVQ0NFU1MpLAogICAgICAgICAgICAgICAgICAgIHNlbGYuaWtiKAogICAgICAgICAgICAgICAgICAgICAgICB0ZXh0PSLwn5eRIiwgY2FsbGJhY2tfZGF0YT1mImNvbnRyb2xzIGNsb3NlIHtjaGF0X2lkfSIsIHN0eWxlPUJ1dHRvblN0eWxlLkRBTkdFUiksCiAgICAgICAgICAgICAgICBdCiAgICAgICAgICAgICkKICAgICAgICByZXR1cm4gc2VsZi5pa20oa2V5Ym9hcmQpCgogICAgZGVmIGhlbHBfbWFya3VwKAogICAgICAgIHNlbGYsIF9sYW5nOiBkaWN0LCBiYWNrOiBib29sID0gRmFsc2UKICAgICkgLT4gdHlwZXMuSW5saW5lS2V5Ym9hcmRNYXJrdXA6CiAgICAgICAgIiIiQ3JlYXRlIGhlbHAgbWVudSB3aXRoIGNhdGVnb3JpemVkIGJ1dHRvbnMuIiIiCiAgICAgICAgaWYgYmFjazoKICAgICAgICAgICAgcm93cyA9IFsKICAgICAgICAgICAgICAgIFsKICAgICAgICAgICAgICAgICAgICBzZWxmLmlrYih0ZXh0PSLKmeG0gOG0hOG0iyIsIGNhbGxiYWNrX2RhdGE9ImhlbHBfbWFpbiIsIHN0eWxlPUJ1dHRvblN0eWxlLlNVQ0NFU1MpLAogICAgICAgICAgICAgICAgXQogICAgICAgICAgICBdCiAgICAgICAgZWxzZToKICAgICAgICAgICAgIyBIZWxwIG1lbnUgd2l0aCBjYXRlZ29yaXplZCBidXR0b25zICgzIHBlciByb3cpCiAgICAgICAgICAgIHJvd3MgPSBbCiAgICAgICAgICAgICAgICBbCiAgICAgICAgICAgICAgICAgICAgc2VsZi5pa2IodGV4dD0i4bSA4bSF4bSNyarJtOqcsSIsIGNhbGxiYWNrX2RhdGE9ImhlbHBfYWRtaW5zIiwgc3R5bGU9QnV0dG9uU3R5bGUuUFJJTUFSWSksCiAgICAgICAgICAgICAgICAgICAgc2VsZi5pa2IodGV4dD0i4bSA4bSc4bSbypwiLCBjYWxsYmFja19kYXRhPSJoZWxwX2F1dGgiLCBzdHlsZT1CdXR0b25TdHlsZS5QUklNQVJZKSwKICAgICAgICAgICAgICAgICAgICBzZWxmLmlrYih0ZXh0PSLKmcqA4bSP4bSA4bSF4bSE4bSA6pyx4bSbIiwgY2FsbGJhY2tfZGF0YT0iaGVscF9icm9hZGNhc3QiLCBzdHlsZT1CdXR0b25TdHlsZS5QUklNQVJZKSwKICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICBbCiAgICAgICAgICAgICAgICAgICAgc2VsZi5pa2IodGV4dD0iypnKny3htITKnOG0gOG0myIsIGNhbGxiYWNrX2RhdGE9ImhlbHBfYmxjaGF0Iiwgc3R5bGU9QnV0dG9uU3R5bGUuUFJJTUFSWSksCiAgICAgICAgICAgICAgICAgICAgc2VsZi5pa2IodGV4dD0iypnKny3htJzqnLHhtIfKgCIsIGNhbGxiYWNrX2RhdGE9ImhlbHBfYmx1c2VyIiwgc3R5bGU9QnV0dG9uU3R5bGUuUFJJTUFSWSksCiAgICAgICAgICAgICAgICAgICAgc2VsZi5pa2IodGV4dD0iyaItypnhtIDJtCIsIGNhbGxiYWNrX2RhdGE9ImhlbHBfZ2JhbiIsIHN0eWxlPUJ1dHRvblN0eWxlLlBSSU1BUlkpLAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgIFsKICAgICAgICAgICAgICAgICAgICBzZWxmLmlrYih0ZXh0PSLKn+G0j+G0j+G0mCIsIGNhbGxiYWNrX2RhdGE9ImhlbHBfbG9vcCIsIHN0eWxlPUJ1dHRvblN0eWxlLlBSSU1BUlkpLAogICAgICAgICAgICAgICAgICAgIHNlbGYuaWtiKHRleHQ9IuG0mMqf4bSAyo8iLCBjYWxsYmFja19kYXRhPSJoZWxwX3BsYXkiLCBzdHlsZT1CdXR0b25TdHlsZS5QUklNQVJZKSwKICAgICAgICAgICAgICAgICAgICBzZWxmLmlrYih0ZXh0PSLHq+G0nOG0h+G0nOG0hyIsIGNhbGxiYWNrX2RhdGE9ImhlbHBfcXVldWUiLCBzdHlsZT1CdXR0b25TdHlsZS5QUklNQVJZKSwKICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICBbCiAgICAgICAgICAgICAgICAgICAgc2VsZi5pa2IodGV4dD0i6pyx4bSH4bSH4bSLIiwgY2FsbGJhY2tfZGF0YT0iaGVscF9zZWVrIiwgc3R5bGU9QnV0dG9uU3R5bGUuUFJJTUFSWSksCiAgICAgICAgICAgICAgICAgICAgc2VsZi5pa2IodGV4dD0i6pyxypzhtJzqnLDqnLDKn+G0hyIsIGNhbGxiYWNrX2RhdGE9ImhlbHBfc2h1ZmZsZSIsIHN0eWxlPUJ1dHRvblN0eWxlLlBSSU1BUlkpLAogICAgICAgICAgICAgICAgICAgIHNlbGYuaWtiKHRleHQ9IuG0mMmqybTJoiIsIGNhbGxiYWNrX2RhdGE9ImhlbHBfcGluZyIsIHN0eWxlPUJ1dHRvblN0eWxlLlBSSU1BUlkpLAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgIFsKICAgICAgICAgICAgICAgICAgICBzZWxmLmlrYih0ZXh0PSLqnLHhtJvhtIDhtJvqnLEiLCBjYWxsYmFja19kYXRhPSJoZWxwX3N0YXRzIiwgc3R5bGU9QnV0dG9uU3R5bGUuUFJJTUFSWSksCiAgICAgICAgICAgICAgICAgICAgc2VsZi5pa2IodGV4dD0i6pyx4bSc4bSF4bSPIiwgY2FsbGJhY2tfZGF0YT0iaGVscF9zdWRvIiwgc3R5bGU9QnV0dG9uU3R5bGUuUFJJTUFSWSksCiAgICAgICAgICAgICAgICAgICAgc2VsZi5pa2IodGV4dD0i4bSN4bSAyarJtOG0m+G0h8m04bSAybThtIThtIciLCBjYWxsYmFja19kYXRhPSJoZWxwX21haW50ZW5hbmNlIiwgc3R5bGU9QnV0dG9uU3R5bGUuUFJJTUFSWSksCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgWwogICAgICAgICAgICAgICAgICAgIHNlbGYuaWtiKHRleHQ9IsqZ4bSA4bSE4bSLIiwgY2FsbGJhY2tfZGF0YT0ic3RhcnQiLCBzdHlsZT1CdXR0b25TdHlsZS5TVUNDRVNTKSwKICAgICAgICAgICAgICAgICAgICBzZWxmLmlrYih0ZXh0PSLwn4yQIMqf4bSAybTJouqcsSIsIGNhbGxiYWNrX2RhdGE9ImhlbHBfbGFuZ3MiLCBzdHlsZT1CdXR0b25TdHlsZS5EQU5HRVIpLAogICAgICAgICAgICAgICAgXQogICAgICAgICAgICBdCiAgICAgICAgcmV0dXJuIHNlbGYuaWttKHJvd3MpCgogICAgZGVmIGxhbmdzX21hcmt1cChzZWxmKSAtPiB0eXBlcy5JbmxpbmVLZXlib2FyZE1hcmt1cDoKICAgICAgICAiIiJDcmVhdGUgNHg1IGxhbmd1YWdlIHNlbGVjdGlvbiBncmlkLiIiIgogICAgICAgIGxhbmdzID0gWwogICAgICAgICAgICAoIvCfh6zwn4enIEVuZ2xpc2giLCAiZW4iKSwgKCLwn4eu8J+HsyBIaW5kaSIsICJoaSIpLCAoIvCfh67wn4ezIFRlbHVndSIsICJ0ZSIpLAogICAgICAgICAgICAoIvCfh7Dwn4e3IEtvcmVhbiIsICJrbyIpLCAoIvCfh7Lwn4eyIE15YW5tYXIiLCAibXkiKSwgKCLwn4eu8J+HqSBJbmRvbmVzaWFuIiwgImlkIiksCiAgICAgICAgICAgICgi8J+Hp/Cfh7cgUG9ydHVndWVzZSIsICJwdCIpLCAoIvCfh7jwn4emIEFyYWJpYyIsICJhciIpLCAoIvCfh6rwn4e4IFNwYW5pc2giLCAiZXMiKSwKICAgICAgICAgICAgKCLwn4er8J+HtyBGcmVuY2giLCAiZnIiKSwgKCLwn4e38J+HuiBSdXNzaWFuIiwgInJ1IiksICgi8J+HqfCfh6ogR2VybWFuIiwgImRlIiksCiAgICAgICAgICAgICgi8J+HufCfh7cgVHVya2lzaCIsICJ0ciIpLCAoIvCfh6fwn4epIEJlbmdhbGkiLCAiYm4iKSwgKCLwn4e58J+HrSBUaGFpIiwgInRoIiksCiAgICAgICAgICAgICgi8J+Hu/Cfh7MgVmlldG5hbWVzZSIsICJ2aSIpLCAoIvCfh6/wn4e1IEphcGFuZXNlIiwgImphIiksICgi8J+HqPCfh7MgQ2hpbmVzZSIsICJ6aCIpLAogICAgICAgICAgICAoIvCfh7Xwn4ewIFVyZHUiLCAidXIiKSwgKCLwn4eu8J+HtyBQZXJzaWFuIiwgImZhIiksCiAgICAgICAgXQogICAgICAgIHJvd3MgPSBbXQogICAgICAgIGZvciBpIGluIHJhbmdlKDAsIGxlbihsYW5ncyksIDIpOgogICAgICAgICAgICByb3cgPSBbCiAgICAgICAgICAgICAgICBzZWxmLmlrYih0ZXh0PWxhbmdzW2ldWzBdLCBjYWxsYmFja19kYXRhPWYic2V0bGFuZ197bGFuZ3NbaV1bMV19Iiwgc3R5bGU9QnV0dG9uU3R5bGUuUFJJTUFSWSksCiAgICAgICAgICAgIF0KICAgICAgICAgICAgaWYgaSArIDEgPCBsZW4obGFuZ3MpOgogICAgICAgICAgICAgICAgcm93LmFwcGVuZCgKICAgICAgICAgICAgICAgICAgICBzZWxmLmlrYih0ZXh0PWxhbmdzW2kgKyAxXVswXSwgY2FsbGJhY2tfZGF0YT1mInNldGxhbmdfe2xhbmdzW2kgKyAxXVsxXX0iLCBzdHlsZT1CdXR0b25TdHlsZS5QUklNQVJZKQogICAgICAgICAgICAgICAgKQogICAgICAgICAgICByb3dzLmFwcGVuZChyb3cpCiAgICAgICAgcm93cy5hcHBlbmQoW3NlbGYuaWtiKHRleHQ9IsqZ4bSA4bSE4bSLIiwgY2FsbGJhY2tfZGF0YT0iaGVscCIsIHN0eWxlPUJ1dHRvblN0eWxlLlNVQ0NFU1MpXSkKICAgICAgICByZXR1cm4gc2VsZi5pa20ocm93cykKCgogICAgZGVmIHBpbmdfbWFya3VwKHNlbGYsIHRleHQ6IHN0cikgLT4gdHlwZXMuSW5saW5lS2V5Ym9hcmRNYXJrdXA6CiAgICAgICAgcmV0dXJuIHNlbGYuaWttKFsKICAgICAgICAgICAgWwogICAgICAgICAgICAgICAgc2VsZi5pa2IodGV4dD0i8J+ToiBDaGFubmVsIiwgdXJsPWNvbmZpZy5TVVBQT1JUX0NIQU5ORUwsIHN0eWxlPUJ1dHRvblN0eWxlLlNVQ0NFU1MpLAogICAgICAgICAgICAgICAgc2VsZi5pa2IodGV4dD0i8J+GmCBTdXBwb3J0IiwgdXJsPWNvbmZpZy5TVVBQT1JUX0NIQVQsIHN0eWxlPUJ1dHRvblN0eWxlLlNVQ0NFU1MpLAogICAgICAgICAgICBdLAogICAgICAgICAgICBbCiAgICAgICAgICAgICAgICBzZWxmLmlrYih0ZXh0PSLinpUgQWRkIE1lIHRvIFlvdXIgR3JvdXAiLCB1cmw9ZiJodHRwczovL3QubWUve2FwcC51c2VybmFtZX0/c3RhcnRncm91cD10cnVlIiwgc3R5bGU9QnV0dG9uU3R5bGUuUFJJTUFSWSksCiAgICAgICAgICAgIF0KICAgICAgICBdKQoKICAgIGRlZiBwbGF5X3F1ZXVlZCgKICAgICAgICBzZWxmLCBjaGF0X2lkOiBpbnQsIGl0ZW1faWQ6IHN0ciwgX3RleHQ6IHN0cgogICAgKSAtPiB0eXBlcy5JbmxpbmVLZXlib2FyZE1hcmt1cDoKICAgICAgICByZXR1cm4gc2VsZi5pa20oCiAgICAgICAgICAgIFsKICAgICAgICAgICAgICAgIFsKICAgICAgICAgICAgICAgICAgICBzZWxmLmlrYigKICAgICAgICAgICAgICAgICAgICAgICAgdGV4dD0i4pa3IiwgY2FsbGJhY2tfZGF0YT1mImNvbnRyb2xzIHJlc3VtZSB7Y2hhdF9pZH0iLCBzdHlsZT1CdXR0b25TdHlsZS5TVUNDRVNTKSwKICAgICAgICAgICAgICAgICAgICBzZWxmLmlrYigKICAgICAgICAgICAgICAgICAgICAgICAgdGV4dD0i4oijIOKIoyIsIGNhbGxiYWNrX2RhdGE9ZiJjb250cm9scyBwYXVzZSB7Y2hhdF9pZH0iLCBzdHlsZT1CdXR0b25TdHlsZS5QUklNQVJZKSwKICAgICAgICAgICAgICAgICAgICBzZWxmLmlrYigKICAgICAgICAgICAgICAgICAgICAgICAgdGV4dD0iPj4iLCBjYWxsYmFja19kYXRhPWYiY29udHJvbHMgc2tpcCB7Y2hhdF9pZH0iLCBzdHlsZT1CdXR0b25TdHlsZS5QUklNQVJZKSwKICAgICAgICAgICAgICAgICAgICBzZWxmLmlrYigKICAgICAgICAgICAgICAgICAgICAgICAgdGV4dD0i4pajIiwgY2FsbGJhY2tfZGF0YT1mImNvbnRyb2xzIHN0b3Age2NoYXRfaWR9Iiwgc3R5bGU9QnV0dG9uU3R5bGUuREFOR0VSKSwKICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICBbCiAgICAgICAgICAgICAgICAgICAgc2VsZi5pa2IoCiAgICAgICAgICAgICAgICAgICAgICAgIHRleHQ9IkF1dG8iLCBjYWxsYmFja19kYXRhPWYiY29udHJvbHMgYXV0b3BsYXkge2NoYXRfaWR9Iiwgc3R5bGU9QnV0dG9uU3R5bGUuU1VDQ0VTUyksCiAgICAgICAgICAgICAgICAgICAgc2VsZi5pa2IoCiAgICAgICAgICAgICAgICAgICAgICAgIHRleHQ9IvCfl5EiLCBjYWxsYmFja19kYXRhPWYiY29udHJvbHMgY2xvc2Uge2NoYXRfaWR9Iiwgc3R5bGU9QnV0dG9uU3R5bGUuREFOR0VSKSwKICAgICAgICAgICAgICAgIF0KICAgICAgICAgICAgXQogICAgICAgICkKCiAgICBkZWYgcXVldWVfbWFya3VwKAogICAgICAgIHNlbGYsIGNoYXRfaWQ6IGludCwgX3RleHQ6IHN0ciwgcGxheWluZzogYm9vbAogICAgKSAtPiB0eXBlcy5JbmxpbmVLZXlib2FyZE1hcmt1cDoKICAgICAgICBfYWN0aW9uID0gInBhdXNlIiBpZiBwbGF5aW5nIGVsc2UgInJlc3VtZSIKICAgICAgICByZXR1cm4gc2VsZi5pa20oCiAgICAgICAgICAgIFtbc2VsZi5pa2IoCiAgICAgICAgICAgICAgICB0ZXh0PV90ZXh0LCBjYWxsYmFja19kYXRhPWYiY29udHJvbHMge19hY3Rpb259IHtjaGF0X2lkfSBxIiwgc3R5bGU9QnV0dG9uU3R5bGUuU1VDQ0VTUyldXQogICAgICAgICkKCiAgICBkZWYgc2V0dGluZ3NfbWFya3VwKAogICAgICAgIHNlbGYsIGxhbmc6IGRpY3QsIGFkbWluX29ubHk6IGJvb2wsIGZvcmNlX2FkbWluOiBib29sLCBsYW5ndWFnZTogc3RyLCBjaGF0X2lkOiBpbnQKICAgICkgLT4gdHlwZXMuSW5saW5lS2V5Ym9hcmRNYXJrdXA6CiAgICAgICAgcGxheV9tb2RlX3R4dCA9IGxhbmdbImFkbWluX29ubHlfdHh0Il0gaWYgYWRtaW5fb25seSBlbHNlIGxhbmdbImV2ZXJ5b25lIl0KICAgICAgICBmb3JjZV9tb2RlX3R4dCA9IGxhbmdbImFkbWluX29ubHlfdHh0Il0gaWYgZm9yY2VfYWRtaW4gZWxzZSBsYW5nWyJldmVyeW9uZSJdCiAgICAgICAgcmV0dXJuIHNlbGYuaWttKAogICAgICAgICAgICBbCiAgICAgICAgICAgICAgICBbCiAgICAgICAgICAgICAgICAgICAgc2VsZi5pa2IoCiAgICAgICAgICAgICAgICAgICAgICAgIHRleHQ9bGFuZ1sicGxheV9tb2RlIl0gKyAiIOKenCIsCiAgICAgICAgICAgICAgICAgICAgICAgIGNhbGxiYWNrX2RhdGE9ZiJjb250cm9scyBzdGF0dXMge2NoYXRfaWR9IiwKICAgICAgICAgICAgICAgICAgICAgICAgc3R5bGU9QnV0dG9uU3R5bGUuUFJJTUFSWSwKICAgICAgICAgICAgICAgICAgICApLAogICAgICAgICAgICAgICAgICAgIHNlbGYuaWtiKHRleHQ9cGxheV9tb2RlX3R4dCwgY2FsbGJhY2tfZGF0YT0icGxheW1vZGUiLCBzdHlsZT1CdXR0b25TdHlsZS5TVUNDRVNTKSwKICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICBbCiAgICAgICAgICAgICAgICAgICAgc2VsZi5pa2IoCiAgICAgICAgICAgICAgICAgICAgICAgIHRleHQ9bGFuZ1siZm9yY2VfbW9kZSJdICsgIiDinpwiLAogICAgICAgICAgICAgICAgICAgICAgICBjYWxsYmFja19kYXRhPWYiY29udHJvbHMgc3RhdHVzIHtjaGF0X2lkfSIsCiAgICAgICAgICAgICAgICAgICAgICAgIHN0eWxlPUJ1dHRvblN0eWxlLlBSSU1BUlksCiAgICAgICAgICAgICAgICAgICAgKSwKICAgICAgICAgICAgICAgICAgICBzZWxmLmlrYih0ZXh0PWZvcmNlX21vZGVfdHh0LCBjYWxsYmFja19kYXRhPSJmb3JjZW1vZGUiLCBzdHlsZT1CdXR0b25TdHlsZS5TVUNDRVNTKSwKICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgIF0KICAgICAgICApCgogICAgZGVmIHN0YXJ0X2tleSgKICAgICAgICBzZWxmLCBsYW5nOiBkaWN0LCBwcml2YXRlOiBib29sID0gRmFsc2UKICAgICkgLT4gdHlwZXMuSW5saW5lS2V5Ym9hcmRNYXJrdXA6CiAgICAgICAgcm93cyA9IFsKICAgICAgICAgICAgWwogICAgICAgICAgICAgICAgc2VsZi5pa2IoCiAgICAgICAgICAgICAgICAgICAgdGV4dD1sYW5nWyJhZGRfbWUiXSwKICAgICAgICAgICAgICAgICAgICB1cmw9ZiJodHRwczovL3QubWUve2FwcC51c2VybmFtZX0/c3RhcnRncm91cD10cnVlIiwKICAgICAgICAgICAgICAgICAgICBzdHlsZT1CdXR0b25TdHlsZS5QUklNQVJZLAogICAgICAgICAgICAgICAgKQogICAgICAgICAgICBdLAogICAgICAgICAgICBbCiAgICAgICAgICAgICAgICBzZWxmLmlrYih0ZXh0PWxhbmdbImhlbHAiXSwgY2FsbGJhY2tfZGF0YT0iaGVscCIsIHN0eWxlPUJ1dHRvblN0eWxlLlNVQ0NFU1MpLAogICAgICAgICAgICAgICAgc2VsZi5pa2IodGV4dD0i6pyx4bSP4bScyoDhtIThtIciLCB1cmw9Imh0dHBzOi8vZ2l0aHViLmNvbS9lbGV2ZW55dHMvQXJ0aXN0TXVzaWMiLCBzdHlsZT1CdXR0b25TdHlsZS5EQU5HRVIpLAogICAgICAgICAgICAgICAgc2VsZi5pa2IodGV4dD0iyp/htIDJtMmi6pyxIiwgY2FsbGJhY2tfZGF0YT0iaGVscF9sYW5ncyIsIHN0eWxlPUJ1dHRvblN0eWxlLlBSSU1BUlkpLAogICAgICAgICAgICBdLAogICAgICAgICAgICBbCiAgICAgICAgICAgICAgICBzZWxmLmlrYih0ZXh0PWxhbmdbInN1cHBvcnQiXSwgdXJsPWNvbmZpZy5TVVBQT1JUX0NIQVQsIHN0eWxlPUJ1dHRvblN0eWxlLlBSSU1BUlkpLAogICAgICAgICAgICAgICAgc2VsZi5pa2IodGV4dD1sYW5nWyJjaGFubmVsIl0sIHVybD1jb25maWcuU1VQUE9SVF9DSEFOTkVMLCBzdHlsZT1CdXR0b25TdHlsZS5QUklNQVJZKSwKICAgICAgICAgICAgXSwKICAgICAgICBdCiAgICAgICAgcmV0dXJuIHNlbGYuaWttKHJvd3MpCgogICAgZGVmIHl0X2tleShzZWxmLCBsaW5rOiBzdHIpIC0+IHR5cGVzLklubGluZUtleWJvYXJkTWFya3VwOgogICAgICAgIHJldHVybiBzZWxmLmlrbSgKICAgICAgICAgICAgWwogICAgICAgICAgICAgICAgWwogICAgICAgICAgICAgICAgICAgIHNlbGYuaWtiKHRleHQ9IuG0hOG0j+G0mMqPIMqfyarJtOG0iyIsIGNvcHlfdGV4dD1saW5rLCBzdHlsZT1CdXR0b25TdHlsZS5QUklNQVJZKSwKICAgICAgICAgICAgICAgICAgICBzZWxmLmlrYih0ZXh0PSLhtI/htJjhtIfJtCDJqsm0IMqP4bSP4bSc4bSb4bScypnhtIciLCB1cmw9bGluaywgc3R5bGU9QnV0dG9uU3R5bGUuUFJJTUFSWSksCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICBdCiAgICAgICAgKQo=").decode("utf-8"))
+# ==========================================================
+# Copyright (c) 2026 ArtistBots
+# All Rights Reserved.
+#
+# Project      : ArtistBots API Telegram Music Bot
+# Powered By   : Artist
+# Type         : API Based Telegram Music Bot
+#
+# Bot          : @ArtistApibot
+# Channel      : https://t.me/artistbots
+# GitHub       : https://github.com/elevenyts
+#
+# Unauthorized copying, modification, or redistribution
+# of this source code without permission is prohibited.
+# ==========================================================
+from pyrogram import types
+from pyrogram.enums import ButtonStyle
+
+from Elevenyts import app, config, lang
+
+
+class Inline:
+    def __init__(self):
+        self.ikm = types.InlineKeyboardMarkup
+        self.ikb = types.InlineKeyboardButton
+
+    def cancel_dl(self, text) -> types.InlineKeyboardMarkup:
+        return self.ikm([[self.ikb(text=text, callback_data=f"cancel_dl", style=ButtonStyle.PRIMARY)]])
+
+    def controls(
+        self,
+        chat_id: int,
+        status: str = None,
+        timer: str = None,
+        remove: bool = False,
+    ) -> types.InlineKeyboardMarkup:
+        keyboard = []
+        if status:
+            keyboard.append(
+                [self.ikb(
+                    text=status, callback_data=f"controls status {chat_id}", style=ButtonStyle.PRIMARY)]
+            )
+        elif timer:
+            keyboard.append(
+                [self.ikb(
+                    text=timer, callback_data=f"controls status {chat_id}", style=ButtonStyle.PRIMARY)]
+            )
+
+        if not remove:
+            # Seek buttons row
+            
+            # Main control buttons row
+            keyboard.append(
+                [
+                    self.ikb(
+                        text="∣∣", callback_data=f"controls pause {chat_id}"),
+                    self.ikb(
+                        text="▷", callback_data=f"controls resume {chat_id}"),
+                    self.ikb(
+                        text="↻", callback_data=f"controls replay {chat_id}"),
+                    self.ikb(
+                        text="‣‣I", callback_data=f"controls skip {chat_id}"),
+                    self.ikb(
+                        text="▣", callback_data=f"controls stop {chat_id}"),
+                ]
+            )
+            # Delete button as full-width button at bottom
+            keyboard.append(
+                [
+                    self.ikb(
+                        text="Auto", callback_data=f"controls autoplay {chat_id}", style=ButtonStyle.SUCCESS),
+                    self.ikb(
+                        text="🗑", callback_data=f"controls close {chat_id}", style=ButtonStyle.DANGER),
+                ]
+            )
+        return self.ikm(keyboard)
+
+    def help_markup(
+        self, _lang: dict, back: bool = False
+    ) -> types.InlineKeyboardMarkup:
+        """Create help menu with categorized buttons."""
+        if back:
+            rows = [
+                [
+                    self.ikb(text="ʙᴀᴄᴋ", callback_data="help_main", style=ButtonStyle.SUCCESS),
+                ]
+            ]
+        else:
+            # Help menu with categorized buttons (3 per row)
+            rows = [
+                [
+                    self.ikb(text="ᴀᴅᴍɪɴꜱ", callback_data="help_admins", style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ᴀᴜᴛʜ", callback_data="help_auth", style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ʙʀᴏᴀᴅᴄᴀꜱᴛ", callback_data="help_broadcast", style=ButtonStyle.PRIMARY),
+                ],
+                [
+                    self.ikb(text="ʙʟ-ᴄʜᴀᴛ", callback_data="help_blchat", style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ʙʟ-ᴜꜱᴇʀ", callback_data="help_bluser", style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ɢ-ʙᴀɴ", callback_data="help_gban", style=ButtonStyle.PRIMARY),
+                ],
+                [
+                    self.ikb(text="ʟᴏᴏᴘ", callback_data="help_loop", style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ᴘʟᴀʏ", callback_data="help_play", style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ǫᴜᴇᴜᴇ", callback_data="help_queue", style=ButtonStyle.PRIMARY),
+                ],
+                [
+                    self.ikb(text="ꜱᴇᴇᴋ", callback_data="help_seek", style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ꜱʜᴜꜰꜰʟᴇ", callback_data="help_shuffle", style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ᴘɪɴɢ", callback_data="help_ping", style=ButtonStyle.PRIMARY),
+                ],
+                [
+                    self.ikb(text="ꜱᴛᴀᴛꜱ", callback_data="help_stats", style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ꜱᴜᴅᴏ", callback_data="help_sudo", style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ", callback_data="help_maintenance", style=ButtonStyle.PRIMARY),
+                ],
+                [
+                    self.ikb(text="ʙᴀᴄᴋ", callback_data="start", style=ButtonStyle.SUCCESS),
+                    self.ikb(text="🌐 ʟᴀɴɢꜱ", callback_data="help_langs", style=ButtonStyle.DANGER),
+                ]
+            ]
+        return self.ikm(rows)
+
+    def langs_markup(self) -> types.InlineKeyboardMarkup:
+        """Create 4x5 language selection grid."""
+        langs = [
+            ("🇬🇧 English", "en"), ("🇮🇳 Hindi", "hi"), ("🇮🇳 Telugu", "te"),
+            ("🇰🇷 Korean", "ko"), ("🇲🇲 Myanmar", "my"), ("🇮🇩 Indonesian", "id"),
+            ("🇧🇷 Portuguese", "pt"), ("🇸🇦 Arabic", "ar"), ("🇪🇸 Spanish", "es"),
+            ("🇫🇷 French", "fr"), ("🇷🇺 Russian", "ru"), ("🇩🇪 German", "de"),
+            ("🇹🇷 Turkish", "tr"), ("🇧🇩 Bengali", "bn"), ("🇹🇭 Thai", "th"),
+            ("🇻🇳 Vietnamese", "vi"), ("🇯🇵 Japanese", "ja"), ("🇨🇳 Chinese", "zh"),
+            ("🇵🇰 Urdu", "ur"), ("🇮🇷 Persian", "fa"),
+        ]
+        rows = []
+        for i in range(0, len(langs), 2):
+            row = [
+                self.ikb(text=langs[i][0], callback_data=f"setlang_{langs[i][1]}", style=ButtonStyle.PRIMARY),
+            ]
+            if i + 1 < len(langs):
+                row.append(
+                    self.ikb(text=langs[i + 1][0], callback_data=f"setlang_{langs[i + 1][1]}", style=ButtonStyle.PRIMARY)
+                )
+            rows.append(row)
+        rows.append([self.ikb(text="ʙᴀᴄᴋ", callback_data="help", style=ButtonStyle.SUCCESS)])
+        return self.ikm(rows)
+
+
+    def ping_markup(self, text: str) -> types.InlineKeyboardMarkup:
+        return self.ikm([
+            [
+                self.ikb(text="📢 Channel", url=config.SUPPORT_CHANNEL, style=ButtonStyle.SUCCESS),
+                self.ikb(text="🆘 Support", url=config.SUPPORT_CHAT, style=ButtonStyle.SUCCESS),
+            ],
+            [
+                self.ikb(text="➕ Add Me to Your Group", url=f"https://t.me/{app.username}?startgroup=true", style=ButtonStyle.PRIMARY),
+            ]
+        ])
+
+    def play_queued(
+        self, chat_id: int, item_id: str, _text: str
+    ) -> types.InlineKeyboardMarkup:
+        return self.ikm(
+            [
+                [
+                    self.ikb(
+                        text="▷", callback_data=f"controls resume {chat_id}", style=ButtonStyle.SUCCESS),
+                    self.ikb(
+                        text="∣ ∣", callback_data=f"controls pause {chat_id}", style=ButtonStyle.PRIMARY),
+                    self.ikb(
+                        text=">>", callback_data=f"controls skip {chat_id}", style=ButtonStyle.PRIMARY),
+                    self.ikb(
+                        text="▣", callback_data=f"controls stop {chat_id}", style=ButtonStyle.DANGER),
+                ],
+                [
+                    self.ikb(
+                        text="Auto", callback_data=f"controls autoplay {chat_id}", style=ButtonStyle.SUCCESS),
+                    self.ikb(
+                        text="🗑", callback_data=f"controls close {chat_id}", style=ButtonStyle.DANGER),
+                ]
+            ]
+        )
+
+    def queue_markup(
+        self, chat_id: int, _text: str, playing: bool
+    ) -> types.InlineKeyboardMarkup:
+        _action = "pause" if playing else "resume"
+        return self.ikm(
+            [[self.ikb(
+                text=_text, callback_data=f"controls {_action} {chat_id} q", style=ButtonStyle.SUCCESS)]]
+        )
+
+    def settings_markup(
+        self, lang: dict, admin_only: bool, force_admin: bool, language: str, chat_id: int
+    ) -> types.InlineKeyboardMarkup:
+        play_mode_txt = lang["admin_only_txt"] if admin_only else lang["everyone"]
+        force_mode_txt = lang["admin_only_txt"] if force_admin else lang["everyone"]
+        return self.ikm(
+            [
+                [
+                    self.ikb(
+                        text=lang["play_mode"] + " ➜",
+                        callback_data=f"controls status {chat_id}",
+                        style=ButtonStyle.PRIMARY,
+                    ),
+                    self.ikb(text=play_mode_txt, callback_data="playmode", style=ButtonStyle.SUCCESS),
+                ],
+                [
+                    self.ikb(
+                        text=lang["force_mode"] + " ➜",
+                        callback_data=f"controls status {chat_id}",
+                        style=ButtonStyle.PRIMARY,
+                    ),
+                    self.ikb(text=force_mode_txt, callback_data="forcemode", style=ButtonStyle.SUCCESS),
+                ],
+            ]
+        )
+
+    def start_key(
+        self, lang: dict, private: bool = False
+    ) -> types.InlineKeyboardMarkup:
+        rows = [
+            [
+                self.ikb(
+                    text=lang["add_me"],
+                    url=f"https://t.me/{app.username}?startgroup=true",
+                    style=ButtonStyle.PRIMARY,
+                )
+            ],
+            [
+                self.ikb(text=lang["help"], callback_data="help", style=ButtonStyle.SUCCESS),
+                self.ikb(text="ꜱᴏᴜʀᴄᴇ", url="https://github.com/elevenyts/ArtistMusic", style=ButtonStyle.DANGER),
+                self.ikb(text="ʟᴀɴɢꜱ", callback_data="help_langs", style=ButtonStyle.PRIMARY),
+            ],
+            [
+                self.ikb(text=lang["support"], url=config.SUPPORT_CHAT, style=ButtonStyle.PRIMARY),
+                self.ikb(text=lang["channel"], url=config.SUPPORT_CHANNEL, style=ButtonStyle.PRIMARY),
+            ],
+        ]
+        return self.ikm(rows)
+
+    def yt_key(self, link: str) -> types.InlineKeyboardMarkup:
+        return self.ikm(
+            [
+                [
+                    self.ikb(text="ᴄᴏᴘʏ ʟɪɴᴋ", copy_text=link, style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ᴏᴘᴇɴ ɪɴ ʏᴏᴜᴛᴜʙᴇ", url=link, style=ButtonStyle.PRIMARY),
+                ],
+            ]
+        )
+

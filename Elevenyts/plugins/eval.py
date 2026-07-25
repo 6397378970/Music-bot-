@@ -13,5 +13,108 @@
   # Unauthorized copying, modification, or redistribution
   # of this source code without permission is prohibited.
   # ==========================================================
-import base64
-exec(base64.b64decode("IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ29weXJpZ2h0IChjKSAyMDI2IEFydGlzdEJvdHMKIyBBbGwgUmlnaHRzIFJlc2VydmVkLgojCiMgUHJvamVjdCAgICAgIDogQXJ0aXN0Qm90cyBBUEkgVGVsZWdyYW0gTXVzaWMgQm90CiMgUG93ZXJlZCBCeSAgIDogQXJ0aXN0CiMgVHlwZSAgICAgICAgIDogQVBJIEJhc2VkIFRlbGVncmFtIE11c2ljIEJvdAojCiMgQm90ICAgICAgICAgIDogQEFydGlzdEFwaWJvdAojIENoYW5uZWwgICAgICA6IGh0dHBzOi8vdC5tZS9hcnRpc3Rib3RzCiMgR2l0SHViICAgICAgIDogaHR0cHM6Ly9naXRodWIuY29tL2VsZXZlbnl0cwojCiMgVW5hdXRob3JpemVkIGNvcHlpbmcsIG1vZGlmaWNhdGlvbiwgb3IgcmVkaXN0cmlidXRpb24KIyBvZiB0aGlzIHNvdXJjZSBjb2RlIHdpdGhvdXQgcGVybWlzc2lvbiBpcyBwcm9oaWJpdGVkLgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KaW1wb3J0IGlvCmltcG9ydCBvcwppbXBvcnQgcmUKaW1wb3J0IHN5cwppbXBvcnQgdHJhY2ViYWNrCmltcG9ydCB1dWlkCmZyb20gaHRtbCBpbXBvcnQgZXNjYXBlCmZyb20gdHlwaW5nIGltcG9ydCBBbnksIE9wdGlvbmFsLCBUdXBsZQoKZnJvbSBweXJvZ3JhbSBpbXBvcnQgZmlsdGVycywgdHlwZXMKCmZyb20gRWxldmVueXRzIGltcG9ydCB0dW5lLCBhcHAsIGNvbmZpZywgZGIsIGxhbmcsIHVzZXJib3QKZnJvbSBFbGV2ZW55dHMuaGVscGVycyBpbXBvcnQgZm9ybWF0X2V4Y2VwdGlvbiwgbWV2YWwKCgpAYXBwLm9uX21lc3NhZ2UoZmlsdGVycy5jb21tYW5kKFsiZXZhbCIsICJleGVjIl0pICYgZmlsdGVycy51c2VyKGFwcC5vd25lcikpCkBhcHAub25fZWRpdGVkX21lc3NhZ2UoZmlsdGVycy5jb21tYW5kKFsiZXZhbCIsICJleGVjIl0pICYgZmlsdGVycy51c2VyKGFwcC5vd25lcikpCkBsYW5nLmxhbmd1YWdlKCkKYXN5bmMgZGVmIGV2YWxfaGFuZGxlcihfLCBtZXNzYWdlOiB0eXBlcy5NZXNzYWdlKToKICAgICMgQXV0by1kZWxldGUgY29tbWFuZCBtZXNzYWdlCiAgICB0cnk6CiAgICAgICAgYXdhaXQgbWVzc2FnZS5kZWxldGUoKQogICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICBwYXNzCiAgICAKICAgIGlmIGxlbihtZXNzYWdlLmNvbW1hbmQpIDwgMjoKICAgICAgICByZXR1cm4gYXdhaXQgbWVzc2FnZS5yZXBseV90ZXh0KG1lc3NhZ2UubGFuZ1siZXZhbF9pbnAiXSkKCiAgICBjb2RlID0gbWVzc2FnZS50ZXh0LnNwbGl0KE5vbmUsIDEpWzFdCiAgICBvdXRfYnVmID0gaW8uU3RyaW5nSU8oKQoKICAgIGFzeW5jIGRlZiBfZXZhbF9jb2RlKCkgLT4gVHVwbGVbc3RyLCBPcHRpb25hbFtzdHJdXToKICAgICAgICBhc3luYyBkZWYgc2VuZCgqYXJnczogQW55LCAqKmt3YXJnczogQW55KSAtPiB0eXBlcy5NZXNzYWdlOgogICAgICAgICAgICByZXR1cm4gYXdhaXQgbWVzc2FnZS5yZXBseV90ZXh0KCphcmdzLCAqKmt3YXJncykKCiAgICAgICAgZGVmIF9wcmludCgqYXJnczogQW55LCAqKmt3YXJnczogQW55KSAtPiBOb25lOgogICAgICAgICAgICBrd2FyZ3Muc2V0ZGVmYXVsdCgiZmlsZSIsIG91dF9idWYpCiAgICAgICAgICAgIHByaW50KCphcmdzLCAqKmt3YXJncykKCiAgICAgICAgZXZhbF92YXJzID0gewogICAgICAgICAgICAibSI6IG1lc3NhZ2UsCiAgICAgICAgICAgICJyIjogbWVzc2FnZS5yZXBseV90b19tZXNzYWdlLAogICAgICAgICAgICAiY2hhdCI6IG1lc3NhZ2UuY2hhdCwKICAgICAgICAgICAgInVzZXIiOiBtZXNzYWdlLmZyb21fdXNlciwKICAgICAgICAgICAgImFwcCI6IGFwcCwKICAgICAgICAgICAgInR1bmUiOiB0dW5lLAogICAgICAgICAgICAiZGIiOiBkYiwKICAgICAgICAgICAgImNsaWVudCI6IGFwcCwKICAgICAgICAgICAgInViIjogdXNlcmJvdCwKICAgICAgICAgICAgImlrYiI6IHR5cGVzLklubGluZUtleWJvYXJkQnV0dG9uLAogICAgICAgICAgICAiaWttIjogdHlwZXMuSW5saW5lS2V5Ym9hcmRNYXJrdXAsCiAgICAgICAgICAgICJzZW5kIjogc2VuZCwKICAgICAgICAgICAgImNvbmZpZyI6IGNvbmZpZywKICAgICAgICAgICAgInByaW50IjogX3ByaW50LAogICAgICAgICAgICAib3MiOiBvcywKICAgICAgICAgICAgInJlIjogcmUsCiAgICAgICAgICAgICJzeXMiOiBzeXMsCiAgICAgICAgICAgICJ0cmFjZWJhY2siOiB0cmFjZWJhY2ssCiAgICAgICAgfQoKICAgICAgICB0cnk6CiAgICAgICAgICAgIHJlc3VsdCA9IGF3YWl0IG1ldmFsKGNvZGUsIGdsb2JhbHMoKSwgKipldmFsX3ZhcnMpCiAgICAgICAgICAgIHJldHVybiAiIiwgcmVzdWx0CiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgICAgICB0YiA9IHRyYWNlYmFjay5leHRyYWN0X3RiKGUuX190cmFjZWJhY2tfXykKICAgICAgICAgICAgc25pcHBldF90YiA9IG5leHQoCiAgICAgICAgICAgICAgICAoaSBmb3IgaSwgZiBpbiBlbnVtZXJhdGUodGIpIGlmIGYuZmlsZW5hbWUgPT0gIjxzdHJpbmc+IiksIC0xCiAgICAgICAgICAgICkKICAgICAgICAgICAgZm9ybWF0dGVkX3RiID0gZm9ybWF0X2V4Y2VwdGlvbigKICAgICAgICAgICAgICAgIGUsIHRiW3NuaXBwZXRfdGI6XSBpZiBzbmlwcGV0X3RiICE9IC0xIGVsc2UgdGIKICAgICAgICAgICAgKQogICAgICAgICAgICByZXR1cm4gbWVzc2FnZS5sYW5nWyJldmFsX2Vycm9yIl0sIGZvcm1hdHRlZF90YgoKICAgIHByZWZpeCwgcmVzdWx0ID0gYXdhaXQgX2V2YWxfY29kZSgpCgogICAgaWYgcmVzdWx0IGlzIG5vdCBOb25lIG9yIG5vdCBvdXRfYnVmLmdldHZhbHVlKCk6CiAgICAgICAgcHJpbnQocmVzdWx0LCBmaWxlPW91dF9idWYpCgogICAgb3V0cHV0ID0gb3V0X2J1Zi5nZXR2YWx1ZSgpLnN0cmlwKCkKICAgIHJlc3BvbnNlID0gbWVzc2FnZS5sYW5nWyJldmFsX291dCJdLmZvcm1hdChlc2NhcGUob3V0cHV0KSkKCiAgICBpZiBsZW4ocmVzcG9uc2UpID4gNDA5NjoKICAgICAgICB3aXRoIGlvLkJ5dGVzSU8ob3V0cHV0LmVuY29kZSgpKSBhcyBvdXRfZmlsZToKICAgICAgICAgICAgb3V0X2ZpbGUubmFtZSA9IGYie3V1aWQudXVpZDQoKS5oZXhbOjhdLmxvd2VyKCl9LnR4dCIKICAgICAgICAgICAgcmV0dXJuIGF3YWl0IG1lc3NhZ2UucmVwbHlfZG9jdW1lbnQoCiAgICAgICAgICAgICAgICBkb2N1bWVudD1vdXRfZmlsZSwgZGlzYWJsZV9ub3RpZmljYXRpb249VHJ1ZQogICAgICAgICAgICApCgogICAgYXdhaXQgbWVzc2FnZS5yZXBseV90ZXh0KHJlc3BvbnNlKQo=").decode("utf-8"))
+# ==========================================================
+# Copyright (c) 2026 ArtistBots
+# All Rights Reserved.
+#
+# Project      : ArtistBots API Telegram Music Bot
+# Powered By   : Artist
+# Type         : API Based Telegram Music Bot
+#
+# Bot          : @ArtistApibot
+# Channel      : https://t.me/artistbots
+# GitHub       : https://github.com/elevenyts
+#
+# Unauthorized copying, modification, or redistribution
+# of this source code without permission is prohibited.
+# ==========================================================
+import io
+import os
+import re
+import sys
+import traceback
+import uuid
+from html import escape
+from typing import Any, Optional, Tuple
+
+from pyrogram import filters, types
+
+from Elevenyts import tune, app, config, db, lang, userbot
+from Elevenyts.helpers import format_exception, meval
+
+
+@app.on_message(filters.command(["eval", "exec"]) & filters.user(app.owner))
+@app.on_edited_message(filters.command(["eval", "exec"]) & filters.user(app.owner))
+@lang.language()
+async def eval_handler(_, message: types.Message):
+    # Auto-delete command message
+    try:
+        await message.delete()
+    except Exception:
+        pass
+    
+    if len(message.command) < 2:
+        return await message.reply_text(message.lang["eval_inp"])
+
+    code = message.text.split(None, 1)[1]
+    out_buf = io.StringIO()
+
+    async def _eval_code() -> Tuple[str, Optional[str]]:
+        async def send(*args: Any, **kwargs: Any) -> types.Message:
+            return await message.reply_text(*args, **kwargs)
+
+        def _print(*args: Any, **kwargs: Any) -> None:
+            kwargs.setdefault("file", out_buf)
+            print(*args, **kwargs)
+
+        eval_vars = {
+            "m": message,
+            "r": message.reply_to_message,
+            "chat": message.chat,
+            "user": message.from_user,
+            "app": app,
+            "tune": tune,
+            "db": db,
+            "client": app,
+            "ub": userbot,
+            "ikb": types.InlineKeyboardButton,
+            "ikm": types.InlineKeyboardMarkup,
+            "send": send,
+            "config": config,
+            "print": _print,
+            "os": os,
+            "re": re,
+            "sys": sys,
+            "traceback": traceback,
+        }
+
+        try:
+            result = await meval(code, globals(), **eval_vars)
+            return "", result
+        except Exception as e:
+            tb = traceback.extract_tb(e.__traceback__)
+            snippet_tb = next(
+                (i for i, f in enumerate(tb) if f.filename == "<string>"), -1
+            )
+            formatted_tb = format_exception(
+                e, tb[snippet_tb:] if snippet_tb != -1 else tb
+            )
+            return message.lang["eval_error"], formatted_tb
+
+    prefix, result = await _eval_code()
+
+    if result is not None or not out_buf.getvalue():
+        print(result, file=out_buf)
+
+    output = out_buf.getvalue().strip()
+    response = message.lang["eval_out"].format(escape(output))
+
+    if len(response) > 4096:
+        with io.BytesIO(output.encode()) as out_file:
+            out_file.name = f"{uuid.uuid4().hex[:8].lower()}.txt"
+            return await message.reply_document(
+                document=out_file, disable_notification=True
+            )
+
+    await message.reply_text(response)
+

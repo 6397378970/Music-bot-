@@ -13,5 +13,123 @@
   # Unauthorized copying, modification, or redistribution
   # of this source code without permission is prohibited.
   # ==========================================================
-import base64
-exec(base64.b64decode("IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ29weXJpZ2h0IChjKSAyMDI2IEFydGlzdEJvdHMKIyBBbGwgUmlnaHRzIFJlc2VydmVkLgojCiMgUHJvamVjdCAgICAgIDogQXJ0aXN0Qm90cyBBUEkgVGVsZWdyYW0gTXVzaWMgQm90CiMgUG93ZXJlZCBCeSAgIDogQXJ0aXN0CiMgVHlwZSAgICAgICAgIDogQVBJIEJhc2VkIFRlbGVncmFtIE11c2ljIEJvdAojCiMgQm90ICAgICAgICAgIDogQEFydGlzdEFwaWJvdAojIENoYW5uZWwgICAgICA6IGh0dHBzOi8vdC5tZS9hcnRpc3Rib3RzCiMgR2l0SHViICAgICAgIDogaHR0cHM6Ly9naXRodWIuY29tL2VsZXZlbnl0cwojCiMgVW5hdXRob3JpemVkIGNvcHlpbmcsIG1vZGlmaWNhdGlvbiwgb3IgcmVkaXN0cmlidXRpb24KIyBvZiB0aGlzIHNvdXJjZSBjb2RlIHdpdGhvdXQgcGVybWlzc2lvbiBpcyBwcm9oaWJpdGVkLgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KaW1wb3J0IGpzb24KZnJvbSBmdW5jdG9vbHMgaW1wb3J0IHdyYXBzCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aAoKZnJvbSBFbGV2ZW55dHMgaW1wb3J0IGRiLCBsb2dnZXIKCiMgU3VwcG9ydGVkIGxhbmd1YWdlIGNvZGVzIGFuZCB0aGVpciBkaXNwbGF5IG5hbWVzCmxhbmdfY29kZXMgPSB7CiAgICAiZW4iOiAiRW5nbGlzaCDwn4es8J+HpyIsCiAgICAiaGkiOiAiSGluZGkg8J+HrvCfh7MiLAogICAgInRlIjogIlRlbHVndSDwn4eu8J+HsyIsCiAgICAia28iOiAiS29yZWFuIPCfh7Dwn4e3IiwKICAgICJteSI6ICJNeWFubWFyIPCfh7Lwn4eyIiwKICAgICJpZCI6ICJJbmRvbmVzaWFuIPCfh67wn4epIiwKICAgICJwdCI6ICJQb3J0dWd1ZXNlIPCfh6fwn4e3IiwKICAgICJhciI6ICJBcmFiaWMg8J+HuPCfh6YiLAogICAgImVzIjogIlNwYW5pc2gg8J+HqvCfh7giLAogICAgImZyIjogIkZyZW5jaCDwn4er8J+HtyIsCiAgICAicnUiOiAiUnVzc2lhbiDwn4e38J+HuiIsCiAgICAiZGUiOiAiR2VybWFuIPCfh6nwn4eqIiwKICAgICJ0ciI6ICJUdXJraXNoIPCfh7nwn4e3IiwKICAgICJibiI6ICJCZW5nYWxpIPCfh6fwn4epIiwKICAgICJ0aCI6ICJUaGFpIPCfh7nwn4etIiwKICAgICJ2aSI6ICJWaWV0bmFtZXNlIPCfh7vwn4ezIiwKICAgICJqYSI6ICJKYXBhbmVzZSDwn4ev8J+HtSIsCiAgICAiemgiOiAiQ2hpbmVzZSDwn4eo8J+HsyIsCiAgICAidXIiOiAiVXJkdSDwn4e18J+HsCIsCiAgICAiZmEiOiAiUGVyc2lhbiDwn4eu8J+HtyIsCn0KCgpjbGFzcyBMYW5ndWFnZToKICAgICIiIgogICAgTGFuZ3VhZ2UgY2xhc3MgZm9yIG1hbmFnaW5nIG11bHRpbGluZ3VhbCBzdXBwb3J0IHVzaW5nIEpTT04gbGFuZ3VhZ2UgZmlsZXMuCiAgICAiIiIKCiAgICBkZWYgX19pbml0X18oc2VsZik6CiAgICAgICAgIiIiSW5pdGlhbGl6ZSB0aGUgbGFuZ3VhZ2Ugc3lzdGVtIGFuZCBsb2FkIGFsbCB0cmFuc2xhdGlvbiBmaWxlcy4iIiIKICAgICAgICBzZWxmLmxhbmdfY29kZXMgPSBsYW5nX2NvZGVzCiAgICAgICAgc2VsZi5sYW5nX2RpciA9IFBhdGgoIkVsZXZlbnl0cy9sb2NhbGVzIikKICAgICAgICBzZWxmLmxhbmd1YWdlcyA9IHNlbGYubG9hZF9maWxlcygpCgogICAgZGVmIGxvYWRfZmlsZXMoc2VsZik6CiAgICAgICAgIiIiTG9hZCBhbGwgbGFuZ3VhZ2UgSlNPTiBmaWxlcyBmcm9tIHRoZSBsb2NhbGVzIGRpcmVjdG9yeS4iIiIKICAgICAgICBsYW5ndWFnZXMgPSB7fQogICAgICAgIGZvciBsYW5nX2NvZGUgaW4gc2VsZi5sYW5nX2NvZGVzLmtleXMoKToKICAgICAgICAgICAgbGFuZ19maWxlID0gc2VsZi5sYW5nX2RpciAvIGYie2xhbmdfY29kZX0uanNvbiIKICAgICAgICAgICAgaWYgbGFuZ19maWxlLmV4aXN0cygpOgogICAgICAgICAgICAgICAgd2l0aCBvcGVuKGxhbmdfZmlsZSwgInIiLCBlbmNvZGluZz0idXRmLTgiKSBhcyBmaWxlOgogICAgICAgICAgICAgICAgICAgIGxhbmd1YWdlc1tsYW5nX2NvZGVdID0ganNvbi5sb2FkKGZpbGUpCiAgICAgICAgbG9nZ2VyLmluZm8oZiLwn4yQIExvYWRlZCBsYW5ndWFnZXM6IHsnLCAnLmpvaW4obGFuZ3VhZ2VzLmtleXMoKSl9IikKICAgICAgICByZXR1cm4gbGFuZ3VhZ2VzCgogICAgZGVmIGdldF9tZXJnZWRfbGFuZyhzZWxmLCBsYW5nX2NvZGU6IHN0cikgLT4gZGljdDoKICAgICAgICAiIiJHZXQgbGFuZ3VhZ2UgZGljdCBtZXJnZWQgd2l0aCBFbmdsaXNoIGZhbGxiYWNrIGZvciBtaXNzaW5nIGtleXMuIiIiCiAgICAgICAgYmFzZSA9IHNlbGYubGFuZ3VhZ2VzLmdldCgiZW4iLCB7fSkuY29weSgpCiAgICAgICAgaWYgbGFuZ19jb2RlICE9ICJlbiIgYW5kIGxhbmdfY29kZSBpbiBzZWxmLmxhbmd1YWdlczoKICAgICAgICAgICAgYmFzZS51cGRhdGUoc2VsZi5sYW5ndWFnZXNbbGFuZ19jb2RlXSkKICAgICAgICByZXR1cm4gYmFzZQoKICAgIGFzeW5jIGRlZiBnZXRfbGFuZyhzZWxmLCBjaGF0X2lkOiBpbnQpIC0+IGRpY3Q6CiAgICAgICAgIiIiR2V0IHRoZSB0cmFuc2xhdGlvbiBkaWN0aW9uYXJ5IGZvciBhIHNwZWNpZmljIGNoYXQvdXNlci4iIiIKICAgICAgICBsYW5nX2NvZGUgPSBhd2FpdCBkYi5nZXRfbGFuZyhjaGF0X2lkKQogICAgICAgIHJldHVybiBzZWxmLmdldF9tZXJnZWRfbGFuZyhsYW5nX2NvZGUpCgogICAgZGVmIGxhbmd1YWdlKHNlbGYpOgogICAgICAgIGRlZiBkZWNvcmF0b3IoZnVuYyk6CiAgICAgICAgICAgIEB3cmFwcyhmdW5jKQogICAgICAgICAgICBhc3luYyBkZWYgd3JhcHBlcigqYXJncywgKiprd2FyZ3MpOgogICAgICAgICAgICAgICAgZmFsbGVuID0gbmV4dCgKICAgICAgICAgICAgICAgICAgICAoCiAgICAgICAgICAgICAgICAgICAgICAgIGFyZwogICAgICAgICAgICAgICAgICAgICAgICBmb3IgYXJnIGluIGFyZ3MKICAgICAgICAgICAgICAgICAgICAgICAgaWYgaGFzYXR0cihhcmcsICJjaGF0Iikgb3IgaGFzYXR0cihhcmcsICJtZXNzYWdlIikKICAgICAgICAgICAgICAgICAgICApLAogICAgICAgICAgICAgICAgICAgIE5vbmUsCiAgICAgICAgICAgICAgICApCgogICAgICAgICAgICAgICAgaWYgaGFzYXR0cihmYWxsZW4sICJjaGF0Iik6CiAgICAgICAgICAgICAgICAgICAgY2hhdCA9IGZhbGxlbi5jaGF0CiAgICAgICAgICAgICAgICBlbGlmIGhhc2F0dHIoZmFsbGVuLCAibWVzc2FnZSIpOgogICAgICAgICAgICAgICAgICAgIGNoYXQgPSBmYWxsZW4ubWVzc2FnZS5jaGF0CgogICAgICAgICAgICAgICAgaWYgY2hhdC5pZCBpbiBkYi5ibGFja2xpc3RlZDoKICAgICAgICAgICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICAgICAgICAgIGF3YWl0IGNoYXQubGVhdmUoKQogICAgICAgICAgICAgICAgICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgICAgICAgICAgICAgICAgIHBhc3MKICAgICAgICAgICAgICAgICAgICByZXR1cm4KCiAgICAgICAgICAgICAgICAjIEdldCB1c2VyJ3MgcHJlZmVycmVkIGxhbmd1YWdlIChmYWxscyBiYWNrIHRvICJlbiIpCiAgICAgICAgICAgICAgICBsYW5nX2NvZGUgPSAiZW4iCiAgICAgICAgICAgICAgICB1c2VyID0gZ2V0YXR0cihmYWxsZW4sICJmcm9tX3VzZXIiLCBOb25lKQogICAgICAgICAgICAgICAgaWYgdXNlcjoKICAgICAgICAgICAgICAgICAgICBsYW5nX2NvZGUgPSBhd2FpdCBkYi5nZXRfbGFuZyh1c2VyLmlkKQoKICAgICAgICAgICAgICAgIGxhbmdfZGljdCA9IHNlbGYuZ2V0X21lcmdlZF9sYW5nKGxhbmdfY29kZSkKCiAgICAgICAgICAgICAgICBzZXRhdHRyKGZhbGxlbiwgImxhbmciLCBsYW5nX2RpY3QpCiAgICAgICAgICAgICAgICByZXR1cm4gYXdhaXQgZnVuYygqYXJncywgKiprd2FyZ3MpCgogICAgICAgICAgICByZXR1cm4gd3JhcHBlcgoKICAgICAgICByZXR1cm4gZGVjb3JhdG9yCg==").decode("utf-8"))
+# ==========================================================
+# Copyright (c) 2026 ArtistBots
+# All Rights Reserved.
+#
+# Project      : ArtistBots API Telegram Music Bot
+# Powered By   : Artist
+# Type         : API Based Telegram Music Bot
+#
+# Bot          : @ArtistApibot
+# Channel      : https://t.me/artistbots
+# GitHub       : https://github.com/elevenyts
+#
+# Unauthorized copying, modification, or redistribution
+# of this source code without permission is prohibited.
+# ==========================================================
+import json
+from functools import wraps
+from pathlib import Path
+
+from Elevenyts import db, logger
+
+# Supported language codes and their display names
+lang_codes = {
+    "en": "English 🇬🇧",
+    "hi": "Hindi 🇮🇳",
+    "te": "Telugu 🇮🇳",
+    "ko": "Korean 🇰🇷",
+    "my": "Myanmar 🇲🇲",
+    "id": "Indonesian 🇮🇩",
+    "pt": "Portuguese 🇧🇷",
+    "ar": "Arabic 🇸🇦",
+    "es": "Spanish 🇪🇸",
+    "fr": "French 🇫🇷",
+    "ru": "Russian 🇷🇺",
+    "de": "German 🇩🇪",
+    "tr": "Turkish 🇹🇷",
+    "bn": "Bengali 🇧🇩",
+    "th": "Thai 🇹🇭",
+    "vi": "Vietnamese 🇻🇳",
+    "ja": "Japanese 🇯🇵",
+    "zh": "Chinese 🇨🇳",
+    "ur": "Urdu 🇵🇰",
+    "fa": "Persian 🇮🇷",
+}
+
+
+class Language:
+    """
+    Language class for managing multilingual support using JSON language files.
+    """
+
+    def __init__(self):
+        """Initialize the language system and load all translation files."""
+        self.lang_codes = lang_codes
+        self.lang_dir = Path("Elevenyts/locales")
+        self.languages = self.load_files()
+
+    def load_files(self):
+        """Load all language JSON files from the locales directory."""
+        languages = {}
+        for lang_code in self.lang_codes.keys():
+            lang_file = self.lang_dir / f"{lang_code}.json"
+            if lang_file.exists():
+                with open(lang_file, "r", encoding="utf-8") as file:
+                    languages[lang_code] = json.load(file)
+        logger.info(f"🌐 Loaded languages: {', '.join(languages.keys())}")
+        return languages
+
+    def get_merged_lang(self, lang_code: str) -> dict:
+        """Get language dict merged with English fallback for missing keys."""
+        base = self.languages.get("en", {}).copy()
+        if lang_code != "en" and lang_code in self.languages:
+            base.update(self.languages[lang_code])
+        return base
+
+    async def get_lang(self, chat_id: int) -> dict:
+        """Get the translation dictionary for a specific chat/user."""
+        lang_code = await db.get_lang(chat_id)
+        return self.get_merged_lang(lang_code)
+
+    def language(self):
+        def decorator(func):
+            @wraps(func)
+            async def wrapper(*args, **kwargs):
+                fallen = next(
+                    (
+                        arg
+                        for arg in args
+                        if hasattr(arg, "chat") or hasattr(arg, "message")
+                    ),
+                    None,
+                )
+
+                if hasattr(fallen, "chat"):
+                    chat = fallen.chat
+                elif hasattr(fallen, "message"):
+                    chat = fallen.message.chat
+
+                if chat.id in db.blacklisted:
+                    try:
+                        await chat.leave()
+                    except Exception:
+                        pass
+                    return
+
+                # Get user's preferred language (falls back to "en")
+                lang_code = "en"
+                user = getattr(fallen, "from_user", None)
+                if user:
+                    lang_code = await db.get_lang(user.id)
+
+                lang_dict = self.get_merged_lang(lang_code)
+
+                setattr(fallen, "lang", lang_dict)
+                return await func(*args, **kwargs)
+
+            return wrapper
+
+        return decorator
+
