@@ -19,8 +19,8 @@ def _e(emoji_id: str, fallback: str) -> str:
 
 class Emoji:
     # ── Music & Playback ─────────────────────────────────
-    MUSIC         = _e("", "🎵")   # Yahan ID daalo
-    PLAY          = _e("", "▶️")
+    MUSIC         = _e("4970133401857163956", "🎵")   # Yahan ID daalo
+    PLAY          = _e("4970176665062736422", "▶️")
     PAUSE         = _e("", "⏸")
     STOP          = _e("", "⏹")
     SKIP          = _e("", "⏭")
