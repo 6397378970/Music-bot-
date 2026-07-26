@@ -200,7 +200,7 @@ class Inline:
             ],
             [
                 self.ikb(text="  " + lang["support"], url=config.SUPPORT_CHAT,    style=ButtonStyle.PRIMARY),
-                self.ikb(text="  " + lang["channel"], url=config.SUPPORT_CHANNEL, style=ButtonStyle.PRIMARY),
+                self.ikb(text="<tg-emoji emoji-id='5197304993920616826'>📣</tg-emoji>  " + lang["channel"], url=config.SUPPORT_CHANNEL, style=ButtonStyle.PRIMARY),
             ],
         ]
         return self.ikm(rows)
