@@ -68,10 +68,10 @@ class Config:
         self.COOKIES_URL: List[str] = self._parse_cookies()
 
         # Images
-        self.DEFAULT_THUMB: str = getenv("DEFAULT_THUMB", "https://gofile.io/d/hrotMu")
-        self.PING_IMG: str = getenv("PING_IMG", "https://gofile.io/d/hrotMu")
-        self.START_IMG: str = getenv("START_IMG", "https://gofile.io/d/hrotMu")
-        self.RADIO_IMG: str = getenv("RADIO_IMG", "https://gofile.io/d/hrotMu")
+        self.DEFAULT_THUMB: str = getenv("DEFAULT_THUMB", "https://graph.org/file/8d492699bd4337068e8b0-069afe8a3596204342.mp4")
+        self.PING_IMG: str = getenv("PING_IMG", "https://graph.org/file/8d492699bd4337068e8b0-069afe8a3596204342.mp4")
+        self.START_IMG: str = getenv("START_IMG", "https://graph.org/file/8d492699bd4337068e8b0-069afe8a3596204342.mp4")
+        self.RADIO_IMG: str = getenv("RADIO_IMG", "https://graph.org/file/8d492699bd4337068e8b0-069afe8a3596204342.mp4")
         
         # Moderation
         self.EXCLUDED_USERNAMES: List[str] = getenv("EXCLUDED_USERNAMES", "").split()
