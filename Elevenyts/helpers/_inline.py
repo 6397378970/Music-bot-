@@ -66,7 +66,6 @@ class Inline:
             # ── Bottom row ────────────────────────────────────────
             keyboard.append(
                 [
-                    self.ikb(text="✦  ᴀᴜᴛᴏ ᴘʟᴀʏ", callback_data=f"controls autoplay {chat_id}", style=ButtonStyle.SUCCESS),
                     self.ikb(text="🗑  ᴄʟᴏꜱᴇ", callback_data=f"controls close {chat_id}", style=ButtonStyle.DANGER),
                 ]
             )
@@ -162,8 +161,7 @@ class Inline:
                 self.ikb(text="⏹",  callback_data=f"controls stop {chat_id}",   style=ButtonStyle.DANGER),
             ],
             [
-                self.ikb(text="✦  ᴀᴜᴛᴏ ᴘʟᴀʏ", callback_data=f"controls autoplay {chat_id}", style=ButtonStyle.SUCCESS),
-                self.ikb(text="🗑  ᴄʟᴏꜱᴇ",     callback_data=f"controls close {chat_id}",   style=ButtonStyle.DANGER),
+                self.ikb(text="🗑  ᴄʟᴏꜱᴇ", callback_data=f"controls close {chat_id}", style=ButtonStyle.DANGER),
             ],
         ])
 
