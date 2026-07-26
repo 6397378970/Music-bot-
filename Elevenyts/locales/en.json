@@ -80,7 +80,7 @@
   "ping_pong": "🎵  <b>Advanced Telegram Music Bot</b>\n\n<blockquote>━━━  𝗕𝗢𝗧  𝗦𝗧𝗔𝗧𝗨𝗦  ━━━\n\n✅  Online & Streaming\n⚡  Latency ╌ <code>{0} ms</code>\n🕐  Uptime ╌ <code>{1}</code>\n📞  PyTgCalls ╌ <code>{2} ms</code>\n💾  RAM ╌ <code>{3}</code>\n🖥  CPU ╌ <code>{4}%</code></blockquote>\n\n<blockquote>🌍  𝗢𝗨𝗥  𝗥𝗘𝗔𝗖𝗛\n\n▸  {5}+ Active Groups\n▸  Crystal Clear Opus Audio\n▸  Smart Queue (30+ songs)\n▸  Multi-Assistants Support\n▸  24/7 Reliable Uptime</blockquote>",
   "play_admin": "<blockquote>🛡  𝗔𝗱𝗺𝗶𝗻 𝗢𝗻𝗹𝘆\n\nOnly admins are allowed to play music in this chat.</blockquote>",
   "play_banned": "<blockquote>🚫  𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁 𝗕𝗮𝗻𝗻𝗲𝗱\n\n{0} assistant is banned from your chat.\n\n🆔  <code>{1}</code>\n📛  {2}\n🔗  {3}</blockquote>",
-  "play_media": "🎵  𝗡𝗢𝗪  𝗣𝗟𝗔𝗬𝗜𝗡𝗚\n\n<a href={0}><b>{1}</b></a>\n\n<blockquote>⏱  {2}  ┊  👤  {3}</blockquote>\n\n<i>✦ ᴘᴏᴡᴇʀᴇᴅ ʙʏ <a href=\"https://t.me/elevenytsmusic\">𝗔𝗿𝘁𝗶𝘀𝘁</a></i>",
+  "play_media": "<tg-emoji emoji-id='4970133401857163956'>🎵</tg-emoji>  𝗡𝗢𝗪  𝗣𝗟𝗔𝗬𝗜𝗡𝗚\n\n<a href={0}><b>{1}</b></a>\n\n<blockquote>⏱  {2}  ┊  👤  {3}</blockquote>\n\n<i>✦ ᴘᴏᴡᴇʀᴇᴅ ʙʏ <a href=\"https://t.me/elevenytsmusic\">𝗔𝗿𝘁𝗶𝘀𝘁</a></i>",
   "play_log": "<blockquote>🎵  {0} 𝗣𝗹𝗮𝘆 𝗟𝗼𝗴\n\n🏠  Chat: <code>{1}</code>  ┊  {2}\n👤  User: <code>{3}</code>  ┊  {4}\n🔗  {5}\n\n🎶  Title: {6}\n⏱  Duration: {7} min</blockquote>",
   "play_queued": "<blockquote>✅  𝗔𝗱𝗱𝗲𝗱 𝘁𝗼 𝗤𝘂𝗲𝘂𝗲  ┊  #{0}\n\n🎶  <a href={1}>{2}</a>\n⏱  {3} min\n👤  {4}</blockquote>",
   "play_usage": "<blockquote>📋  <b>Usage:</b>\n\n<code>/play [song name / YouTube URL / reply to audio]</code></blockquote>",
