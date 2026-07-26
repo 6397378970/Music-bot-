@@ -172,8 +172,9 @@ async def _block_user(_, m: types.Message):
             f"<blockquote>⚠️ {user_mention} is already blocked</blockquote>"
         )
 
-    app.bl_users.add(user_id)
+    # DB first — if it fails, in-memory stays consistent
     await db.add_blacklist(user_id)
+    app.bl_users.add(user_id)
     await m.reply_text(
         f"<blockquote><u><b>✅ ᴜꜱᴇʀ ʙʟᴏᴄᴋᴇᴅ</b></u>\n\n"
         f"<b>ᴜꜱᴇʀ:</b> {user_mention}\n"

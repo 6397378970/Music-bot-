@@ -189,7 +189,7 @@ async def _update(_, m: types.Message):
         asyncio.create_task(stop())
         await asyncio.sleep(2)
         
-        os.execl(sys.executable, sys.executable, "-m", "HasiiMusic")
+        os.execl(sys.executable, sys.executable, "-m", "Elevenyts")
         
     except FileNotFoundError:
         await sent.edit_text(

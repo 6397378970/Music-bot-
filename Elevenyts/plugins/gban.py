@@ -13,7 +13,9 @@
 # Unauthorized copying, modification, or redistribution
 # of this source code without permission is prohibited.
 # ==========================================================
-from pyrogram import filters, types
+import asyncio
+
+from pyrogram import errors, filters, types
 
 from Elevenyts import app, db, lang, userbot
 
@@ -89,6 +91,9 @@ async def _gban(_, m: types.Message):
             # Get chat members to check if user is in that chat
             await app.ban_chat_member(chat_id, user_id)
             kicked_count += 1
+            await asyncio.sleep(0.3)  # Avoid FloodWait from Telegram
+        except errors.FloodWait as fw:
+            await asyncio.sleep(fw.value + 1)
         except Exception:
             failed_count += 1
             continue

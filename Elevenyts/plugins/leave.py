@@ -90,29 +90,27 @@ async def _leaveall(_, m: types.Message):
     for ub in userbot.clients:
         left = 0
         try:
+            # Collect chat IDs first to avoid modifying the dialog list while iterating
+            to_leave = []
+            excluded = [app.logger] + config.EXCLUDED_CHATS
             async for dialog in ub.get_dialogs():
                 chat_id = dialog.chat.id
-                
-                # Skip logger and excluded chats
-                excluded = [app.logger] + config.EXCLUDED_CHATS
                 if chat_id in excluded:
                     continue
-                
-                # Only leave groups and supergroups
                 if dialog.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-                    # Skip if currently in an active call
-                    if chat_id in db.active_calls:
-                        continue
-                    
-                    try:
-                        await ub.leave_chat(chat_id)
-                        left += 1
-                        total_left += 1
-                        await asyncio.sleep(1)  # Rate limit
-                    except Exception as e:
-                        logger.debug(f"Failed to leave {chat_id}: {e}")
-                        continue
-                        
+                    if chat_id not in db.active_calls:
+                        to_leave.append(chat_id)
+
+            for chat_id in to_leave:
+                try:
+                    await ub.leave_chat(chat_id)
+                    left += 1
+                    total_left += 1
+                    await asyncio.sleep(1)  # Rate limit
+                except Exception as e:
+                    logger.debug(f"Failed to leave {chat_id}: {e}")
+                    continue
+
         except Exception as e:
             logger.error(f"Error in leaveall for assistant {ub.me.username if hasattr(ub, 'me') and ub.me else 'Unknown'}: {e}")
             continue

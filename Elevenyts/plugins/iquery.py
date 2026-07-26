@@ -13,11 +13,15 @@
 # Unauthorized copying, modification, or redistribution
 # of this source code without permission is prohibited.
 # ==========================================================
+import logging
+
 from py_yt import VideosSearch
-from pyrogram import types
+from pyrogram import errors, types
 
 from Elevenyts import app
 from Elevenyts.helpers import buttons
+
+_logger = logging.getLogger(__name__)
 
 
 @app.on_inline_query(~app.bl_users)
@@ -65,5 +69,7 @@ async def inline_query_handler(_, query: types.InlineQuery):
 
         if answers:
             await app.answer_inline_query(query.id, results=answers, cache_time=5)
-    except:
-        pass
+    except errors.QueryIdInvalid:
+        pass  # Query expired — normal, no action needed
+    except Exception as e:
+        _logger.error(f"Inline query error for '{text}': {e}")

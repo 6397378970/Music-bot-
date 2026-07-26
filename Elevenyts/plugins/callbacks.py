@@ -128,9 +128,6 @@ async def _controls(_, query: types.CallbackQuery):
     if action == "shuffle":
         return await handle_shuffle(query, chat_id, user)
     
-    if action == "autoplay":
-        return await handle_autoplay(query, chat_id, user)
-    
     await query.answer(query.lang["processing"], show_alert=True)
 
     if action == "pause":
@@ -374,15 +371,6 @@ async def handle_shuffle(query: types.CallbackQuery, chat_id: int, user: str):
         f"🔀 Queue <b>shuffled</b> ({len(remaining)} tracks)",
         quote=False
     )
-
-
-async def handle_autoplay(query, chat_id: int, user: str):
-    """Toggle autoplay via inline button."""
-    current = await db.get_autoplay(chat_id)
-    new_state = not current
-    await db.set_autoplay(chat_id, new_state)
-    status = "✅ ON" if new_state else "⏹ OFF"
-    await query.answer(f"Autoplay {status}", show_alert=True)
 
 
 @app.on_callback_query(filters.regex(r"^help") & ~app.bl_users)
