@@ -6,7 +6,7 @@
 # Powered By   : Artist
 # Type         : API Based Telegram Music Bot
 #
-# Bot          : @ArtistApibot
+# Bot          : @ArtistApibot 
 # Channel      : https://t.me/artistbots
 # GitHub       : https://github.com/elevenyts
 #
