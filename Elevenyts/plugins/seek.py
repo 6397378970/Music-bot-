@@ -1,19 +1,4 @@
 # ==========================================================
-  # Copyright (c) 2026 ArtistBots
-  # All Rights Reserved.
-  # 
-  # Project      : ArtistBots API Telegram Music Bot
-  # Powered By   : Artist
-  # Type         : API Based Telegram Music Bot
-  #
-  # Bot          : @ArtistApibot
-  # Channel      : https://t.me/artistbots
-  # GitHub       : https://github.com/elevenyts
-  #
-  # Unauthorized copying, modification, or redistribution
-  # of this source code without permission is prohibited.
-  # ==========================================================
-# ==========================================================
 # Copyright (c) 2026 ArtistBots
 # All Rights Reserved.
 #
@@ -32,7 +17,6 @@
 from pyrogram import filters, types
 
 from Elevenyts import tune, app, db, lang, queue
-from Elevenyts.emojis import e
 from Elevenyts.helpers import can_manage_vc
 
 
@@ -91,10 +75,9 @@ async def _seek(_, m: types.Message):
     if success:
         _t = int(start_from)
         _ts = f"{_t//60:02d}:{_t%60:02d}"
-        _dir = f"{e('seek')} ꜰᴏʀᴡᴀʀᴅᴇᴅ" if stype == "forward" else f"{e('seekback')} ʀᴇᴡɪɴᴅᴇᴅ"
+        _dir = ">> ꜰᴏʀᴡᴀʀᴅᴇᴅ" if stype == "forward" else "▢ ʀᴇᴡɪɴᴅᴇᴅ"
         await sent.edit_text(
-            f"<blockquote><b>{_dir}</b>\n\n⏱  ᴅᴜʀᴀᴛɪᴏɴ ╌ {_ts}\n{e('user')}  ʙʏ ╌ {m.from_user.mention}</blockquote>"
+            f"<blockquote><b>{_dir}</b>\n\n⏱  ᴅᴜʀᴀᴛɪᴏɴ ╌ {_ts}\n👤  ʙʏ ╌ {m.from_user.mention}</blockquote>"
         )
     else:
         await sent.edit_text("Failed to seek!")
-

@@ -1,19 +1,4 @@
 # ==========================================================
-  # Copyright (c) 2026 ArtistBots
-  # All Rights Reserved.
-  #
-  # Project      : ArtistBots API Telegram Music Bot
-  # Powered By   : Artist
-  # Type         : API Based Telegram Music Bot
-  #
-  # Bot          : @ArtistApibot
-  # Channel      : https://t.me/artistbots
-  # GitHub       : https://github.com/elevenyts
-  #
-  # Unauthorized copying, modification, or redistribution
-  # of this source code without permission is prohibited.
-  # ==========================================================
-# ==========================================================
 # Copyright (c) 2026 ArtistBots
 # All Rights Reserved.
 #
@@ -75,4 +60,3 @@ async def _shuffle(_, m: types.Message):
         queue.add(chat_id, item)
     
     await m.reply_text(f"Queue shuffled! ({len(remaining)} tracks randomized)")
-

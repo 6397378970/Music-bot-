@@ -1,19 +1,4 @@
 # ==========================================================
-  # Copyright (c) 2026 ArtistBots
-  # All Rights Reserved.
-  #
-  # Project      : ArtistBots API Telegram Music Bot
-  # Powered By   : Artist
-  # Type         : API Based Telegram Music Bot
-  # 
-  # Bot          : @ArtistApibot
-  # Channel      : https://t.me/artistbots
-  # GitHub       : https://github.com/elevenyts
-  #
-  # Unauthorized copying, modification, or redistribution
-  # of this source code without permission is prohibited.
-  # ==========================================================
-# ==========================================================
 # Copyright (c) 2026 ArtistBots
 # All Rights Reserved.
 #
@@ -37,7 +22,6 @@ from pyrogram import filters, types
 from pyrogram.errors import FloodWait, QueryIdInvalid
 
 from Elevenyts import tune, app, config, db, lang, logger, queue, tg, yt
-from Elevenyts.emojis import e
 from Elevenyts.helpers import admin_check, buttons, can_manage_vc
 
 
@@ -52,7 +36,7 @@ def safe_callback(func):
         except Exception as e:
             logger.error(f"Error in callback {func.__name__}: {e}", exc_info=True)
             try:
-                await query.answer(f"{e('cross')} An error occurred. Please try again.", show_alert=True)
+                await query.answer("❌ An error occurred. Please try again.", show_alert=True)
             except Exception:
                 pass
     return wrapper
@@ -572,4 +556,3 @@ async def _forcemode(_, query: types.CallbackQuery):
             chat_id,
         )
     )
-

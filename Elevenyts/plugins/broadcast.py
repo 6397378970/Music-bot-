@@ -1,19 +1,4 @@
 # ==========================================================
-  # Copyright (c) 2026 ArtistBots
-  # All Rights Reserved.
-  #
-  # Project      : ArtistBots API Telegram Music Bot
-  # Powered By   : Artist
-  # Type         : API Based Telegram Music Bot
-  #
-  # Bot          : @ArtistApibot
-  # Channel      : https://t.me/artistbots
-  # GitHub       : https://github.com/elevenyts
-  #
-  # Unauthorized copying, modification, or redistribution
-  # of this source code without permission is prohibited.
-  # ==========================================================
-# ==========================================================
 # Copyright (c) 2026 ArtistBots
 # All Rights Reserved.
 #
@@ -35,7 +20,6 @@ from typing import List, Tuple
 from pyrogram import enums, errors, filters, types
 
 from Elevenyts import app, db, lang
-from Elevenyts.emojis import e
 
 
 # Global flag to track if a broadcast is currently running
@@ -100,7 +84,7 @@ async def broadcast_message(_, message: types.Message) -> None:
 
     if not all_chats:
         return await message.reply_text(
-            f"{e('cross')} No recipients found. Make sure the bot is added to groups or has users."
+            "❌ No recipients found. Make sure the bot is added to groups or has users."
         )
 
     # Set broadcasting flag
@@ -705,7 +689,7 @@ async def _send_broadcast_completion(
     completion_text = message.lang["gcast_end"].format(
         success_groups, success_users)
     if media_message:
-        completion_text += f"\n{e('paperclip')} Media type: {media_type}"
+        completion_text += f"\n📎 Media type: {media_type}"
 
     # If there were failures, send error file
     if failed_log:
@@ -720,4 +704,3 @@ async def _send_broadcast_completion(
         os.remove(error_file)
 
     await status_message.edit_text(completion_text)
-
