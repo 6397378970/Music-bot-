@@ -42,17 +42,10 @@ class Inline:
             )
         elif timer:
             keyboard.append(
-                [self.ikb(text=f"⏱  {timer}", callback_data=f"controls status {chat_id}", style=ButtonStyle.PRIMARY)]
+                [self.ikb(text=f"  {timer}", callback_data=f"controls status {chat_id}", style=ButtonStyle.PRIMARY)]
             )
 
         if not remove:
-            # ── Seek row ─────────────────────────────────────────
-            keyboard.append(
-                [
-                    self.ikb(text="«  10ꜱ", callback_data=f"controls seekback {chat_id}"),
-                    self.ikb(text="10ꜱ  »", callback_data=f"controls seekforward {chat_id}"),
-                ]
-            )
             # ── Main controls row ─────────────────────────────────
             keyboard.append(
                 [
