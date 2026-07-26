@@ -77,7 +77,7 @@
   "logger_usage": "<blockquote>📋  <b>Usage:</b>\n\n/{0} [on | off]</blockquote>",
   "not_playing": "<blockquote>🔇  Bot isn't streaming in the voice chat.</blockquote>",
   "pinging": "⏳  𝗣𝗶𝗻𝗴𝗶𝗻𝗴… please wait…",
-  "ping_pong": "🎵  <b>Advanced Telegram Music Bot</b>\n\n<blockquote>━━━  𝗕𝗢𝗧  𝗦𝗧𝗔𝗧𝗨𝗦  ━━━\n\n✅  Online & Streaming\n⚡  Latency ╌ <code>{0} ms</code>\n🕐  Uptime ╌ <code>{1}</code>\n📞  PyTgCalls ╌ <code>{2} ms</code>\n💾  RAM ╌ <code>{3}</code>\n🖥  CPU ╌ <code>{4}%</code></blockquote>\n\n<blockquote>🌍  𝗢𝗨𝗥  𝗥𝗘𝗔𝗖𝗛\n\n▸  {5}+ Active Groups\n▸  Crystal Clear Opus Audio\n▸  Smart Queue (30+ songs)\n▸  Multi-Assistants Support\n▸  24/7 Reliable Uptime</blockquote>",
+  "ping_pong": "<tg-emoji emoji-id='6325708780797432188'>🎵</tg-emoji>  <b>Advanced Telegram Music Bot</b>\n\n<blockquote>━━━  𝗕𝗢𝗧  𝗦𝗧𝗔𝗧𝗨𝗦  ━━━\n\n✅  Online & Streaming\n⚡  Latency ╌ <code>{0} ms</code>\n🕐  Uptime ╌ <code>{1}</code>\n📞  PyTgCalls ╌ <code>{2} ms</code>\n💾  RAM ╌ <code>{3}</code>\n🖥  CPU ╌ <code>{4}%</code></blockquote>\n\n<blockquote>🌍  𝗢𝗨𝗥  𝗥𝗘𝗔𝗖𝗛\n\n▸  {5}+ Active Groups\n▸  Crystal Clear Opus Audio\n▸  Smart Queue (30+ songs)\n▸  Multi-Assistants Support\n▸  24/7 Reliable Uptime</blockquote>",
   "play_admin": "<blockquote>🛡  𝗔𝗱𝗺𝗶𝗻 𝗢𝗻𝗹𝘆\n\nOnly admins are allowed to play music in this chat.</blockquote>",
   "play_banned": "<blockquote>🚫  𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁 𝗕𝗮𝗻𝗻𝗲𝗱\n\n{0} assistant is banned from your chat.\n\n🆔  <code>{1}</code>\n📛  {2}\n🔗  {3}</blockquote>",
   "play_media": "<tg-emoji emoji-id='4970133401857163956'>🎵</tg-emoji>  𝗡𝗢𝗪  𝗣𝗟𝗔𝗬𝗜𝗡𝗚  <tg-emoji emoji-id='5972211849687470465'>🔹</tg-emoji>\n\n<a href={0}><b>{1}</b></a>\n\n<blockquote><tg-emoji emoji-id='4967525849902350972'>⏰</tg-emoji>  {2}  ┊  <tg-emoji emoji-id='4967667085606912536'>👤</tg-emoji>  {3}</blockquote>\n\n<i><tg-emoji emoji-id='5877734105457627699'>❤️</tg-emoji> ᴘᴏᴡᴇʀᴇᴅ ʙʏ <a href=\"https://t.me/elevenytsmusic\">𝗔𝗿𝘁𝗶𝘀𝘁</a></i>",
@@ -114,13 +114,13 @@
   "playlist_fetch": "<blockquote>⏳  Fetching the playlist...\n\nPlease hold on.</blockquote>",
   "playlist_error": "<blockquote>❌  Something went wrong while fetching the playlist.</blockquote>",
   "playlist_queued": "<b>✅  𝗔𝗱𝗱𝗲𝗱 {0} 𝘁𝗿𝗮𝗰𝗸𝘀 𝗳𝗿𝗼𝗺 𝗽𝗹𝗮𝘆𝗹𝗶𝘀𝘁 𝘁𝗼 𝗾𝘂𝗲𝘂𝗲:</b>\n\n",
-  "queue_curr": "<b>🎵  𝗡𝗼𝘄 𝗣𝗹𝗮𝘆𝗶𝗻𝗴:</b>\n\n<blockquote>🔗  <a href={0}>{1}</a>\n⏱  {2}\n👤  {3}</blockquote>\n\n",
+  "queue_curr": "<b>🎵  𝗡𝗼𝘄 𝗣𝗹𝗮𝘆𝗶𝗻𝗴:</b>\n\n<blockquote>🔗  <a href={0}>{1}</a>\n⏱  {2}\n<tg-emoji emoji-id='4967667085606912536'>👤</tg-emoji>  {3}</blockquote>\n\n",
   "queue_item": "<b>{0}.</b>  {1}\n     <i>⏱  {2} min</i>\n\n",
   "queue_fetching": "⏳  𝗙𝗲𝘁𝗰𝗵𝗶𝗻𝗴 𝗾𝘂𝗲𝘂𝗲...",
   "restarting": "<blockquote>🔄  𝗥𝗲𝘀𝘁𝗮𝗿𝘁𝗶𝗻𝗴...</blockquote>",
   "restarted": "<blockquote>✅  Restart in progress. Back in a few seconds!</blockquote>",
-  "start_pm": "✦  ʜᴇʏ {0}!  ✦\n\n🎵  <b>{1}</b>\n<i>Your premium music experience on Telegram</i>\n\n<blockquote>⚡  Instant YouTube streaming\n🎶  Smart Queue system\n🌍  20+ languages supported</blockquote>\n\n<i>✦ Powered by <a href=\"https://t.me/elevenytsmusic\">𝗔𝗿𝘁𝗶𝘀𝘁</a></i>",
-  "start_gp": "✦  𝗛𝗲𝘆!\n\nI'm <b>{0}</b> — an advanced music player bot.\n\n<i>Use /play to start the music! 🎵</i>",
+  "start_pm": "✦  ʜᴇʏ {0}!  ✦\n\n<tg-emoji emoji-id='6325708780797432188'>🎵</tg-emoji>  <b>{1}</b> <tg-emoji emoji-id='5972211849687470465'>🔹</tg-emoji>\n<i>Your premium music experience on Telegram</i>\n\n<blockquote><tg-emoji emoji-id='5929221469027437894'>🖥</tg-emoji>  Instant YouTube streaming\n<tg-emoji emoji-id='6325708780797432188'>🎵</tg-emoji>  Smart Queue system\n<tg-emoji emoji-id='5224450179368767019'>🌎</tg-emoji>  20+ languages supported</blockquote>\n\n<i><tg-emoji emoji-id='5255956191141454203'>❤️</tg-emoji> Powered by <a href=\"https://t.me/elevenytsmusic\">𝗔𝗿𝘁𝗶𝘀𝘁</a></i>",
+  "start_gp": "✦  𝗛𝗲𝘆!\n\nI'm <b>{0}</b> — an advanced music player bot.\n\n<i>Use /play to start the music! <tg-emoji emoji-id='6325708780797432188'>🎵</tg-emoji></i>",
   "start_settings": "<b>⚙️  {0}  𝗦𝗲𝘁𝘁𝗶𝗻𝗴𝘀</b>\n\n<i>Click the buttons below to change this chat's settings.</i>",
   "stats_fetching": "⏳  𝗙𝗲𝘁𝗰𝗵𝗶𝗻𝗴 𝘀𝘁𝗮𝘁𝘀...",
   "stats_sudo": "<blockquote>🔧  𝗦𝘆𝘀𝘁𝗲𝗺 𝗜𝗻𝗳𝗼\n\n▸  Modules: {0}\n▸  Platform: {1}\n▸  RAM: {2}\n▸  CPU: {3}\n▸  Storage: {4}\n▸  Python: <code>v{5}</code>\n▸  Pyrogram: <code>v{6}</code>\n▸  PyTgCalls: <code>v{7}</code></blockquote>",
@@ -188,5 +188,5 @@
   "no_player_stats": "<blockquote>❌  You haven't participated in any tournaments yet!</blockquote>",
   "lang_select": "🌐  <b>𝗦𝗲𝗹𝗲𝗰𝘁 𝗬𝗼𝘂𝗿 𝗟𝗮𝗻𝗴𝘂𝗮𝗴𝗲</b>\n\n<i>Choose your preferred language from the buttons below.</i>",
   "lang_changed": "<blockquote>✅  Language changed to: <b>{0}</b></blockquote>",
-  "play_emoji": "🎵"
+  "play_emoji": "<tg-emoji emoji-id='6026256492619895014'>🎵</tg-emoji>"
 }
