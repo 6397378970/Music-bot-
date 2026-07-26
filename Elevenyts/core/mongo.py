@@ -267,7 +267,10 @@ class MongoDB:
     async def add_chat(self, chat_id: int) -> None:
         if not await self.is_chat(chat_id):
             self.chats.append(chat_id)
-            await self.chatsdb.insert_one({"_id": chat_id})
+            # upsert avoids DuplicateKeyError if two concurrent calls race past is_chat()
+            await self.chatsdb.update_one(
+                {"_id": chat_id}, {"$setOnInsert": {"_id": chat_id}}, upsert=True
+            )
 
     async def rm_chat(self, chat_id: int) -> None:
         if await self.is_chat(chat_id):
@@ -444,20 +447,6 @@ class MongoDB:
                 {"$set": {"mode": mode}},
                 upsert=True,
             )
-
-    # AUTOPLAY METHODS
-    async def get_autoplay(self, chat_id: int) -> bool:
-        """Get autoplay status for a chat. Default: True (autoplay on by default)"""
-        doc = await self.cache.find_one({"_id": f"autoplay_{chat_id}"})
-        return doc.get("enabled", True) if doc else True
-
-    async def set_autoplay(self, chat_id: int, enabled: bool) -> None:
-        """Set autoplay status for a chat."""
-        await self.cache.update_one(
-            {"_id": f"autoplay_{chat_id}"},
-            {"$set": {"enabled": enabled}},
-            upsert=True,
-        )
 
     # PLAY MODE METHODS
     async def get_play_mode(self, chat_id: int) -> bool:

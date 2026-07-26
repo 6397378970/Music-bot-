@@ -82,9 +82,11 @@ class TgCall(PyTgCalls):
                     caption=caption,
                     reply_markup=reply_markup,
                 )
-            except Exception:
+            except Exception as e:
+                logger.error(f"Now Playing photo send failed after FloodWait for {chat_id}: {e}")
                 return None
-        except Exception:
+        except Exception as e:
+            logger.error(f"Now Playing photo send failed for {chat_id}: {e}")
             return None
 
     async def pause(self, chat_id: int) -> bool:
@@ -386,12 +388,13 @@ class TgCall(PyTgCalls):
                 except Exception as e:
                     logger.debug(f"Error starting preload for {chat_id}: {e}")
         except FileNotFoundError:
+            logger.warning(f"File not found for media in {chat_id}, skipping to next track")
             if message:
                 try:
                     await message.edit_text(_lang["error_no_file"].format(config.SUPPORT_CHAT))
                 except Exception:
                     pass
-            await self.play_next(chat_id)
+            await self.play_next(chat_id)  # play_next itself calls queue.get_next(), advancing past the bad track
         except exceptions.NoActiveGroupCall:
             await self.stop(chat_id)
             if message:
@@ -524,10 +527,8 @@ class TgCall(PyTgCalls):
             return False
 
     async def play_next(self, chat_id: int) -> None:
-        if chat_id not in self._play_next_locks:
-            self._play_next_locks[chat_id] = asyncio.Lock()
-
-        lock = self._play_next_locks[chat_id]
+        # setdefault is atomic in Python's GIL — safe from race conditions
+        lock = self._play_next_locks.setdefault(chat_id, asyncio.Lock())
 
         if lock.locked():
             logger.info(
@@ -571,8 +572,6 @@ class TgCall(PyTgCalls):
                             await db.rm_chat(chat_id)
                         return
 
-                # Save last played track for autoplay
-                _last_track = queue.get_current(chat_id)
                 media = queue.get_next(chat_id)
 
                 if not media and loop_mode == 10:
@@ -612,46 +611,6 @@ class TgCall(PyTgCalls):
                         f"Could not delete previous message in {chat_id}: {e}")
 
                 if not media:
-                    # Check autoplay before stopping (skip if loop mode is active)
-                    if _last_track and loop_mode == 0 and await db.get_autoplay(chat_id):
-                        try:
-                            _lang = await lang.get_lang(chat_id)
-                            _autoplay_msg = await app.send_message(
-                                chat_id=target_chat,
-                                text=f"🎵 Autoplaying similar songs..."
-                            )
-                            # Use search_related for YouTube-like variety — different song each time
-                            _next_track = await yt.search_related(
-                                title=_last_track.title,
-                                channel_name=getattr(_last_track, "channel_name", None),
-                                exclude_id=_last_track.id,
-                            )
-                            if _next_track:
-                                _next_track.user = "Autoplay"
-                                # Download the track
-                                if not _next_track.file_path:
-                                    _next_track.file_path = await yt.download(
-                                        _next_track.id,
-                                        video=getattr(_next_track, 'video', False),
-                                    )
-                                if _next_track.file_path:
-                                    queue.add(chat_id, _next_track)
-                                    await self.play_media(chat_id, _autoplay_msg, _next_track, message_chat_id=message_chat_id)
-                                    return
-                                else:
-                                    if _autoplay_msg:
-                                        try:
-                                            await _autoplay_msg.delete()
-                                        except Exception:
-                                            pass
-                            else:
-                                if _autoplay_msg:
-                                    try:
-                                        await _autoplay_msg.delete()
-                                    except Exception:
-                                        pass
-                        except Exception as e:
-                            logger.warning(f"Autoplay failed for {chat_id}: {e}")
                     if config.AUTO_END:
                         _lang = await lang.get_lang(chat_id)
                         try:

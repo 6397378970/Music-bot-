@@ -496,67 +496,6 @@ class YouTube:
         return None
 
 
-    async def search_related(self, title: str, channel_name: str = None, exclude_id: str = None, limit: int = 8) -> "Track | None":
-        """
-        Search for a DIFFERENT related song — YouTube-style autoplay.
-        Tries multiple query variations, gets multiple results, and randomly picks
-        one that is not the currently-playing song.
-        """
-        # Build varied search queries so we get different results each time
-        queries = []
-        if channel_name:
-            queries.append(f"{channel_name} songs")
-        # Strip common suffixes/prefixes that would pin us to the exact song
-        clean_title = re.sub(r"\s*[-|].*", "", title).strip()  # "Song - Artist" → "Song"
-        queries += [
-            f"{clean_title} similar songs",
-            f"songs like {clean_title}",
-            f"{clean_title} best songs",
-        ]
-        if channel_name:
-            queries.append(f"{channel_name} best songs")
-
-        tried = set()
-        for query in queries:
-            if query in tried:
-                continue
-            tried.add(query)
-            try:
-                _search = VideosSearch(query, limit=limit)
-                results = await _search.next()
-            except Exception as e:
-                logger.debug(f"search_related query failed '{query}': {e}")
-                continue
-
-            if not results or not results.get("result"):
-                continue
-
-            # Filter out the currently-playing song, missing IDs, and shuffle for variety
-            candidates = [
-                r for r in results["result"]
-                if r.get("id") and r.get("link") and r.get("id") != exclude_id
-            ]
-            if not candidates:
-                continue  # all results were excluded — try next query
-
-            random.shuffle(candidates)
-            data = candidates[0]
-
-            duration = data.get("duration")
-            is_live = duration is None or duration == "LIVE"
-            track = Track(
-                id=data.get("id"),
-                channel_name=data.get("channel", {}).get("name"),
-                duration=duration if not is_live else "LIVE",
-                duration_sec=0 if is_live else utils.to_seconds(duration),
-                message_id=0,
-                title=data.get("title")[:25],
-                thumbnail=data.get("thumbnails", [{}])[-1].get("url", "").split("?")[0],
-                url=data.get("link"),
-                view_count=data.get("viewCount", {}).get("short"),
-                is_live=is_live,
-            )
-            return track
 
         return None
 
