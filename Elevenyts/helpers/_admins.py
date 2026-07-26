@@ -1,19 +1,4 @@
 # ==========================================================
-  # Copyright (c) 2026 ArtistBots
-  # All Rights Reserved.
-  #
-  # Project      : ArtistBots API Telegram Music Bot
-  # Powered By   : Artist
-  # Type         : API Based Telegram Music Bot
-  #
-  # Bot          : @ArtistApibot
-  # Channel      : https://t.me/artistbots
-  # GitHub       : https://github.com/elevenyts
-  #
-  # Unauthorized copying, modification, or redistribution
-  # of this source code without permission is prohibited.
-  # ==========================================================
-# ==========================================================
 # Copyright (c) 2026 ArtistBots
 # All Rights Reserved.
 #
@@ -161,4 +146,3 @@ async def is_admin_callback(query: types.CallbackQuery) -> bool:
     
     admins = await db.get_admins(chat_id)
     return user_id in admins
-
