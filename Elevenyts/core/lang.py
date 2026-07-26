@@ -1,19 +1,4 @@
 # ==========================================================
-  # Copyright (c) 2026 ArtistBots
-  # All Rights Reserved.
-  #
-  # Project      : ArtistBots API Telegram Music Bot
-  # Powered By   : Artist
-  # Type         : API Based Telegram Music Bot
-  #
-  # Bot          : @ArtistApibot
-  # Channel      : https://t.me/artistbots
-  # GitHub       : https://github.com/elevenyts
-  #
-  # Unauthorized copying, modification, or redistribution
-  # of this source code without permission is prohibited.
-  # ==========================================================
-# ==========================================================
 # Copyright (c) 2026 ArtistBots
 # All Rights Reserved.
 #
@@ -33,7 +18,6 @@ from functools import wraps
 from pathlib import Path
 
 from Elevenyts import db, logger
-from Elevenyts.emojis import build_map, _EMOJIS
 
 # Supported language codes and their display names
 lang_codes = {
@@ -87,28 +71,7 @@ class Language:
         base = self.languages.get("en", {}).copy()
         if lang_code != "en" and lang_code in self.languages:
             base.update(self.languages[lang_code])
-
-        # Per-locale emoji ID overrides: read _emoji_ids block from locale JSON.
-        # Any key with a non-empty ID here overrides the global emojis.py definition.
-        locale_ids: dict = base.pop("_emoji_ids", {})
-
-        def _render(key: str) -> str:
-            fallback, global_id = _EMOJIS.get(key, ("❓", ""))
-            eid = locale_ids.get(key, "").strip() or global_id
-            if eid:
-                return f'<tg-emoji emoji-id="{eid}">{fallback}</tg-emoji>'
-            return fallback
-
-        # Build substitution map using locale-overridden IDs
-        emap = {f"e_{k}": _render(k) for k in _EMOJIS}
-
-        result = {}
-        for k, v in base.items():
-            if isinstance(v, str):
-                for placeholder, emoji_html in emap.items():
-                    v = v.replace("{" + placeholder + "}", emoji_html)
-            result[k] = v
-        return result
+        return base
 
     async def get_lang(self, chat_id: int) -> dict:
         """Get the translation dictionary for a specific chat/user."""
@@ -154,4 +117,3 @@ class Language:
             return wrapper
 
         return decorator
-
