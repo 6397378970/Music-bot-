@@ -131,12 +131,12 @@ class Inline:
     def ping_markup(self, text: str) -> types.InlineKeyboardMarkup:
         return self.ikm([
             [
-                self.ikb(text="📢  ᴄʜᴀɴɴᴇʟ", url=config.SUPPORT_CHANNEL, style=ButtonStyle.PRIMARY),
-                self.ikb(text="💬  ꜱᴜᴘᴘᴏʀᴛ",  url=config.SUPPORT_CHAT,    style=ButtonStyle.PRIMARY),
+                self.ikb(text="  ᴄʜᴀɴɴᴇʟ", url=config.SUPPORT_CHANNEL, style=ButtonStyle.PRIMARY),
+                self.ikb(text="  ꜱᴜᴘᴘᴏʀᴛ",  url=config.SUPPORT_CHAT,    style=ButtonStyle.PRIMARY),
             ],
             [
                 self.ikb(
-                    text="➕  ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ",
+                    text="  ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ",
                     url=f"https://t.me/{app.username}?startgroup=true",
                     style=ButtonStyle.SUCCESS,
                 ),
@@ -173,11 +173,11 @@ class Inline:
         force_mode_txt = lang["admin_only_txt"] if force_admin else lang["everyone"]
         return self.ikm([
             [
-                self.ikb(text="🎵  " + lang["play_mode"],  callback_data=f"controls status {chat_id}", style=ButtonStyle.PRIMARY),
+                self.ikb(text="  " + lang["play_mode"],  callback_data=f"controls status {chat_id}", style=ButtonStyle.PRIMARY),
                 self.ikb(text=play_mode_txt,               callback_data="playmode",                   style=ButtonStyle.SUCCESS),
             ],
             [
-                self.ikb(text="⚡  " + lang["force_mode"], callback_data=f"controls status {chat_id}", style=ButtonStyle.PRIMARY),
+                self.ikb(text="  " + lang["force_mode"], callback_data=f"controls status {chat_id}", style=ButtonStyle.PRIMARY),
                 self.ikb(text=force_mode_txt,              callback_data="forcemode",                  style=ButtonStyle.SUCCESS),
             ],
         ])
@@ -188,19 +188,19 @@ class Inline:
         rows = [
             [
                 self.ikb(
-                    text="➕  " + lang["add_me"],
+                    text="  " + lang["add_me"],
                     url=f"https://t.me/{app.username}?startgroup=true",
                     style=ButtonStyle.PRIMARY,
                 )
             ],
             [
-                self.ikb(text="❓  " + lang["help"],  callback_data="help",                                    style=ButtonStyle.SUCCESS),
-                self.ikb(text="🌐  ʟᴀɴɢꜱ",           callback_data="help_langs",                              style=ButtonStyle.PRIMARY),
-                self.ikb(text="💻  ꜱᴏᴜʀᴄᴇ",          url="https://github.com/elevenyts/ArtistMusic",          style=ButtonStyle.DANGER),
+                self.ikb(text="  " + lang["help"],  callback_data="help",                                    style=ButtonStyle.SUCCESS),
+                self.ikb(text="  ʟᴀɴɢꜱ",           callback_data="help_langs",                              style=ButtonStyle.PRIMARY),
+                self.ikb(text="  ꜱᴏᴜʀᴄᴇ",          url="https://github.com/elevenyts/ArtistMusic",          style=ButtonStyle.DANGER),
             ],
             [
-                self.ikb(text="💬  " + lang["support"], url=config.SUPPORT_CHAT,    style=ButtonStyle.PRIMARY),
-                self.ikb(text="📢  " + lang["channel"], url=config.SUPPORT_CHANNEL, style=ButtonStyle.PRIMARY),
+                self.ikb(text="  " + lang["support"], url=config.SUPPORT_CHAT,    style=ButtonStyle.PRIMARY),
+                self.ikb(text="  " + lang["channel"], url=config.SUPPORT_CHANNEL, style=ButtonStyle.PRIMARY),
             ],
         ]
         return self.ikm(rows)
