@@ -196,7 +196,7 @@ class Inline:
             [
                 self.ikb(text="  " + lang["help"],  callback_data="help",                                    style=ButtonStyle.SUCCESS),
                 self.ikb(text="  ʟᴀɴɢꜱ",           callback_data="help_langs",                              style=ButtonStyle.PRIMARY),
-                self.ikb(text="  ꜱᴏᴜʀᴄᴇ",          url="",          style=ButtonStyle.DANGER),
+                self.ikb(text="  ꜱᴏᴜʀᴄᴇ",          url="https://github.com/elevenyts",          style=ButtonStyle.DANGER),
             ],
             [
                 self.ikb(text="  " + lang["support"], url=config.SUPPORT_CHAT,    style=ButtonStyle.PRIMARY),
