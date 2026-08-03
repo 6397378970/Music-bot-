@@ -74,7 +74,7 @@
   "play_media": "<u><b><tg-emoji emoji-id=\"5938473438468378529\">🎵</tg-emoji> Started streaming</b></u>\n\n<b><tg-emoji emoji-id=\"5773626993010546707\">🎶</tg-emoji> Title:</b> <a href={0}>{1}</a>\n\n<b><tg-emoji emoji-id=\"5850317551090800862\">🕛</tg-emoji> Duration:</b> {2} min\n<b><tg-emoji emoji-id=\"6033108709213736873\">🙍🏻</tg-emoji> Requested by:</b> {3}",
   "play_log": "<blockquote>🎵  {0} 𝗣𝗹𝗮𝘆 𝗟𝗼𝗴\n\n🏠  Chat: <code>{1}</code>  ┊  {2}\n👤  User: <code>{3}</code>  ┊  {4}\n🔗  {5}\n\n🎶  Title: {6}\n⏱  Duration: {7} min</blockquote>",
   "play_queued": "<blockquote><tg-emoji emoji-id='5927221276987887503'>🎵</tg-emoji>  𝗔𝗗𝗗𝗘𝗗  𝗧𝗢  𝗤𝗨𝗘𝗨𝗘\n\n<tg-emoji emoji-id='6325587147323609800'>🟢</tg-emoji>  𝗣𝗼𝘀𝗶𝘁𝗶𝗼𝗻  ╌  #{0}\n<tg-emoji emoji-id='6026256492619895014'>🎵</tg-emoji>  <a href={1}>{2}</a>\n<tg-emoji emoji-id='4967525849902350972'>⏰</tg-emoji>  𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻  ╌  {3} ᴍɪɴ\n<tg-emoji emoji-id='4967667085606912536'>👤</tg-emoji>  𝗕𝘆  ╌  {4}</blockquote>",
-  "play_usage": "<blockquote>📋  <b><tg-emoji emoji-id=\"5904258298764334001\">⚙️</tg-emoji> Usage:</b>\n\n<code>/play attention</code></blockquote>"
+  "play_usage": "<blockquote>📋  <b><tg-emoji emoji-id=\"5904258298764334001\">⚙️</tg-emoji> Usage:</b>\n\n<code>/play attention</code></blockquote>",
   "play_video_disabled": "<blockquote>❌  Video playback is <b>disabled</b>.</blockquote>",
   "play_seeking": "⟳  𝗦𝗲𝗲𝗸𝗶𝗻𝗴 𝘀𝘁𝗿𝗲𝗮𝗺...",
   "play_again": "⟳  𝗥𝗲𝗽𝗹𝗮𝘆𝗶𝗻𝗴 𝘁𝗿𝗮𝗰𝗸...",
