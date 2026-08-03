@@ -194,15 +194,15 @@ class Inline:
                 )
             ],
             [
-                self.ikb(text="  " + lang["help"],  callback_data="help",                                    style=ButtonStyle.SUCCESS),
-                self.ikb(text="  ʟᴀɴɢꜱ",           callback_data="help_langs",                              style=ButtonStyle.PRIMARY),
-                self.ikb(text="  ꜱᴏᴜʀᴄᴇ",          url="https://github.com/elevenyts",          style=ButtonStyle.DANGER),
+                self.ikb(text="  " + lang["help"],  callback_data="help"),
             ],
             [
-                self.ikb(text="  " + lang["support"], url=config.SUPPORT_CHAT,    style=ButtonStyle.PRIMARY),
-                self.ikb(text=" " + lang["channel"], url=config.SUPPORT_CHANNEL, style=ButtonStyle.PRIMARY),
+                self.ikb(text="  " + lang["support"], url=config.SUPPORT_CHAT),
+                self.ikb(text=" " + lang["channel"], url=config.SUPPORT_CHANNEL),
             ],
-        ]
+            [   self.ikb(text="Owner",          url="https://t.me/light_speedy",          style=ButtonStyle.DANGER),
+            ], 
+        ]     
         return self.ikm(rows)
 
     def yt_key(self, link: str) -> types.InlineKeyboardMarkup:
