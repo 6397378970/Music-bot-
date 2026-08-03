@@ -43,8 +43,8 @@ class Config:
         self.SESSION3: str = getenv("STRING_SESSION3", "")
 
         # Support Links
-        self.SUPPORT_CHANNEL: str = getenv("SUPPORT_CHANNEL", "https://t.me/elevenytsmusic")
-        self.SUPPORT_CHAT: str = getenv("SUPPORT_CHAT", "https://t.me/elevenytschats")
+        self.SUPPORT_CHANNEL: str = getenv("SUPPORT_CHANNEL", "https://t.me/light_organisation")
+        self.SUPPORT_CHAT: str = getenv("SUPPORT_CHAT", "https://t.me/+0xI9c4YEenpjMDFl")
 
         # Excluded Chats
         self.EXCLUDED_CHATS: List[int] = self._parse_excluded_chats()
@@ -68,10 +68,10 @@ class Config:
         self.COOKIES_URL: List[str] = self._parse_cookies()
 
         # Images
-        self.DEFAULT_THUMB: str = getenv("DEFAULT_THUMB", "https://graph.org/file/8d492699bd4337068e8b0-069afe8a3596204342.mp4")
-        self.PING_IMG: str = getenv("PING_IMG", "https://graph.org/file/8d492699bd4337068e8b0-069afe8a3596204342.mp4")
-        self.START_IMG: str = getenv("START_IMG", "https://graph.org/file/8d492699bd4337068e8b0-069afe8a3596204342.mp4")
-        self.RADIO_IMG: str = getenv("RADIO_IMG", "https://graph.org/file/8d492699bd4337068e8b0-069afe8a3596204342.mp4")
+        self.DEFAULT_THUMB: str = getenv("DEFAULT_THUMB", "https://files.catbox.moe/cxm4l1.jpg")
+        self.PING_IMG: str = getenv("PING_IMG", "https://files.catbox.moe/6sj97p.png")
+        self.START_IMG: str = getenv("START_IMG", "https://files.catbox.moe/cxm4l1.jpg")
+        self.RADIO_IMG: str = getenv("RADIO_IMG", "https://files.catbox.moe/m4luwd.jpg")
         
         # Moderation
         self.EXCLUDED_USERNAMES: List[str] = getenv("EXCLUDED_USERNAMES", "").split()
