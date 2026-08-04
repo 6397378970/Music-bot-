@@ -73,13 +73,6 @@ DIM_WHITE  = (210, 210, 230)
 MID_GREY   = (160, 160, 185)
 DARK_GREY  = ( 45,  45,  60)
 
-_f = "QXJ0aXN0Ym90cw=="
-
-
-def _decode_f() -> str:
-    decoded = base64.b64decode(_f).decode("utf-8")
-    return f"✦  {decoded.upper()}  ✦"
-
 
 def trim_to_width(text: str, font, max_w: int) -> str:
     ellipsis = "…"
@@ -116,66 +109,6 @@ def gradient_line(draw, x0, y0, x1, y1, thickness,
         g  = int(color_a[1] + (color_b[1] - color_a[1]) * t)
         b  = int(color_a[2] + (color_b[2] - color_a[2]) * t)
         draw.rectangle((x, y0, xn, y0 + thickness), fill=(r, g, b, 255))
-
-
-def draw_watermark_badge(img: Image.Image, text: str, font,
-                         top: int = 22, right: int = 28):
-    """
-    Draws a glowing pill badge in the top-right corner of `img`.
-    Returns the modified image.
-    """
-    draw = ImageDraw.Draw(img, "RGBA")
-
-    # Measure text
-    bbox   = font.getbbox(text)
-    tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
-    pad_x, pad_y = 22, 10
-
-    bw = tw + pad_x * 2
-    bh = th + pad_y * 2
-
-    x1 = img.width - right
-    x0 = x1 - bw
-    y0 = top
-    y1 = y0 + bh
-    r  = bh // 2   # full pill
-
-    # Outer glow (violet)
-    draw_glow_rect(draw, (x0, y0, x1, y1),
-                   radius=r, color=ACCENT_A, spread=14, max_alpha=90)
-
-    # Pill background — semi-transparent dark violet
-    draw.rounded_rectangle(
-        (x0, y0, x1, y1),
-        radius=r,
-        fill=(30, 10, 60, 200)
-    )
-
-    # Gradient-ish top highlight inside pill
-    draw.rounded_rectangle(
-        (x0 + 2, y0 + 2, x1 - 2, y0 + bh // 2),
-        radius=r - 2,
-        fill=(255, 255, 255, 20)
-    )
-
-    # Pill border — thin violet-cyan
-    draw.rounded_rectangle(
-        (x0, y0, x1, y1),
-        radius=r,
-        outline=(*ACCENT_C, 220),
-        width=2
-    )
-
-    # Text shadow
-    tx = x0 + pad_x
-    ty = y0 + pad_y
-    draw.text((tx + 1, ty + 1), text, fill=(0, 0, 0, 140), font=font)
-    # Text — gradient-feel via layered semi-transparent draws
-    draw.text((tx, ty), text, fill=(*ACCENT_B, 230), font=font)
-    # Brighten center chars slightly
-    draw.text((tx, ty), text, fill=(255, 255, 255, 60), font=font)
-
-    return img
 
 
 class Thumbnail:
@@ -350,7 +283,7 @@ class Thumbnail:
                     fill=(br, bg_, bb, 255)
                 )
 
-            clean_title = re.sub(r"\W+", " ", song.title).title() + "  ·  Artistbots"
+            clean_title = re.sub(r"\W+", " ", song.title).title()
             final_title = trim_to_width(clean_title, self.title_font, MAX_TITLE_WIDTH)
 
             # Title glow (very subtle violet)
@@ -446,15 +379,6 @@ class Thumbnail:
                         a_
                     ))
                     bg.paste(tinted_ic, (ICONS_X, ICONS_Y), tinted_ic)
-
-            # ── 8. Watermark badge — top-right corner ─────────────────────────
-            bg = draw_watermark_badge(
-                bg,
-                text=_decode_f(),
-                font=self.badge_font,
-                top=24,
-                right=30
-            )
 
             bg.save(output)
             try:
