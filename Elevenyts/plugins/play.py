@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 
 # ── Music search animation frames ─────────────────────────────────────────
 _PLAY_FRAMES = [
-    "<tg-emoji emoji-id="5449449325434266744">❄️</tg-emoji> downloading",
+    "<tg-emoji emoji-id='5449449325434266744'>❄️</tg-emoji> downloading",
 ]
 
 
