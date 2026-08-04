@@ -164,5 +164,5 @@
   "no_player_stats": "<blockquote>❌  You haven't participated in any tournaments yet!</blockquote>",
   "lang_select": "🌐  <b>𝗦𝗲𝗹𝗲𝗰𝘁 𝗬𝗼𝘂𝗿 𝗟𝗮𝗻𝗴𝘂𝗮𝗴𝗲</b>\n\n<i>Choose your preferred language from the buttons below.</i>",
   "lang_changed": "<blockquote>✅  Language changed to: <b>{0}</b></blockquote>",
-  "play_emoji": "<tg-emoji emoji-id='6026256492619895014'>🎵</tg-emoji>"
+  "play_emoji": "<tg-emoji emoji-id=\"5406745015365943482\">⬇️</tg-emoji> downloading <tg-emoji emoji-id=\"5927022501606460935\">🚫</tg-emoji>"
 }
