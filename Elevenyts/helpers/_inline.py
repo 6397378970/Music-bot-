@@ -75,33 +75,32 @@ class Inline:
         else:
             rows = [
                 [
-                    self.ikb(text="🛡  ᴀᴅᴍɪɴꜱ",     callback_data="help_admins",       style=ButtonStyle.PRIMARY),
-                    self.ikb(text="🔐  ᴀᴜᴛʜ",        callback_data="help_auth",         style=ButtonStyle.PRIMARY),
-                    self.ikb(text="📢  ʙʀᴏᴀᴅᴄᴀꜱᴛ",  callback_data="help_broadcast",    style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ᴀᴅᴍɪɴꜱ",     callback_data="help_admins",       style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ᴀᴜᴛʜ",        callback_data="help_auth",         style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ʙʀᴏᴀᴅᴄᴀꜱᴛ",  callback_data="help_broadcast",    style=ButtonStyle.PRIMARY),
                 ],
                 [
-                    self.ikb(text="🚫  ʙʟ-ᴄʜᴀᴛ",    callback_data="help_blchat",       style=ButtonStyle.PRIMARY),
-                    self.ikb(text="🚷  ʙʟ-ᴜꜱᴇʀ",    callback_data="help_bluser",       style=ButtonStyle.PRIMARY),
-                    self.ikb(text="⚡  ɢ-ʙᴀɴ",       callback_data="help_gban",         style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ʙʟ-ᴄʜᴀᴛ",    callback_data="help_blchat",       style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ʙʟ-ᴜꜱᴇʀ",    callback_data="help_bluser",       style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ɢ-ʙᴀɴ",       callback_data="help_gban",         style=ButtonStyle.PRIMARY),
                 ],
                 [
-                    self.ikb(text="🔁  ʟᴏᴏᴘ",        callback_data="help_loop",         style=ButtonStyle.PRIMARY),
-                    self.ikb(text="🎵  ᴘʟᴀʏ",        callback_data="help_play",         style=ButtonStyle.PRIMARY),
-                    self.ikb(text="📋  ǫᴜᴇᴜᴇ",       callback_data="help_queue",        style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ʟᴏᴏᴘ",        callback_data="help_loop",         style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ᴘʟᴀʏ",        callback_data="help_play",         style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ǫᴜᴇᴜᴇ",       callback_data="help_queue",        style=ButtonStyle.PRIMARY),
                 ],
                 [
-                    self.ikb(text="⏩  ꜱᴇᴇᴋ",        callback_data="help_seek",         style=ButtonStyle.PRIMARY),
-                    self.ikb(text="🔀  ꜱʜᴜꜰꜰʟᴇ",    callback_data="help_shuffle",      style=ButtonStyle.PRIMARY),
-                    self.ikb(text="📡  ᴘɪɴɢ",        callback_data="help_ping",         style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ꜱᴇᴇᴋ",        callback_data="help_seek",         style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ꜱʜᴜꜰꜰʟᴇ",    callback_data="help_shuffle",      style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ᴘɪɴɢ",        callback_data="help_ping",         style=ButtonStyle.PRIMARY),
                 ],
                 [
-                    self.ikb(text="📊  ꜱᴛᴀᴛꜱ",       callback_data="help_stats",        style=ButtonStyle.PRIMARY),
-                    self.ikb(text="👑  ꜱᴜᴅᴏ",        callback_data="help_sudo",         style=ButtonStyle.PRIMARY),
-                    self.ikb(text="🔧  ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ", callback_data="help_maintenance", style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ꜱᴛᴀᴛꜱ",       callback_data="help_stats",        style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ꜱᴜᴅᴏ",        callback_data="help_sudo",         style=ButtonStyle.PRIMARY),
+                    self.ikb(text="ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ", callback_data="help_maintenance", style=ButtonStyle.PRIMARY),
                 ],
                 [
-                    self.ikb(text="‹  ʙᴀᴄᴋ",         callback_data="start",             style=ButtonStyle.SUCCESS),
-                    self.ikb(text="🌐  ʟᴀɴɢꜱ",       callback_data="help_langs",        style=ButtonStyle.DANGER),
+                    self.ikb(text="ʙᴀᴄᴋ",         callback_data="start",             style=ButtonStyle.DANGER),
                 ],
             ]
         return self.ikm(rows)
