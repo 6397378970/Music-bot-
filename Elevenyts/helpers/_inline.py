@@ -199,7 +199,8 @@ class Inline:
                 self.ikb(text="  " + lang["support"], url=config.SUPPORT_CHAT),
                 self.ikb(text=" " + lang["channel"], url=config.SUPPORT_CHANNEL),
             ],
-            [   self.ikb(text="Owner",          url="https://t.me/archol",          style=ButtonStyle.DANGER),
+            [   
+                self.ikb(text="Owner", url="https://t.me/light_speedi", style=ButtonStyle.DANGER),
             ], 
         ]     
         return self.ikm(rows)
